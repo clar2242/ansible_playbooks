@@ -1,0 +1,23 @@
+---
+
+- name: update all linux boxes
+  hosts: thunderweb
+  become: true
+  tasks:
+  - package:
+      name: "*"
+      state: latest
+
+- name: update rkhunter on topcat
+  hosts: topcat.thunderweb.co.uk
+  become: true
+  tasks:
+  - command:
+      cmd: rkhunter --propupd
+
+- name: update homebrew
+  hosts: localhost
+  tasks:
+  - homebrew:
+      update_homebrew: yes
+      upgrade_all: yes
