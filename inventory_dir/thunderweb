@@ -1,3 +1,6 @@
+[all:vars]
+ansible_user=scott
+
 localhost ansible_connection="local"
 
 [thunderweb:children]
