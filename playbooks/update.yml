@@ -7,6 +7,7 @@
   - package:
       name: "*"
       state: latest
+    register: package_update
 
 - name: update rkhunter on topcat
   hosts: topcat.thunderweb.co.uk
@@ -14,6 +15,7 @@
   tasks:
   - command:
       cmd: rkhunter --propupd
+    when: package_update is changed
 
 - name: update homebrew
   hosts: localhost
