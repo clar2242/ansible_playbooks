@@ -20,17 +20,17 @@ tfrcentos
 tfrdebian
 
 [tfrcentos]
-nas[1:2]
+nas[1:2].thunderweb.co.uk
 
 [tfrdebian]
-pi
+raspberrypi.thunderweb.co.uk
 
 [docker]
-nas[1:2]
-pi
+nas[1:2].thunderweb.co.uk
+raspberrypi.thunderweb.co.uk
 topcat.thunderweb.co.uk
 
 [centos]
-nas[1:2]
+nas[1:2].thunderweb.co.uk
 topcat.thunderweb.co.uk
 bennytheball.thunderweb.co.uk
