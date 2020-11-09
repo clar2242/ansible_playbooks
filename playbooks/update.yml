@@ -3,6 +3,7 @@
 - name: update all linux boxes
   hosts: thunderweb
   become: true
+  gather_facts: false
   tasks:
   - package:
       name: "*"
@@ -12,6 +13,7 @@
 - name: update rkhunter on topcat
   hosts: topcat.thunderweb.co.uk
   become: true
+  gather_facts: false
   tasks:
   - command:
       cmd: rkhunter --propupd
