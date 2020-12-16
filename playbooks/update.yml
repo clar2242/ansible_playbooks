@@ -1,9 +1,9 @@
 ---
 
-- name: update all linux boxes
+- name: update all unix boxes
   hosts: thunderweb
   become: true
-  gather_facts: false
+  gather_facts: true
   tasks:
   - package:
       name: "*"
