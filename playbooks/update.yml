@@ -19,6 +19,15 @@
       cmd: rkhunter --propupd
     when: package_update is changed
 
+- name: update nextcloud on drive.thunderweb.uk
+  hosts: topcat.thunderweb.co.uk
+  become: true
+  become_user: nginx
+  gather_facts: false
+  tasks:
+  - command:
+      cmd: php /home/websites/thunderweb.uk/drive/public_html/updater/updater.phar --no-interaction
+
 - name: update homebrew
   hosts: localhost
   tasks:
