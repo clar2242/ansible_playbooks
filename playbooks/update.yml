@@ -28,6 +28,14 @@
   - command:
       cmd: php /home/websites/thunderweb.uk/drive/public_html/updater/updater.phar --no-interaction
 
+- name: update pihole on raspberrypi
+  hosts: raspberrypi.thunderweb.co.uk
+  become: true
+  gather_facts: false
+  tasks:
+  - command:
+      cmd: /usr/local/bin/pihole -up
+
 - name: update homebrew
   hosts: localhost
   tasks:
