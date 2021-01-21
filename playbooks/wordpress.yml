@@ -9,3 +9,11 @@
   - command:
       cmd: /bin/wp core update
       chdir: /home/websites/drunkendba.co.uk/public_html/
+  - command:
+      cmd: /bin/wp plugin update --all
+      chdir: /home/websites/drunkendba.co.uk/public_html/
+  - command:
+      cmd: /bin/wp theme update --all
+      chdir: /home/websites/drunkendba.co.uk/public_html/
+
+
