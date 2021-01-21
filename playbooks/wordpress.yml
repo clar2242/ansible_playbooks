@@ -8,7 +8,7 @@
   vars:
     wordpress_installs:
       - "/home/websites/drunkendba.co.uk/public_html"
-      - "/home/websites/scottclark.me.uk/www/public_html/"
+      - "/home/websites/scottclark.me.uk/www/public_html"
       - "/home/websites/scottclark.uk/dev/public_html"
 
   tasks:
