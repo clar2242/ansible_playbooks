@@ -19,14 +19,6 @@
       cmd: rkhunter --propupd
     when: package_update is changed
 
-- name: update pihole on raspberrypi
-  hosts: raspberrypi.thunderweb.co.uk
-  become: true
-  gather_facts: false
-  tasks:
-  - command:
-      cmd: /usr/local/bin/pihole -up
-
 - name: update homebrew
   hosts: localhost
   tasks:
@@ -34,5 +26,6 @@
       update_homebrew: yes
       upgrade_all: yes
 
+- import_playbook: pihole.yml
 - import_playbook: wordpress.yml
 - import_playbook: nextcloud.yml

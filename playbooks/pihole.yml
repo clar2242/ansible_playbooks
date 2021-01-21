@@ -1,0 +1,9 @@
+---
+
+- name: update pihole on raspberrypi
+  hosts: raspberrypi.thunderweb.co.uk
+  become: true
+  gather_facts: false
+  tasks:
+  - command:
+      cmd: /usr/local/bin/pihole -up
