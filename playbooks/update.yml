@@ -33,3 +33,6 @@
   - homebrew:
       update_homebrew: yes
       upgrade_all: yes
+
+- import_playbook: wordpress.yml
+- import_playbook: nextcloud.yml
