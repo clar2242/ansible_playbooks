@@ -1,0 +1,11 @@
+---
+
+- name: update wordpress on drunkendba.co.uk
+  hosts: topcat.thunderweb.co.uk
+  become: true
+  become_user: nginx
+  gather_facts: false
+  tasks:
+  - command:
+      cmd: /bin/wp core update
+      chdir: /home/websites/drunkendba.co.uk/public_html/
