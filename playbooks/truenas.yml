@@ -1,0 +1,29 @@
+---
+
+- name: TrueNAS | Checking For Pending Updates
+  uri:
+    method: POST
+    headers:
+      Authorization: "{{ 'Bearer ' + truenas_auth }}"
+    return_content: true
+    status_code: 200
+    url: "{{ truenas_uri + '/api/v2.0/update/check_available' }}"
+    validate_certs: no
+  delegate_to: localhost
+  register: freenas_pending_updates
+
+- name: TrueNAS | Displaying Pending Updates
+  debug:
+    var: freenas_pending_updates.json
+
+- name: TrueNAS | Apply Pending Updates
+  uri:
+    method: POST
+    headers:
+      Authorization: "{{ 'Bearer ' + truenas_auth }}"
+    return_content: true
+    status_code: 200
+    url: "{{ truenas_uri + '/api/v2.0/update/update' }}"
+    validate_certs: no
+  delegate_to: localhost
+  when: freenas_pending_updates.json.status == "AVAILABLE"

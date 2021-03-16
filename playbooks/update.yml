@@ -1,7 +1,7 @@
 ---
 
-- name: update all unix boxes
-  hosts: thunderweb
+- name: update all linux boxes
+  hosts: linuxboxes
   become: true
   gather_facts: true
   tasks:
@@ -29,3 +29,4 @@
 - import_playbook: pihole.yml
 - import_playbook: wordpress.yml
 - import_playbook: nextcloud.yml
+- import_playbook: nas2.yml

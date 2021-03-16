@@ -8,6 +8,11 @@ localhost ansible_connection="local"
 remote
 tfr
 
+[linuxboxes:children]
+tfrcentos
+tfrdebian
+remote
+
 [remote]
 topcat.thunderweb.co.uk
 bennytheball.thunderweb.co.uk
