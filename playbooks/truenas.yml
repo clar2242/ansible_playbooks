@@ -14,7 +14,7 @@
 
 - name: TrueNAS | Displaying Pending Updates
   debug:
-    var: freenas_pending_updates.json
+    var: freenas_pending_updates.json.status
 
 - name: TrueNAS | Apply Pending Updates
   uri:
