@@ -24,6 +24,7 @@
     return_content: true
     status_code: 200
     url: "{{ truenas_uri + '/api/v2.0/update/update' }}"
+    body: "{ \"reboot\": true }"
     # validate_certs: no
   delegate_to: localhost
   when: freenas_pending_updates.json.status == "AVAILABLE"
