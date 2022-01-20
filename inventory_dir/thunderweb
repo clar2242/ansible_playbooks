@@ -23,13 +23,9 @@ ansible_port=2299
 [tfr:children]
 tfrcentos
 tfrdebian
-tfrbsd
 
 [tfrcentos]
 nas1.thunderweb.co.uk
-
-[tfrbsd]
-nas2.thunderweb.co.uk
 
 [tfrdebian]
 raspberrypi.thunderweb.co.uk
@@ -43,6 +39,3 @@ topcat.thunderweb.co.uk
 nas1.thunderweb.co.uk
 topcat.thunderweb.co.uk
 bennytheball.thunderweb.co.uk
-
-[bsd]
-nas2.thunderweb.co.uk
