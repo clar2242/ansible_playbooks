@@ -29,4 +29,3 @@
 - import_playbook: pihole.yml
 - import_playbook: wordpress.yml
 - import_playbook: nextcloud.yml
-- import_playbook: ott.yml

@@ -1,6 +1,0 @@
-[ott:vars]
-ansible_user=centos
-
-[ott]
-ott-test
-omf
