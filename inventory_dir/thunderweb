@@ -39,3 +39,9 @@ topcat.thunderweb.co.uk
 nas1.thunderweb.co.uk
 topcat.thunderweb.co.uk
 bennytheball.thunderweb.co.uk
+
+[py3hosts]
+topcat.thunderweb.co.uk
+
+[py3hosts:vars]
+ansible_python_interpreter=/usr/bin/python3
