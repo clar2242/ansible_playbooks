@@ -70,3 +70,19 @@
       ports:
         - "127.0.0.1:9080:80"
         - "2222:22"
+
+- name: install check_mk on topcat
+  hosts: topcat.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: monitoring
+        image: checkmk/check-mk-raw:2.0.0-latest
+        restart_policy: always
+        volumes:
+          - monitoring:/omd/sites
+        ports:
+          - "192.168.0.253:8080:5000"
+        env:
+          MAIL_RELAY_HOST: "192.168.0.253"
+          CMK_SITE_ID: "cmk"
