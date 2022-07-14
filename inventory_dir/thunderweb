@@ -15,7 +15,6 @@ remote
 
 [remote]
 topcat.thunderweb.co.uk
-bennytheball.thunderweb.co.uk
 
 [remote:vars]
 ansible_port=2299
@@ -38,7 +37,6 @@ topcat.thunderweb.co.uk
 [centos]
 nas1.thunderweb.co.uk
 topcat.thunderweb.co.uk
-bennytheball.thunderweb.co.uk
 
 [py3hosts]
 topcat.thunderweb.co.uk
