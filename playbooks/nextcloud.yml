@@ -9,5 +9,5 @@
   - command:
       cmd: php /home/websites/thunderweb.uk/drive/public_html/updater/updater.phar --no-interaction
   - command:
-      cmd: /home/websites/thunderweb.uk/drive/public_html/occ app:update --all
+      cmd: php /home/websites/thunderweb.uk/drive/public_html/occ app:update --all
 
