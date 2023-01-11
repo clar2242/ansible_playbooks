@@ -1,20 +1,9 @@
 ---
-
-#- name: list docker containers
-#  hosts: docker
-#  tasks:
-#  - community.docker.docker_host_info:
-#      images: yes
-#    register: result
-#
-#  - ansible.builtin.debug:
-#      var: result.host_info
-
 - name: install portainer_agent on raspberrypi
   hosts: raspberrypi.thunderweb.co.uk
   gather_facts: false
   tasks:
-  - community.docker.docker_container:
+    - community.docker.docker_container:
       name: portainer_agent
       image: portainer/agent
       restart_policy: always
@@ -25,10 +14,10 @@
         - 9001:9001
 
 - name: install portainer_agent on topcat
-  hosts: topcat.thunderweb.co.uk 
+  hosts: topcat.thunderweb.co.uk
   gather_facts: false
   tasks:
-  - community.docker.docker_container:
+    - community.docker.docker_container:
       name: portainer_agent
       image: portainer/agent
       restart_policy: always
@@ -42,7 +31,7 @@
   hosts: raspberrypi.thunderweb.co.uk
   gather_facts: false
   tasks:
-  - community.docker.docker_container:
+    - community.docker.docker_container:
       name: cloudflared
       image: visibilityspots/cloudflared:latest
       network_mode: host
@@ -52,7 +41,7 @@
   hosts: topcat.thunderweb.co.uk
   gather_facts: false
   tasks:
-  - community.docker.docker_container:
+    - community.docker.docker_container:
       name: shlink
       image: shlinkio/shlink:stable
       restart_policy: always
@@ -72,7 +61,7 @@
   hosts: topcat.thunderweb.co.uk
   gather_facts: false
   tasks:
-  - community.docker.docker_container:
+    - community.docker.docker_container:
       name: gitlab
       image: gitlab/gitlab-ce:latest
       hostname: gitlab.thunderweb.co.uk
@@ -126,3 +115,19 @@
           synchronisation_interval: "43200"
           convert_heic_to_jpeg: "true"
           TZ: "Europe/London"
+
+- name: install caddy on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: caddy
+        image: caddy/caddy:2.6.2
+        hostname: caddy
+        restart_policy: always
+        volumes:
+          - ~/caddy/Caddyfile:/etc/caddy/Caddyfile
+          - caddy_data:/data
+      ports:
+        - "81:80"
+        - "443:443"
