@@ -115,6 +115,10 @@
           synchronisation_interval: "43200"
           convert_heic_to_jpeg: "true"
           TZ: "Europe/London"
+          pushover_user: "{{ pushover_user }}"
+          pushover_token: "{{ pushover_token }}"
+          pushover_sound: "pushover"
+          notification_title: "icloudpd"
 
 - name: install caddy on nas1
   hosts: nas1.thunderweb.co.uk
