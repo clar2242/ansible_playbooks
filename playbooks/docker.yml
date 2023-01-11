@@ -119,6 +119,7 @@
           pushover_token: "{{ pushover_token }}"
           pushover_sound: "pushover"
           notification_title: "icloudpd"
+          notification_type: "Pushover"
 
 - name: install caddy on nas1
   hosts: nas1.thunderweb.co.uk
