@@ -136,3 +136,19 @@
         ports:
           - "81:80"
           - "443:443"
+
+- name: install heimdall on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: heimdall
+        image: ghcr.io/linuxserver/heimdall:latest
+        hostname: heimdall
+        restart_policy: always
+        volumes:
+          - heimdall_data:/config
+        ports:
+          - 80:80
+        env:
+          APP_URL: "https://home.thunderweb.uk/start/"
