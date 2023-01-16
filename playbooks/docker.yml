@@ -151,4 +151,4 @@
         ports:
           - 80:80
         env:
-          APP_URL: "https://home.thunderweb.uk/start/"
+          APP_URL: "https://start.home.thunderweb.uk/"
