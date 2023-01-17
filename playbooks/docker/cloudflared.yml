@@ -1,0 +1,10 @@
+---
+- name: install cloudflared on pi
+  hosts: raspberrypi.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: cloudflared
+        image: visibilityspots/cloudflared:latest
+        network_mode: host
+        restart_policy: always

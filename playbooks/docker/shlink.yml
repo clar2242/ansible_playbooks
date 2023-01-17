@@ -1,0 +1,20 @@
+---
+- name: install shlink on topcat
+  hosts: topcat.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: shlink
+        image: shlinkio/shlink:stable
+        restart_policy: always
+        ports:
+          - "127.0.0.1:8080:8080"
+        env:
+          DEFAULT_DOMAIN: "yag.me.uk"
+          IS_HTTPS_ENABLED: "true"
+          DB_DRIVER: "mysql"
+          DB_USER: "shlink"
+          DB_PASSWORD: "{{ shlink_mysql_pass }}"
+          DB_NAME: "shlink"
+          DB_HOST: "topcat.thunderweb.co.uk"
+          GEOLITE_LICENSE_KEY: "{{ shlink_geolite }}"

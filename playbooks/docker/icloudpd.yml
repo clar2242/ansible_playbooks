@@ -1,0 +1,30 @@
+---
+- name: install icloudpd on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: icloudpd
+        image: boredazfcuk/icloudpd
+        hostname: icloudpd
+        restart_policy: always
+        volumes:
+          - icloudpd_config:/config
+          - /data/icloud/photos:/home/scott/iCloud
+        env:
+          user: "scott"
+          user_id: "1000"
+          group: "scott"
+          group_id: "1000"
+          apple_id: "clar2242@me.com"
+          authentication_type: "2FA"
+          auto_delete: "True"
+          notification_days: "14"
+          synchronisation_interval: "43200"
+          convert_heic_to_jpeg: "true"
+          TZ: "Europe/London"
+          pushover_user: "{{ pushover_user }}"
+          pushover_token: "{{ pushover_token }}"
+          pushover_sound: "pushover"
+          notification_title: "icloudpd"
+          notification_type: "Pushover"
