@@ -8,4 +8,4 @@
   - command:
       cmd: /usr/local/bin/pihole -up
   - command:
-      cmd: /etc/init.d/pihole-FTL restart
+      cmd: /usr/bin/systemctl restart pihole-FTL
