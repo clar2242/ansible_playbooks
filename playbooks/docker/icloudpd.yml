@@ -25,6 +25,6 @@
           TZ: "Europe/London"
           pushover_user: "{{ pushover_user }}"
           pushover_token: "{{ pushover_token }}"
-          pushover_sound: "pushover"
+          pushover_sound: "intermission"
           notification_title: "icloudpd"
           notification_type: "Pushover"
