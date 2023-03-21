@@ -8,5 +8,6 @@
 - import_playbook: docker/heimdall.yml
 - import_playbook: docker/icloudpd.yml
 - import_playbook: docker/shlink.yml
+- import_playbook: docker/uptimekuma.yml
 
 ## How to wildcard include?!

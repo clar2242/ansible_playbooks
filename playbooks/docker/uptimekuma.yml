@@ -1,0 +1,15 @@
+---
+- name: install uptime kuma on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: uptime-kuma
+        image: louislam/uptime-kuma:1
+        hostname: uptime-kuma
+        restart_policy: always
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+          - uptime-kuma:/app/data
+        ports:
+          - "3001:3001"
