@@ -9,7 +9,6 @@
         hostname: uptime-kuma
         restart_policy: always
         volumes:
-          - /var/run/docker.sock:/var/run/docker.sock
           - uptime-kuma:/app/data
         ports:
           - "3001:3001"
