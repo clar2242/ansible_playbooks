@@ -1,0 +1,20 @@
+---
+- name: install radarr on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: radarr
+        image: lscr.io/linuxserver/radarr:latest
+        hostname: radarr
+        restart_policy: always
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+        volumes:
+          - radarr_data:/config
+          - /data/media:/data/media
+          - /media/nas2:/media/nas2
+        ports:
+          - "7878:7878"

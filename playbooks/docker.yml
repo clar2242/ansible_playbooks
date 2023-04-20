@@ -9,5 +9,8 @@
 - import_playbook: docker/icloudpd.yml
 - import_playbook: docker/shlink.yml
 - import_playbook: docker/uptimekuma.yml
+- import_playbook: docker/prowlarr.yml
+- import_playbook: docker/sonarr.yml
+- import_playbook: docker/radarr.yml
 
 ## How to wildcard include?!
