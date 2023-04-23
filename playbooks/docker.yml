@@ -12,5 +12,6 @@
 - import_playbook: docker/prowlarr.yml
 - import_playbook: docker/sonarr.yml
 - import_playbook: docker/radarr.yml
+- import_playbook: docker/overseerr.yml
 
 ## How to wildcard include?!

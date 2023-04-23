@@ -1,0 +1,18 @@
+---
+- name: install overseerr on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: overseerr
+        image: lscr.io/linuxserver/overseerr:latest
+        hostname: overseerr
+        restart_policy: always
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+        volumes:
+          - overseerr_data:/config
+        ports:
+          - "5055:5055"

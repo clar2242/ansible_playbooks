@@ -15,6 +15,6 @@
         volumes:
           - sonarr_data:/config
           - /data/media:/data/media
-          - /media/nas2:/media/nas2
+          - /data/download/:/data/download
         ports:
           - "8989:8989"
