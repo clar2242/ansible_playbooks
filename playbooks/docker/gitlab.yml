@@ -1,6 +1,6 @@
 ---
-- name: install gitlab on topcat
-  hosts: topcat.thunderweb.co.uk
+- name: install gitlab on nas1
+  hosts: nas1.thunderweb.co.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
