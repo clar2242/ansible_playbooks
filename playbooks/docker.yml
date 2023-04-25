@@ -1,7 +1,6 @@
 ---
 - import_playbook: docker/portainer_pi.yml
 - import_playbook: docker/portainer_topcat.yml
-- import_playbook: docker/caddy.yml
 - import_playbook: docker/check_mk.yml
 - import_playbook: docker/cloudflared.yml
 - import_playbook: docker/gitlab.yml
