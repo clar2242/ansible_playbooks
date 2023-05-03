@@ -1,0 +1,21 @@
+---
+- name: install gitea on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: gitea
+        image: gitea/gitea:latest
+        hostname: gitea
+        restart_policy: always
+        env:
+          USER_UID: "1000"
+          USER_GID: "1000"
+          TZ: "Etc/UTC"
+        volumes:
+          - gitea_data:/data
+          - /etc/timezone:/etc/timezone:ro
+          - /etc/localtime:/etc/localtime:ro
+        ports:
+          - "3000:3000"
+          - "2222:22"
