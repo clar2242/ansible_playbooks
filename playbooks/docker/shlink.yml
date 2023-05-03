@@ -1,6 +1,6 @@
 ---
 - name: install shlink on topcat
-  hosts: topcat.thunderweb.co.uk
+  hosts: nas1.thunderweb.co.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -16,5 +16,5 @@
           DB_USER: "shlink"
           DB_PASSWORD: "{{ shlink_mysql_pass }}"
           DB_NAME: "shlink"
-          DB_HOST: "topcat.thunderweb.co.uk"
+          DB_HOST: "192.168.0.254"
           GEOLITE_LICENSE_KEY: "{{ shlink_geolite }}"

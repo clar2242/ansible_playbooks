@@ -5,12 +5,15 @@
   tasks:
     - community.docker.docker_container:
         name: heimdall
-        image: ghcr.io/linuxserver/heimdall:latest
+        image: lscr.io/linuxserver/heimdall:latest
         hostname: heimdall
         restart_policy: always
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+          APP_URL: "https://start.home.thunderweb.uk/"
         volumes:
           - heimdall_data:/config
         ports:
-          - 80:80
-        env:
-          APP_URL: "https://start.home.thunderweb.uk/"
+          - 8080:80
