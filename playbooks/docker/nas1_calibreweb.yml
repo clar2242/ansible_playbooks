@@ -1,0 +1,21 @@
+---
+- name: install calibre-web on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: calibre-web
+        image: lscr.io/linuxserver/calibre-web:latest
+        hostname: calibre-web
+        restart_policy: always
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+          DOCKER_MODS: "linuxserver/mods:universal-calibre"
+        volumes:
+          - calibre_config:/config
+          - /data/shared/eBooks/Calibre:/books
+          - /home/scott/configs/calibre:/custom-cont-init.d
+        ports:
+          - "8083:8083"
