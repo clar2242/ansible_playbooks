@@ -1,0 +1,17 @@
+---
+- name: install home assistant on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: homeassistant
+        image: lscr.io/linuxserver/homeassistant:latest
+        hostname: homeassistant
+        restart_policy: always
+        network_mode: host
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+        volumes:
+          - homeassistant_data:/config

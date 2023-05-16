@@ -16,6 +16,5 @@
         volumes:
           - calibre_config:/config
           - /data/shared/eBooks/Calibre:/books
-          - /home/scott/configs/calibre:/custom-cont-init.d
         ports:
           - "8083:8083"

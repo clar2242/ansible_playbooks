@@ -1,0 +1,20 @@
+---
+- name: install stash on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: stash
+        image: cr.hotio.dev/hotio/stash
+        hostname: stash
+        restart_policy: always
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+          UMASK: "002"
+        volumes:
+          - stash_data:/config
+          - /data/shared/_Sort/GAY:/data/shared/_Sort/GAY
+        ports:
+          - "9999:9999"
