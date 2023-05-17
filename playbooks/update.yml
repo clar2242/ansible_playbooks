@@ -27,5 +27,5 @@
       upgrade_all: yes
 
 - import_playbook: pihole.yml
-#- import_playbook: wordpress.yml
+- import_playbook: wordpress.yml
 - import_playbook: nextcloud.yml
