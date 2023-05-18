@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: gitea
         image: gitea/gitea:latest
+        pull: true
         hostname: gitea
         restart_policy: always
         env:

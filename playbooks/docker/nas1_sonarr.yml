@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: sonarr
         image: lscr.io/linuxserver/sonarr:latest
+        pull: true
         hostname: sonarr
         restart_policy: always
         env:

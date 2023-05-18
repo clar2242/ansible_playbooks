@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: heimdall
         image: lscr.io/linuxserver/heimdall:latest
+        pull: true
         hostname: heimdall
         restart_policy: always
         env:

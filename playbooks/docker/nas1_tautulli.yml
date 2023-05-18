@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: tautulli
         image: lscr.io/linuxserver/tautulli:latest
+        pull: true
         hostname: tautulli
         restart_policy: always
         env:

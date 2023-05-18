@@ -1,12 +1,18 @@
 ---
-- import_playbook: docker/portainer_pi.yml
-- import_playbook: docker/portainer_topcat.yml
-- import_playbook: docker/cloudflared.yml
-- import_playbook: docker/heimdall.yml
-- import_playbook: docker/icloudpd.yml
-- import_playbook: docker/prowlarr.yml
-- import_playbook: docker/sonarr.yml
-- import_playbook: docker/radarr.yml
-- import_playbook: docker/overseerr.yml
-
-## How to wildcard include?!
+- import_playbook: docker/nas1_calibreweb.yml
+- import_playbook: docker/nas1_gitea.yml
+- import_playbook: docker/nas1_heimdall.yml
+- import_playbook: docker/nas1_homeassistant.yml
+- import_playbook: docker/nas1_icloudpd.yml
+- import_playbook: docker/nas1_overseerr.yml
+- import_playbook: docker/nas1_portainer.yml
+- import_playbook: docker/nas1_prowlarr.yml
+- import_playbook: docker/nas1_radarr.yml
+- import_playbook: docker/nas1_sonarr.yml
+- import_playbook: docker/nas1_stash.yml
+- import_playbook: docker/nas1_tautulli.yml
+- import_playbook: docker/nas1_unpackerr.yml
+- import_playbook: docker/pi_cloudflared.yml
+- import_playbook: docker/pi_portainer_agent.yml
+- import_playbook: docker/topcat_portainer_agent.yml
+- import_playbook: docker/topcat_shlink.yml

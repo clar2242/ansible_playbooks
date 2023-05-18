@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: overseerr
         image: lscr.io/linuxserver/overseerr:latest
+        pull: true
         hostname: overseerr
         restart_policy: always
         env:

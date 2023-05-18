@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: homeassistant
         image: lscr.io/linuxserver/homeassistant:latest
+        pull: true
         hostname: homeassistant
         restart_policy: always
         network_mode: host

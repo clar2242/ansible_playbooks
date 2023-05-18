@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: stash
         image: cr.hotio.dev/hotio/stash
+        pull: true
         hostname: stash
         restart_policy: always
         env:

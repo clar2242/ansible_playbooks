@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: radarr
         image: lscr.io/linuxserver/radarr:latest
+        pull: true
         hostname: radarr
         restart_policy: always
         env:

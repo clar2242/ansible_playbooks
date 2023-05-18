@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: calibre-web
         image: lscr.io/linuxserver/calibre-web:latest
+        pull: true
         hostname: calibre-web
         restart_policy: always
         env:

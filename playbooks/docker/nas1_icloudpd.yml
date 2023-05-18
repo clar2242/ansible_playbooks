@@ -6,6 +6,7 @@
     - community.docker.docker_container:
         name: icloudpd
         image: boredazfcuk/icloudpd:latest
+        pull: true
         hostname: icloudpd
         restart_policy: always
         volumes:
