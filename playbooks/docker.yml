@@ -15,4 +15,3 @@
 - import_playbook: docker/pi_cloudflared.yml
 - import_playbook: docker/pi_portainer_agent.yml
 - import_playbook: docker/topcat_portainer_agent.yml
-- import_playbook: docker/topcat_shlink.yml
