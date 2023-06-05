@@ -1,0 +1,9 @@
+---
+- name: prune docker images
+  hosts: docker
+  become: true
+  gather_facts: false
+  tasks:
+  - command:
+      cmd: docker image prune -f
+
