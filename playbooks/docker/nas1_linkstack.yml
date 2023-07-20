@@ -1,0 +1,23 @@
+---
+- name: install linkstack on nas1
+  hosts: nas1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: linkstack
+        image: linkstackorg/linkstack:latest
+        pull: true
+        hostname: linkstack
+        restart_policy: always
+        volumes:
+          - linkstack_data:/htdocs
+        env:
+          TZ: "Europe/London"
+          SERVER_ADMIN: 'clar2242@me.com'
+          HTTP_SERVER_NAME: 'comeandclick.me.uk'
+          HTTPS_SERVER_NAME: 'comeandclick.me.uk'
+          LOG_LEVEL: 'info'
+          PHP_MEMORY_LIMIT: '256M'
+          UPLOAD_MAX_FILESIZE: '8M'
+        ports:
+          - "9443:443"
