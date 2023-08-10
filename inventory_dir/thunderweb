@@ -28,11 +28,12 @@ nas1.thunderweb.co.uk
 
 [tfrdebian]
 raspberrypi.thunderweb.co.uk
+docker1.thunderweb.co.uk
 
 [docker]
 nas1.thunderweb.co.uk
 raspberrypi.thunderweb.co.uk
-topcat.thunderweb.co.uk
+docker1.thunderweb.co.uk
 
 [centos]
 nas1.thunderweb.co.uk

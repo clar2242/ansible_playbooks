@@ -1,6 +1,6 @@
 ---
-- name: install stash on nas1
-  hosts: nas1.thunderweb.co.uk
+- name: install stash on docker1
+  hosts: docker1.thunderweb.co.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
