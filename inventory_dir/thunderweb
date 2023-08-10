@@ -5,19 +5,11 @@ ansible_user=scott
 localhost ansible_connection="local"
 
 [thunderweb:children]
-remote
 tfr
 
 [linuxboxes:children]
 tfrcentos
 tfrdebian
-remote
-
-[remote]
-topcat.thunderweb.co.uk
-
-[remote:vars]
-ansible_port=2299
 
 [tfr:children]
 tfrcentos
@@ -37,10 +29,3 @@ docker1.thunderweb.co.uk
 
 [centos]
 nas1.thunderweb.co.uk
-topcat.thunderweb.co.uk
-
-[py3hosts]
-topcat.thunderweb.co.uk
-
-[py3hosts:vars]
-ansible_python_interpreter=/usr/bin/python3
