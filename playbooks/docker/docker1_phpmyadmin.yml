@@ -1,0 +1,20 @@
+---
+- name: install phpmyadmin on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: phpmyadmin
+        image: lscr.io/linuxserver/phpmyadmin:latest
+        pull: true
+        hostname: phpmyadmin
+        restart_policy: always
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+          PMA_ABSOLUTE_URI: "https://phpmyadmin.home.thunderweb.uk"
+        volumes:
+          - phpmyadmin_data:/config
+        ports:
+          - "8001:80"
