@@ -1,0 +1,20 @@
+---
+- name: install munin on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: munin
+        image: aheimsbakk/munin-alpine
+        pull: true
+        hostname: munin
+        restart_policy: always
+        env:
+          NODES: "nas1.thunderweb.co.uk:192.168.0.254 docker1.thunderweb.co.uk:192.168.0.253 raspberrypi.thunderweb.co.uk:192.168.0.2"
+        volumes:
+          - munin_config:/etc/munin/munin-conf.d
+          - munin_plugin:/etc/munin/plugin-conf.d
+          - munin_lib:/var/lib/munin
+          - munin_log:/var/log/munin
+        ports:
+          - "127.0.0.1:8182:80"
