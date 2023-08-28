@@ -18,4 +18,4 @@
           - stash_data:/config
           - /data/shared/_Sort/GAY:/data/shared/_Sort/GAY
         ports:
-          - "9999:9999"
+          - "127.0.0.1:9999:9999"

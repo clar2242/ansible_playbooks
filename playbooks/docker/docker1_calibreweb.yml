@@ -18,4 +18,4 @@
           - calibre_config:/config
           - /data/shared/eBooks/Calibre:/books
         ports:
-          - "8083:8083"
+          - "127.0.0.1:8083:8083"

@@ -20,4 +20,4 @@
           PHP_MEMORY_LIMIT: '256M'
           UPLOAD_MAX_FILESIZE: '8M'
         ports:
-          - "9443:443"
+          - "127.0.0.1:9443:443"

@@ -18,4 +18,4 @@
           - /data/media:/data/media
           - /data/download/:/data/download
         ports:
-          - "8989:8989"
+          - "127.0.0.1:8989:8989"

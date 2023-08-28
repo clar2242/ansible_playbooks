@@ -16,4 +16,4 @@
         volumes:
           - overseerr_data:/config
         ports:
-          - "5055:5055"
+          - "127.0.0.1:5055:5055"
