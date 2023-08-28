@@ -1,0 +1,23 @@
+---
+- name: install plex on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: plex
+        image: lscr.io/linuxserver/plex:latest
+        pull: true
+        hostname: plex
+        restart_policy: always
+        network_mode: host
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+          VERSION: "latest"
+          PLEX_CLAIM: "claim-AUWJKcpx96WwFyVrRw7r"
+        volumes:
+          - plex_data:/config
+          - /data/media:/data/media
+        devices:
+          - /dev/dri:/dev/dri

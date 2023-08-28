@@ -1,0 +1,25 @@
+---
+- name: install jellyfin on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: jellyfin
+        image: lscr.io/linuxserver/jellyfin:latest
+        pull: true
+        hostname: jellyfin
+        restart_policy: always
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+          JELLYFIN_PublishedServerUrl: "192.168.0.253"
+          DOCKER_MODS: "linuxserver/mods:jellyfin-amd"
+        volumes:
+          - jellyfin_config:/config
+          - /data/media:/data/media
+        devices:
+          - /dev/dri:/dev/dri
+          - /dev/kfd:/dev/kfd
+        ports:
+          - "8096:8096"

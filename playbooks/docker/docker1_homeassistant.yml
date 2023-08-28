@@ -10,9 +10,12 @@
         hostname: homeassistant
         restart_policy: always
         network_mode: host
+        privileged: true
         env:
           PUID: "1000"
           PGID: "1000"
           TZ: "Etc/UTC"
+          DOCKER_MODS: "linuxserver/mods:homeassistant-hacs"
         volumes:
           - homeassistant_data:/config
+          - /run/dbus:/run/dbus:ro

@@ -1,19 +1,19 @@
 ---
-- name: install prowlarr on nas1
-  hosts: nas1.thunderweb.co.uk
+- name: install overseerr on docker1
+  hosts: docker1.thunderweb.co.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: prowlarr
-        image: lscr.io/linuxserver/prowlarr:latest
+        name: overseerr
+        image: lscr.io/linuxserver/overseerr:latest
         pull: true
-        hostname: prowlarr
+        hostname: overseerr
         restart_policy: always
         env:
           PUID: "1000"
           PGID: "1000"
           TZ: "Etc/UTC"
         volumes:
-          - prowlarr_data:/config
+          - overseerr_data:/config
         ports:
-          - "9696:9696"
+          - "5055:5055"
