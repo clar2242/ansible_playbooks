@@ -5,11 +5,12 @@
 - import_playbook: docker/docker1_homeassistant.yml
 - import_playbook: docker/docker1_linkstack.yml
 - import_playbook: docker/docker1_mariadb.yml
+- import_playbook: docker/docker1_munin.yml
 - import_playbook: docker/docker1_nextcloud.yml
 - import_playbook: docker/docker1_overseerr.yml
 - import_playbook: docker/docker1_phpmyadmin.yml
 - import_playbook: docker/docker1_plex.yml
-- import_playbook: docker/docker1_portainer_agent.yml
+- import_playbook: docker/docker1_portainer.yml
 - import_playbook: docker/docker1_prowlarr.yml
 - import_playbook: docker/docker1_radarr.yml
 - import_playbook: docker/docker1_shlink.yml
@@ -17,7 +18,7 @@
 - import_playbook: docker/docker1_stash.yml
 - import_playbook: docker/docker1_tautulli.yml
 - import_playbook: docker/nas1_icloudpd.yml
-- import_playbook: docker/nas1_portainer.yml
+- import_playbook: docker/nas1_portainer_agent.yml
 - import_playbook: docker/nas1_unpackerr.yml
 - import_playbook: docker/pi_cloudflared.yml
 - import_playbook: docker/pi_portainer_agent.yml
