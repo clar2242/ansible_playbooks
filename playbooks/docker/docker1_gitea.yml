@@ -9,6 +9,8 @@
         pull: true
         hostname: gitea
         restart_policy: always
+        networks:
+          - name: infra
         env:
           USER_UID: "1000"
           USER_GID: "1000"

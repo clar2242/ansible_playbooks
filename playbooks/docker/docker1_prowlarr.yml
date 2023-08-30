@@ -9,6 +9,8 @@
         pull: true
         hostname: prowlarr
         restart_policy: always
+        networks:
+          - name: media
         env:
           PUID: "1000"
           PGID: "1000"

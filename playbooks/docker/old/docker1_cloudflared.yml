@@ -1,0 +1,13 @@
+---
+- name: install cloudflared on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: cloudflared
+        image: visibilityspots/cloudflared:latest
+        pull: true
+        restart_policy: always
+        ports:
+          - "5054:5054/udp"
+          - "5054:5054/tcp"

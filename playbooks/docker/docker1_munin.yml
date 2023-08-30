@@ -9,6 +9,8 @@
         pull: true
         hostname: munin
         restart_policy: always
+        networks:
+          - name: infra
         env:
           NODES: "nas1.thunderweb.co.uk:192.168.0.254 docker1.thunderweb.co.uk:192.168.0.253 raspberrypi.thunderweb.co.uk:192.168.0.2"
         volumes:

@@ -9,6 +9,8 @@
         pull: true
         hostname: portainer
         restart_policy: always
+        networks:
+          - name: infra
         volumes:
           - portainer_data:/data
           - /var/run/docker.sock:/var/run/docker.sock

@@ -9,6 +9,8 @@
         pull: true
         hostname: linkstack
         restart_policy: always
+        networks:
+          - name: web
         volumes:
           - linkstack_data:/htdocs
         env:
