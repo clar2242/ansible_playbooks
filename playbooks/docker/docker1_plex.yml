@@ -15,7 +15,7 @@
           PGID: "1000"
           TZ: "Etc/UTC"
           VERSION: "latest"
-          PLEX_CLAIM: "claim-AUWJKcpx96WwFyVrRw7r"
+          # PLEX_CLAIM: ""
         volumes:
           - plex_data:/config
           - /data/media:/data/media
