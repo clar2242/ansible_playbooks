@@ -5,7 +5,7 @@
   tasks:
     - community.docker.docker_container:
         name: stash
-        image: cr.hotio.dev/hotio/stash
+        image: ghcr.io/hotio/stash
         pull: true
         hostname: stash
         restart_policy: always
