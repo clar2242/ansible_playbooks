@@ -1,0 +1,23 @@
+---
+- name: install sickchill on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: sickchill
+        image: lscr.io/linuxserver/sickchill:latest
+        pull: true
+        hostname: sickchill
+        restart_policy: unless-stopped
+        networks:
+          - name: media
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+        volumes:
+          - sickchill_data:/config
+          - /mnt/external/media/Archive:/media/Archive
+          - /data/media:/data/media
+        ports:
+          - "127.0.0.1:8081:8081"

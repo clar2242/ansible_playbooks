@@ -14,6 +14,7 @@
 - import_playbook: docker/docker1_prowlarr.yml
 - import_playbook: docker/docker1_radarr.yml
 - import_playbook: docker/docker1_shlink.yml
+- import_playbook: docker/docker1_sickchill.yml
 - import_playbook: docker/docker1_sonarr.yml
 - import_playbook: docker/docker1_stash.yml
 - import_playbook: docker/docker1_tautulli.yml
