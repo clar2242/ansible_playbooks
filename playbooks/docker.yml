@@ -12,10 +12,12 @@
 - import_playbook: docker/docker1_plex.yml
 - import_playbook: docker/docker1_portainer.yml
 - import_playbook: docker/docker1_prowlarr.yml
+- import_playbook: docker/docker1_pyload.yml
 - import_playbook: docker/docker1_radarr.yml
 - import_playbook: docker/docker1_shlink.yml
 - import_playbook: docker/docker1_sickchill.yml
 - import_playbook: docker/docker1_sonarr.yml
+- import_playbook: docker/docker1_speedtest.yml
 - import_playbook: docker/docker1_stash.yml
 - import_playbook: docker/docker1_tautulli.yml
 - import_playbook: docker/nas1_icloudpd.yml

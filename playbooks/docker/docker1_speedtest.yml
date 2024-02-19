@@ -1,0 +1,22 @@
+---
+- name: install speedtest-tracker on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: speedtest
+        image: lscr.io/linuxserver/speedtest-tracker:latest
+        pull: true
+        hostname: speedtest
+        restart_policy: always
+        networks:
+          - name: infra
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+          DB_CONNECTION: "sqlite"
+        volumes:
+          - speedtest_data:/config
+        ports:
+          - "127.0.0.1:8123:80"
