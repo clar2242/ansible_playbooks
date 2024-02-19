@@ -19,4 +19,4 @@
         volumes:
           - speedtest_data:/config
         ports:
-          - "127.0.0.1:8123:80"
+          - "127.0.0.1:8124:80"
