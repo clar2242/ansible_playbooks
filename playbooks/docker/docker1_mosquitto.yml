@@ -1,0 +1,19 @@
+---
+- name: install mosquitto on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: mosquitto
+        image: eclipse-mosquitto:2.0
+        pull: true
+        hostname: mosquitto
+        restart_policy: always
+        env:
+          TZ: "Etc/UTC"
+        volumes:
+          - mosquitto_data:/mosquitto
+        ports:
+          - "1883:1883"
+          - "9001:9001"
+        command: "mosquitto -c /mosquitto-no-auth.conf"
