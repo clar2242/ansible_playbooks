@@ -9,12 +9,14 @@
         pull: true
         hostname: zigbee2mqtt
         restart_policy: always
+        networks:
+          - name: infra
         env:
           TZ: "Etc/UTC"
         volumes:
           - zigbee2mqtt_data:/app/data
           - /run/udev:/run/udev:ro
         ports:
-          - "8082:8080"
+          - "127.0.0.1:8082:8080"
         devices:
           - "/dev/ttyUSB0:/dev/ttyUSB0"

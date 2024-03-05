@@ -5,6 +5,7 @@
 - import_playbook: docker/docker1_homeassistant.yml
 - import_playbook: docker/docker1_linkstack.yml
 - import_playbook: docker/docker1_mariadb.yml
+- import_playbook: docker/docker1_mosquitto.yml
 - import_playbook: docker/docker1_munin.yml
 - import_playbook: docker/docker1_nextcloud.yml
 - import_playbook: docker/docker1_overseerr.yml
@@ -20,6 +21,8 @@
 - import_playbook: docker/docker1_speedtest.yml
 - import_playbook: docker/docker1_stash.yml
 - import_playbook: docker/docker1_tautulli.yml
+- import_playbook: docker/docker1_uptimekuma.yml
+- import_playbook: docker/docker1_zigbee2mqtt.yml
 - import_playbook: docker/nas1_icloudpd.yml
 - import_playbook: docker/nas1_portainer_agent.yml
 - import_playbook: docker/nas1_unpackerr.yml

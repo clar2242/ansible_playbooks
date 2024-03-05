@@ -1,0 +1,21 @@
+---
+- name: install uptime kuma on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: uptimekuma
+        image: louislam/uptime-kuma:1
+        pull: true
+        hostname: uptimekuma
+        restart_policy: always
+        networks:
+          - name: infra
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+        volumes:
+          - uptimekuma_data:/app/data 
+        ports:
+          - "127.0.0.1:3001:3001"

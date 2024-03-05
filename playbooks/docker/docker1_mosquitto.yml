@@ -9,11 +9,14 @@
         pull: true
         hostname: mosquitto
         restart_policy: always
+        networks:
+          - name: infra
         env:
           TZ: "Etc/UTC"
         volumes:
-          - mosquitto_data:/mosquitto
+          - mosquitto_data:/mosquitto/data
+          - mosquitto_config:/mosquitto/config
+          - mosquitto_logs:/mosquitto/log
         ports:
           - "1883:1883"
-          - "9001:9001"
         command: "mosquitto -c /mosquitto-no-auth.conf"
