@@ -19,5 +19,8 @@
           - sickchill_data:/config
           - /mnt/external/media/Archive:/media/Archive
           - /data/media:/data/media
-        ports:
-          - "127.0.0.1:8081:8081"
+        labels:
+          caddy: sickchill.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.import_1: cloudflare
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8081 }}"

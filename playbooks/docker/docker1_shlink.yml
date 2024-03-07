@@ -11,8 +11,6 @@
         hostname: shlink
         networks:
           - name: web
-        ports:
-          - "127.0.0.1:8088:8080"
         env:
           DEFAULT_DOMAIN: "yag.me.uk"
           IS_HTTPS_ENABLED: "true"
@@ -22,3 +20,7 @@
           DB_NAME: "shlink"
           DB_HOST: "mariadb"
           GEOLITE_LICENSE_KEY: "{{ shlink_geolite }}"
+        labels:
+          caddy: yag.me.uk www.yag.me.uk
+          caddy.import_1: cloudflare
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8080 }}"

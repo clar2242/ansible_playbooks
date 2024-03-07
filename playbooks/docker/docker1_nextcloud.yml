@@ -19,5 +19,9 @@
         volumes:
           - nextcloud_config:/config
           - nextcloud_data:/data
-        ports:
-          - "127.0.0.1:8443:443"
+        labels:
+          caddy: drive.thunderweb.uk
+          caddy.import_1: cloudflare
+          caddy.reverse_proxy: !unsafe "{{ upstreams 443 }}"
+          caddy.reverse_proxy.transport: "http"
+          caddy.reverse_proxy.transport.tls_insecure_skip_verify:

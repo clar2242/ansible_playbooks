@@ -21,5 +21,9 @@
           LOG_LEVEL: 'info'
           PHP_MEMORY_LIMIT: '256M'
           UPLOAD_MAX_FILESIZE: '8M'
-        ports:
-          - "127.0.0.1:9443:443"
+        labels:
+          caddy: comeandclick.me.uk www.comeandclick.me.uk
+          caddy.import_1: cloudflare
+          caddy.reverse_proxy: !unsafe "{{ upstreams 443 }}"
+          caddy.reverse_proxy.transport: "http"
+          caddy.reverse_proxy.transport.tls_insecure_skip_verify:

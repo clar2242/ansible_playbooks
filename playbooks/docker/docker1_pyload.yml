@@ -18,5 +18,8 @@
         volumes:
           - pyload_data:/config
           - /data/download:/data/download
-        ports:
-          - "127.0.0.1:8000:8000"
+        labels:
+          caddy: downloads.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.import_1: cloudflare
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8000 }}"

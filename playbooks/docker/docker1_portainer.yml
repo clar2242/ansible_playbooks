@@ -14,5 +14,8 @@
         volumes:
           - portainer_data:/data
           - /var/run/docker.sock:/var/run/docker.sock
-        ports:
-          - "127.0.0.1:9000:9000"
+        labels:
+          caddy: portainer.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.import_1: cloudflare
+          caddy.reverse_proxy: !unsafe "{{ upstreams 9000 }}"

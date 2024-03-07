@@ -18,5 +18,9 @@
           - munin_plugin:/etc/munin/plugin-conf.d
           - munin_lib:/var/lib/munin
           - munin_log:/var/log/munin
-        ports:
-          - "127.0.0.1:8182:80"
+        labels:
+          caddy: monitoring.home.thunderweb.uk monitoring.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.import_1: cloudflare
+          caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+          caddy.redir: / https://monitoring.home.thunderweb.uk/munin/

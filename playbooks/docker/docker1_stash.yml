@@ -19,5 +19,8 @@
         volumes:
           - stash_data:/config
           - /data/shared/_Sort/GAY:/data/shared/_Sort/GAY
-        ports:
-          - "127.0.0.1:9999:9999"
+        labels:
+          caddy: stash.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.import_1: cloudflare
+          caddy.reverse_proxy: !unsafe "{{ upstreams 9999 }}"
