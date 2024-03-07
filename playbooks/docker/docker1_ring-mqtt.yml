@@ -1,0 +1,19 @@
+---
+- name: install ring-mqtt on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: ring-mqtt
+        image: tsightler/ring-mqtt
+        pull: true
+        hostname: ring-mqtt
+        restart_policy: always
+        networks:
+          - name: infra
+        env:
+          TZ: "Etc/UTC"
+        volumes:
+          - ring-mqtt_data:/data
+        ports:
+          - "8554:8554"
