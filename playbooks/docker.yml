@@ -1,4 +1,5 @@
 ---
+- import_playbook: docker/docker1_caddy.yml
 - import_playbook: docker/docker1_calibreweb.yml
 - import_playbook: docker/docker1_gitea.yml
 - import_playbook: docker/docker1_heimdall.yml
@@ -15,6 +16,7 @@
 - import_playbook: docker/docker1_prowlarr.yml
 - import_playbook: docker/docker1_pyload.yml
 - import_playbook: docker/docker1_radarr.yml
+- import_playbook: docker/docker1_ring-mqtt.yml
 - import_playbook: docker/docker1_shlink.yml
 - import_playbook: docker/docker1_sickchill.yml
 - import_playbook: docker/docker1_sonarr.yml
