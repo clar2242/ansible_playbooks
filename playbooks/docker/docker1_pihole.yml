@@ -1,0 +1,30 @@
+---
+- name: install pihole on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: pihole
+        image: pihole/pihole:latest
+        pull: true
+        hostname: pihole
+        restart_policy: always
+        network_mode: host
+        env:
+          TZ: "Etc/UTC"
+          WEBPASSWORD: "{{ pihole_admin }}"
+          WEB_PORT: "81"
+          DHCP_START: "192.168.0.150"
+          DHCP_END: "192.168.0.200"
+          DHCP_ROUTER: "192.168.0.1"
+          DHCP_LEASETIME: "12"
+          PIHOLE_DOMAIN: "tfr.home"
+          PIHOLE_DNS_1: "127.0.0.1#5054"
+          #FTLCONF_LOCAL_IPV4: "192.168.0.253"
+        volumes:
+          - pihole_etc:/etc/pihole
+          - pihole_dnsmasq:/etc/dnsmasq.d
+          - pihole_tftpboot:/tftpboot/
+          - pihold_log:/var/log/pihole/
+        capabilities:
+          - NET_ADMIN
