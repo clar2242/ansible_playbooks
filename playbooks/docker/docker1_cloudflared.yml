@@ -1,0 +1,11 @@
+---
+- name: install cloudflared on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: cloudflared
+        image: visibilityspots/cloudflared:latest
+        pull: true
+        network_mode: host
+        restart_policy: always
