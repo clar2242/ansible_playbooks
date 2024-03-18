@@ -14,7 +14,6 @@
 - import_playbook: docker/docker1_plex.yml
 - import_playbook: docker/docker1_portainer.yml
 - import_playbook: docker/docker1_prowlarr.yml
-- import_playbook: docker/docker1_pyload.yml
 - import_playbook: docker/docker1_radarr.yml
 - import_playbook: docker/docker1_ring-mqtt.yml
 - import_playbook: docker/docker1_shlink.yml

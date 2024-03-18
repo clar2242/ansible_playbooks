@@ -1,0 +1,24 @@
+---
+- name: install pyload-ng on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: pyload
+        image: lscr.io/linuxserver/pyload-ng:latest
+        pull: true
+        hostname: pyload
+        restart_policy: always
+        networks:
+          - name: infra
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Etc/UTC"
+        volumes:
+          - pyload_data:/config
+          - /data/download:/data/download
+        labels:
+          caddy: downloads.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8000 }}"
