@@ -21,6 +21,5 @@
         labels:
           caddy: monitoring.home.thunderweb.uk monitoring.thunderweb.uk
           caddy.import_0: httpauth
-          caddy.import_1: cloudflare
           caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
           caddy.redir: / https://monitoring.home.thunderweb.uk/munin/

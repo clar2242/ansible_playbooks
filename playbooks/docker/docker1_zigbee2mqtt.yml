@@ -21,5 +21,4 @@
         labels:
           caddy: zigbee.home.thunderweb.uk
           caddy.import_0: httpauth
-          caddy.import_1: cloudflare
           caddy.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
