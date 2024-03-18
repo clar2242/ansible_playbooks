@@ -1,0 +1,16 @@
+---
+- name: install pialert on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: pialert
+        image: jokobsk/pi.alert:latest
+        pull: true
+        hostname: pialert
+        restart_policy: always
+        network_mode: host
+        env:
+          TZ: "Europe/London"
+        volumes:
+          - pialert_data:/home/pi/pialert
