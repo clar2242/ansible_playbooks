@@ -16,5 +16,3 @@
   - homebrew:
       update_homebrew: yes
       upgrade_all: yes
-
-- import_playbook: pihole.yml

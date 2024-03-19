@@ -1,6 +1,7 @@
 ---
 - import_playbook: docker/docker1_caddy.yml
 - import_playbook: docker/docker1_calibreweb.yml
+- import_playbook: docker/docker1_cloudflared.yml
 - import_playbook: docker/docker1_gitea.yml
 - import_playbook: docker/docker1_heimdall.yml
 - import_playbook: docker/docker1_homeassistant.yml
@@ -11,6 +12,7 @@
 - import_playbook: docker/docker1_nextcloud.yml
 - import_playbook: docker/docker1_overseerr.yml
 - import_playbook: docker/docker1_phpmyadmin.yml
+- import_playbook: docker/docker1_pihole.yml
 - import_playbook: docker/docker1_plex.yml
 - import_playbook: docker/docker1_portainer.yml
 - import_playbook: docker/docker1_prowlarr.yml
