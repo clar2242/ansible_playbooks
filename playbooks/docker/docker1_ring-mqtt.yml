@@ -12,7 +12,7 @@
         networks:
           - name: infra
         env:
-          TZ: "Etc/UTC"
+          TZ: "Europe/London"
         volumes:
           - ring-mqtt_data:/data
         ports:

@@ -14,7 +14,7 @@
         env:
           USER_UID: "1000"
           USER_GID: "1000"
-          TZ: "Etc/UTC"
+          TZ: "Europe/London"
         volumes:
           - gitea_data:/data
           - /etc/timezone:/etc/timezone:ro

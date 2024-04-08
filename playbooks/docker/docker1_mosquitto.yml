@@ -12,7 +12,7 @@
         networks:
           - name: infra
         env:
-          TZ: "Etc/UTC"
+          TZ: "Europe/London"
         volumes:
           - mosquitto_data:/mosquitto/data
           - mosquitto_config:/mosquitto/config

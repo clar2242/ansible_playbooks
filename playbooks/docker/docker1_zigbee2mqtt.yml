@@ -12,7 +12,7 @@
         networks:
           - name: infra
         env:
-          TZ: "Etc/UTC"
+          TZ: "Europe/London"
         volumes:
           - zigbee2mqtt_data:/app/data
           - /run/udev:/run/udev:ro

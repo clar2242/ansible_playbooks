@@ -12,7 +12,8 @@
         networks:
           - name: infra
         env:
-          NODES: "nas1.thunderweb.co.uk:192.168.0.254 docker1.thunderweb.co.uk:192.168.0.253 raspberrypi.thunderweb.co.uk:192.168.0.2"
+          NODES: "nas1.thunderweb.co.uk:192.168.0.254 docker1.thunderweb.co.uk:192.168.0.253"
+          TZ: "Europe/London"
         volumes:
           - munin_config:/etc/munin/munin-conf.d
           - munin_plugin:/etc/munin/plugin-conf.d

@@ -13,7 +13,7 @@
         env:
           PUID: "1000"
           PGID: "1000"
-          TZ: "Etc/UTC"
+          TZ: "Europe/London"
           VERSION: "latest"
           # PLEX_CLAIM: ""
         volumes:

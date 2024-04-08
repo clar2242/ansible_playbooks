@@ -29,6 +29,4 @@
 - import_playbook: docker/nas1_icloudpd.yml
 - import_playbook: docker/nas1_portainer_agent.yml
 - import_playbook: docker/nas1_unpackerr.yml
-- import_playbook: docker/pi_cloudflared.yml
-- import_playbook: docker/pi_portainer_agent.yml
 - import_playbook: docker_prune.yml

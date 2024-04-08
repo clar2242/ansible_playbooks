@@ -11,7 +11,7 @@
         restart_policy: always
         network_mode: host
         env:
-          TZ: "Etc/UTC"
+          TZ: "Europe/London"
           WEBPASSWORD: "{{ pihole_admin }}"
           WEB_PORT: "81"
           DHCP_START: "192.168.0.150"

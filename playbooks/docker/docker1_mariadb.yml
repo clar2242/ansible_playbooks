@@ -14,7 +14,7 @@
         env:
           PUID: "1000"
           PGID: "1000"
-          TZ: "Etc/UTC"
+          TZ: "Europe/London"
           MYSQL_ROOT_PASSWORD: "{{ docker1_mysql_root }}"
         volumes:
           - mariadb_data:/config

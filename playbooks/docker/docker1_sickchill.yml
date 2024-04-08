@@ -14,7 +14,7 @@
         env:
           PUID: "1000"
           PGID: "1000"
-          TZ: "Etc/UTC"
+          TZ: "Europe/London"
         volumes:
           - sickchill_data:/config
           - /mnt/external/media/Archive:/media/Archive

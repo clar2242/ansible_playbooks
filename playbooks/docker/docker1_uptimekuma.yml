@@ -5,7 +5,7 @@
   tasks:
     - community.docker.docker_container:
         name: uptimekuma
-        image: louislam/uptime-kuma:1
+        image: louislam/uptime-kuma:latest
         pull: true
         hostname: uptimekuma
         restart_policy: always
@@ -14,7 +14,7 @@
         env:
           PUID: "1000"
           PGID: "1000"
-          TZ: "Etc/UTC"
+          TZ: "Europe/London"
         volumes:
           - uptimekuma_data:/app/data 
         labels:
