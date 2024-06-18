@@ -11,4 +11,5 @@
         restart_policy: always
         volumes:
           - /data/download/:/data/download
+          - /data/media/download:/data/media/download
           - /home/scott/configs/unpackerr:/config

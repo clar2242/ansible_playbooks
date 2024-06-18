@@ -16,6 +16,7 @@
           PGID: "1000"
           TZ: "Europe/London"
           DB_CONNECTION: "sqlite"
+          APP_KEY: "{{ speedtest_appkey }}"
         volumes:
           - speedtest_data:/config
         labels:

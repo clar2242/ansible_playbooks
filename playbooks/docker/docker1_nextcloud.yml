@@ -15,7 +15,6 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
-          DOCKER_MODS: "linuxserver/mods:nextcloud-memories|linuxserver/mods:nextcloud-mediadc"
         volumes:
           - nextcloud_config:/config
           - nextcloud_data:/data
