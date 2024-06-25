@@ -20,6 +20,8 @@
           DB_NAME: "shlink"
           DB_HOST: "mariadb"
           GEOLITE_LICENSE_KEY: "{{ shlink_geolite }}"
+          DISABLE_TRACKING_FROM: "185.241.225.204"
+          ANONYMIZE_REMOTE_ADDR: "false"
         labels:
           caddy: yag.me.uk www.yag.me.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
