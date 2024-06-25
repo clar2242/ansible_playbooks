@@ -1,0 +1,26 @@
+---
+- name: install lazylibrarian on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: lazylibrarian
+        image: lscr.io/linuxserver/lazylibrarian:latest
+        pull: true
+        hostname: lazylibrarian
+        restart_policy: always
+        networks:
+          - name: media
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+          DOCKER_MODS: "linuxserver/mods:universal-calibre|linuxserver/mods:lazylibrarian-ffmpeg"
+        volumes:
+          - lazylibrarian_data:/config
+          - /data/shared/:/data/shared
+          - /data/download/:/data/download
+        labels:
+          caddy: lazylibrarian.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.reverse_proxy: !unsafe "{{ upstreams 5299 }}"

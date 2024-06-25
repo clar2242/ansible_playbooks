@@ -1,0 +1,25 @@
+---
+- name: install readarr on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: readarr
+        image: lscr.io/linuxserver/readarr:develop
+        pull: true
+        hostname: readarr
+        restart_policy: always
+        networks:
+          - name: media
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+        volumes:
+          - readarr_data:/config
+          - /data/shared/:/data/shared
+          - /data/download/:/data/download
+        labels:
+          caddy: readarr.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8787 }}"
