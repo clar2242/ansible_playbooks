@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Generate docker.yml to include all docker playbooks
+
 echo "---" > docker.yml
 
 ls docker/*.yml | while read playbook
