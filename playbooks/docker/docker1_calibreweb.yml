@@ -19,7 +19,7 @@
         volumes:
           - calibre_config:/config
           - /data/shared/eBooks/Calibre:/books
-          - /data/shared/:/data/shared
+          - /data:/data
         labels:
           caddy: calibre.home.thunderweb.uk
           caddy.import_0: httpauth

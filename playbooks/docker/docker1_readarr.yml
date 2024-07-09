@@ -17,8 +17,7 @@
           TZ: "Europe/London"
         volumes:
           - readarr_data:/config
-          - /data/shared/:/data/shared
-          - /data/download/:/data/download
+          - /data:/data
         labels:
           caddy: readarr.home.thunderweb.uk
           caddy.import_0: httpauth

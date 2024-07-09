@@ -18,8 +18,7 @@
           DOCKER_MODS: "linuxserver/mods:universal-calibre|linuxserver/mods:lazylibrarian-ffmpeg"
         volumes:
           - lazylibrarian_data:/config
-          - /data/shared/:/data/shared
-          - /data/download/:/data/download
+          - /data/:/data/
         labels:
           caddy: lazylibrarian.home.thunderweb.uk
           caddy.import_0: httpauth

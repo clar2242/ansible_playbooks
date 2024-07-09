@@ -5,6 +5,7 @@
 - import_playbook: docker/docker1_coredns.yml
 - import_playbook: docker/docker1_gitea.yml
 - import_playbook: docker/docker1_heimdall.yml
+- import_playbook: docker/docker1_lazylibrarian.yml
 - import_playbook: docker/docker1_linkstack.yml
 - import_playbook: docker/docker1_mariadb.yml
 - import_playbook: docker/docker1_munin.yml
@@ -16,6 +17,7 @@
 - import_playbook: docker/docker1_portainer.yml
 - import_playbook: docker/docker1_prowlarr.yml
 - import_playbook: docker/docker1_radarr.yml
+- import_playbook: docker/docker1_readarr.yml
 - import_playbook: docker/docker1_shlink.yml
 - import_playbook: docker/docker1_sickchill.yml
 - import_playbook: docker/docker1_sonarr.yml
