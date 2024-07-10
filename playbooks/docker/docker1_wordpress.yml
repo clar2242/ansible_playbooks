@@ -1,0 +1,29 @@
+---
+- name: install wordpress on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: wordpress
+        image: wordpress:php8.3-fpm
+        pull: true
+        hostname: wordpress
+        restart_policy: always
+        networks:
+          - name: web
+        env:
+          TZ: "Europe/London"
+          WORDPRESS_DB_HOST: "mariadb"
+          WORDPRESS_DB_NAME: "scottclark"
+          WORDPRESS_DB_USER: "scottclark"
+          WORDPRESS_DB_PASSWORD: "{{ wordpress_mysql_pass }}"
+        volumes:
+          - wordpress_data:/var/www/html
+        labels:
+          caddy: dev.scottclark.uk
+          caddy.php_fastcgi: !unsafe "{{ upstreams 9000 }}"
+          caddy.root: "* /var/www/html"
+          caddy.file_server:
+          caddy.encode: gzip
+          caddy.@forbidden.path: "/.user.ini"
+          caddy.respond: "@forbidden 404"

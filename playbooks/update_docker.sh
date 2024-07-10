@@ -2,6 +2,8 @@
 
 # Generate docker.yml to include all docker playbooks
 
+cd ~/ansible/playbooks
+
 echo "---" > docker.yml
 
 ls docker/*.yml | while read playbook
