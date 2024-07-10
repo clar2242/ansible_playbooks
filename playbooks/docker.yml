@@ -1,5 +1,5 @@
 ---
-- import_playbook: docker/docker1_caddy.yml
+- import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/docker1_calibreweb.yml
 - import_playbook: docker/docker1_cloudflared.yml
 - import_playbook: docker/docker1_coredns.yml
@@ -25,6 +25,7 @@
 - import_playbook: docker/docker1_stash.yml
 - import_playbook: docker/docker1_tautulli.yml
 - import_playbook: docker/docker1_uptimekuma.yml
+- import_playbook: docker/docker1_wordpress.yml
 - import_playbook: docker/docker1_zigbee2mqtt.yml
 - import_playbook: docker/nas1_icloudpd.yml
 - import_playbook: docker/nas1_portainer_agent.yml
