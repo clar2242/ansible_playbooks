@@ -17,6 +17,7 @@
           TZ: "Europe/London"
           DB_CONNECTION: "sqlite"
           APP_KEY: "{{ speedtest_appkey }}"
+          SPEEDTEST_SCHEDULE: "0 */8 * * *"
         volumes:
           - speedtest_data:/config
         labels:
