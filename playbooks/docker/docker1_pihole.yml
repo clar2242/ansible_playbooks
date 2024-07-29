@@ -10,6 +10,7 @@
         hostname: pihole
         restart_policy: always
         network_mode: host
+        shm_size: 256M
         env:
           TZ: "Europe/London"
           WEBPASSWORD: "{{ pihole_admin }}"
