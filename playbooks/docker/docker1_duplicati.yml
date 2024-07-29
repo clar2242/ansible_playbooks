@@ -1,0 +1,26 @@
+---
+- name: install duplicati on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: duplicati
+        image: lscr.io/linuxserver/duplicati:latest
+        pull: true
+        hostname: duplicati
+        restart_policy: always
+        networks:
+          - name: infra
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+        volumes:
+          - duplicati_data:/config
+          - duplicati_source:/source
+          - duplicati_backups:/backups
+          - /data:/data
+        labels:
+          caddy: duplicati.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8200 }}"
