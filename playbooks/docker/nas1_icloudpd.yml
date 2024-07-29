@@ -8,7 +8,7 @@
         image: boredazfcuk/icloudpd:latest
         pull: true
         hostname: icloudpd
-        restart_policy: always
+        restart_policy: no
         volumes:
           - icloudpd_config:/config
           - /data/icloud/photos:/home/scott/iCloud
@@ -22,7 +22,8 @@
           auto_delete: "True"
           notification_days: "14"
           synchronisation_interval: "43200"
-          convert_heic_to_jpeg: "true"
+          single_pass: "true"
+          convert_heic_to_jpeg: "false"
           TZ: "Europe/London"
           pushover_user: "{{ pushover_user }}"
           pushover_token: "{{ pushover_token }}"
