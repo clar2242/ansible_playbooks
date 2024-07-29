@@ -20,10 +20,12 @@ nas1.thunderweb.co.uk
 
 [tfrdebian]
 docker1.thunderweb.co.uk
+docker2.tfr.home
 
 [docker]
 nas1.thunderweb.co.uk
 docker1.thunderweb.co.uk
+docker2.tfr.home
 
 [centos]
 nas1.thunderweb.co.uk
