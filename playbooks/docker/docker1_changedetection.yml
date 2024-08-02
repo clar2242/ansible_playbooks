@@ -1,0 +1,41 @@
+---
+- name: install changedetection.io on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: changedetection
+        image: lscr.io/linuxserver/changedetection.io:latest
+        pull: true
+        hostname: changedetection
+        restart_policy: always
+        networks:
+          - name: web
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          PLAYWRIGHT_DRIVER_URL: "ws://browserless:3000"
+          LC_ALL: en_US.UTF-8
+        volumes:
+          - changedetection_data:/config
+        labels:
+          caddy: change.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.reverse_proxy: !unsafe "{{ upstreams 5000 }}"
+
+    - community.docker.docker_container:
+        name: browserless
+        image: dgtlmoon/sockpuppetbrowser:latest
+        pull: true
+        hostname: browserless
+        restart_policy: always
+        networks:
+          - name: web
+        shm_size: 1024M
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          SCREEN_WIDTH: "1920"
+          SCREEN_HEIGHT: "1024"
+          SCREEN_DEPTH: "16"
+          MAX_CONCURRENT_CHROME_PROCESSES: "10"
