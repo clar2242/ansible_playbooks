@@ -1,16 +1,16 @@
 ---
-- name: install zigbee2mqtt on docker1
-  hosts: docker1.thunderweb.co.uk
+- name: install zigbee2mqtt on nas1
+  hosts: nas1.thunderweb.co.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
         name: zigbee2mqtt
         image: koenkk/zigbee2mqtt
         pull: true
+        ports:
+          - "8082:8080"
         hostname: zigbee2mqtt
         restart_policy: always
-        networks:
-          - name: infra
         env:
           TZ: "Europe/London"
         volumes:
@@ -18,7 +18,3 @@
           - /run/udev:/run/udev:ro
         devices:
           - "/dev/ttyUSB0:/dev/ttyUSB0"
-        labels:
-          caddy: zigbee.home.thunderweb.uk
-          caddy.import_0: httpauth
-          caddy.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
