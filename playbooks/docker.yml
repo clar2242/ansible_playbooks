@@ -1,6 +1,7 @@
 ---
 - import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/docker1_calibreweb.yml
+- import_playbook: docker/docker1_changedetection.yml
 - import_playbook: docker/docker1_cloudflared.yml
 - import_playbook: docker/docker1_coredns.yml
 - import_playbook: docker/docker1_duplicati.yml
@@ -28,11 +29,10 @@
 - import_playbook: docker/docker1_tools.yml
 - import_playbook: docker/docker1_uptimekuma.yml
 - import_playbook: docker/docker1_wordpress.yml
-- import_playbook: docker/docker1_wordpress2.yml
-- import_playbook: docker/docker1_zigbee2mqtt.yml
 - import_playbook: docker/docker2_plex.yml
 - import_playbook: docker/docker2_portainer_agent.yml
 - import_playbook: docker/nas1_icloudpd.yml
 - import_playbook: docker/nas1_portainer_agent.yml
 - import_playbook: docker/nas1_unpackerr.yml
+- import_playbook: docker/nas1_zigbee2mqtt.yml
 - import_playbook: docker_prune.yml
