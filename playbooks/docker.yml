@@ -8,7 +8,6 @@
 - import_playbook: docker/docker1_gitea.yml
 - import_playbook: docker/docker1_homarr.yml
 - import_playbook: docker/docker1_lazylibrarian.yml
-- import_playbook: docker/docker1_linkstack.yml
 - import_playbook: docker/docker1_mariadb.yml
 - import_playbook: docker/docker1_munin.yml
 - import_playbook: docker/docker1_nextcloud.yml
@@ -20,7 +19,6 @@
 - import_playbook: docker/docker1_prowlarr.yml
 - import_playbook: docker/docker1_radarr.yml
 - import_playbook: docker/docker1_readarr.yml
-- import_playbook: docker/docker1_shlink.yml
 - import_playbook: docker/docker1_sickchill.yml
 - import_playbook: docker/docker1_sonarr.yml
 - import_playbook: docker/docker1_speedtest.yml
@@ -35,4 +33,9 @@
 - import_playbook: docker/nas1_portainer_agent.yml
 - import_playbook: docker/nas1_unpackerr.yml
 - import_playbook: docker/nas1_zigbee2mqtt.yml
+- import_playbook: docker/vps1_caddy_proxy.yml
+- import_playbook: docker/vps1_linkstack.yml
+- import_playbook: docker/vps1_mariadb.yml
+- import_playbook: docker/vps1_portainer_agent.yml
+- import_playbook: docker/vps1_shlink.yml
 - import_playbook: docker_prune.yml

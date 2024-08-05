@@ -1,6 +1,6 @@
 ---
-- name: install linkstack on docker1
-  hosts: docker1.thunderweb.co.uk
+- name: install linkstack on vps1
+  hosts: vps1.thunderweb.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
