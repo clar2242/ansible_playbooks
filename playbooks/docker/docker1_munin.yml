@@ -12,7 +12,7 @@
         networks:
           - name: infra
         env:
-          NODES: "nas1.thunderweb.co.uk:192.168.0.254 docker1.thunderweb.co.uk:192.168.0.253 docker2.tfr.home:192.168.0.252 proxmox1.srv.tfr.home:192.168.255.11 proxmox2.srv.tfr.home:192.168.255.12"
+          NODES: "nas1.thunderweb.co.uk:192.168.0.254 docker1.thunderweb.co.uk:192.168.0.253 docker2.tfr.home:192.168.0.252 proxmox1.srv.tfr.home:192.168.255.11 proxmox2.srv.tfr.home:192.168.255.12 vps1.thunderweb.uk:192.168.2.2"
           TZ: "Europe/London"
         volumes:
           - munin_config:/etc/munin/munin-conf.d
