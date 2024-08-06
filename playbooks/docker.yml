@@ -25,7 +25,6 @@
 - import_playbook: docker/docker1_stash.yml
 - import_playbook: docker/docker1_tautulli.yml
 - import_playbook: docker/docker1_tools.yml
-- import_playbook: docker/docker1_uptimekuma.yml
 - import_playbook: docker/docker1_wordpress.yml
 - import_playbook: docker/docker2_plex.yml
 - import_playbook: docker/docker2_portainer_agent.yml
@@ -38,4 +37,5 @@
 - import_playbook: docker/vps1_mariadb.yml
 - import_playbook: docker/vps1_portainer_agent.yml
 - import_playbook: docker/vps1_shlink.yml
+- import_playbook: docker/vps1_uptimekuma.yml
 - import_playbook: docker_prune.yml
