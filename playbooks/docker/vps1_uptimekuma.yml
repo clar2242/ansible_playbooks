@@ -1,6 +1,6 @@
 ---
-- name: install uptime kuma on docker1
-  hosts: docker1.thunderweb.co.uk
+- name: install uptime kuma on vps1
+  hosts: vps1.thunderweb.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -10,7 +10,7 @@
         hostname: uptimekuma
         restart_policy: always
         networks:
-          - name: infra
+          - name: web
         env:
           PUID: "1000"
           PGID: "1000"
@@ -18,6 +18,6 @@
         volumes:
           - uptimekuma_data:/app/data 
         labels:
-          caddy: kuma.home.thunderweb.uk
+          caddy: kuma.thunderweb.uk
           caddy.import_0: httpauth
           caddy.reverse_proxy: !unsafe "{{ upstreams 3001 }}"
