@@ -1,0 +1,24 @@
+---
+- name: install openbooks on docker1
+  hosts: docker1.thunderweb.co.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: openbooks
+        image: evanbuss/openbooks:latest
+        pull: true
+        hostname: openbooks
+        restart_policy: always
+        networks:
+          - name: web
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+        volumes:
+          - openbooks_data:/books
+        command: "--persist --name {{ openbooks_user }} --log --debug"
+        labels:
+          caddy: ob.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
