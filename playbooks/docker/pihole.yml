@@ -1,6 +1,6 @@
 ---
-- name: install pihole on docker1
-  hosts: docker1.thunderweb.co.uk
+- name: install pihole on pihole
+  hosts: pihole.tfr.home
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -14,18 +14,19 @@
         env:
           TZ: "Europe/London"
           WEBPASSWORD: "{{ pihole_admin }}"
-          WEB_PORT: "81"
+          WEB_PORT: "80"
           DHCP_START: "192.168.0.150"
           DHCP_END: "192.168.0.200"
           DHCP_ROUTER: "192.168.0.1"
           DHCP_LEASETIME: "12"
           PIHOLE_DOMAIN: "tfr.home"
           PIHOLE_DNS_1: "127.0.0.1#5054"
-          #FTLCONF_LOCAL_IPV4: "192.168.0.253"
+          FTLCONF_LOCAL_IPV4: "192.168.0.2"
+          LOCAL_IPV4: "192.168.0.2"
         volumes:
           - pihole_etc:/etc/pihole
           - pihole_dnsmasq:/etc/dnsmasq.d
           - pihole_tftpboot:/tftpboot/
-          - pihold_log:/var/log/pihole/
+          - pihole_log:/var/log/pihole/
         capabilities:
           - NET_ADMIN

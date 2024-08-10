@@ -22,12 +22,16 @@ nas1.thunderweb.co.uk
 docker1.thunderweb.co.uk
 docker2.tfr.home
 vps1.thunderweb.uk
+pihole.tfr.home
 
 [docker]
 nas1.thunderweb.co.uk
 docker1.thunderweb.co.uk
-docker2.tfr.home
 vps1.thunderweb.uk
+
+[portainerclients]
+pihole.tfr.home
+docker2.tfr.home
 
 [centos]
 nas1.thunderweb.co.uk
