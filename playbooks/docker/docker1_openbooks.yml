@@ -17,7 +17,7 @@
           TZ: "Europe/London"
         volumes:
           - openbooks_data:/books
-        command: "--persist --name {{ openbooks_user }} --log --debug"
+        command: "--persist --name {{ openbooks_user }} --log --debug --tls=false -s irc.irchighway.net:6660"
         labels:
           caddy: ob.home.thunderweb.uk
           caddy.import_0: httpauth
