@@ -2,8 +2,6 @@
 - import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/docker1_calibreweb.yml
 - import_playbook: docker/docker1_changedetection.yml
-- import_playbook: docker/docker1_cloudflared.yml
-- import_playbook: docker/docker1_coredns.yml
 - import_playbook: docker/docker1_duplicati.yml
 - import_playbook: docker/docker1_gitea.yml
 - import_playbook: docker/docker1_homarr.yml
@@ -14,7 +12,6 @@
 - import_playbook: docker/docker1_openbooks.yml
 - import_playbook: docker/docker1_overseerr.yml
 - import_playbook: docker/docker1_phpmyadmin.yml
-- import_playbook: docker/docker1_pihole.yml
 - import_playbook: docker/docker1_portainer.yml
 - import_playbook: docker/docker1_prowlarr.yml
 - import_playbook: docker/docker1_radarr.yml
@@ -26,12 +23,16 @@
 - import_playbook: docker/docker1_tautulli.yml
 - import_playbook: docker/docker1_tools.yml
 - import_playbook: docker/docker1_wordpress.yml
+- import_playbook: docker/docker2_jellyfin.yml
 - import_playbook: docker/docker2_plex.yml
-- import_playbook: docker/docker2_portainer_agent.yml
 - import_playbook: docker/nas1_icloudpd.yml
 - import_playbook: docker/nas1_portainer_agent.yml
 - import_playbook: docker/nas1_unpackerr.yml
 - import_playbook: docker/nas1_zigbee2mqtt.yml
+- import_playbook: docker/nodes_portainer_agent.yml
+- import_playbook: docker/pihole.yml
+- import_playbook: docker/pihole_cloudflared.yml
+- import_playbook: docker/pihole_netalertx.yml
 - import_playbook: docker/vps1_caddy_proxy.yml
 - import_playbook: docker/vps1_linkstack.yml
 - import_playbook: docker/vps1_mariadb.yml
