@@ -1,6 +1,6 @@
 ---
 - name: install munin on docker1
-  hosts: docker1.thunderweb.co.uk
+  hosts: docker1.srv.tfr.home
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -12,7 +12,7 @@
         networks:
           - name: infra
         env:
-          NODES: "nas1.thunderweb.co.uk:192.168.0.254 docker1.thunderweb.co.uk:192.168.0.253 docker2.tfr.home:192.168.0.252 pihole.tfr.home:192.168.0.2 proxmox1.srv.tfr.home:192.168.255.11 proxmox2.srv.tfr.home:192.168.255.12"
+          NODES: "nas1.srv.tfr.home:192.168.250.101 docker1.srv.tfr.home:192.168.250.11 docker2.srv.tfr.home:192.168.250.12 pihole.srv.tfr.home:192.168.250.53 proxmox1.srv.tfr.home:192.168.250.111 proxmox2.srv.tfr.home:192.168.250.112"
           TZ: "Europe/London"
         volumes:
           - munin_config:/etc/munin/munin-conf.d

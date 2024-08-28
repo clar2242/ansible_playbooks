@@ -10,28 +10,42 @@ tfr
 [linuxboxes:children]
 tfrcentos
 tfrdebian
+proxmox
 
 [tfr:children]
 tfrcentos
 tfrdebian
 
 [tfrcentos]
-nas1.thunderweb.co.uk
+nas1.srv.tfr.home
 
 [tfrdebian]
-docker1.thunderweb.co.uk
-docker2.tfr.home
+docker1.srv.tfr.home
+docker2.srv.tfr.home
+runtipi.srv.tfr.home
+pihole.srv.tfr.home
 vps1.thunderweb.uk
-pihole.tfr.home
 
 [docker]
-nas1.thunderweb.co.uk
-docker1.thunderweb.co.uk
+nas1.srv.tfr.home
+runtipi.srv.tfr.home
+docker1.srv.tfr.home
+docker2.srv.tfr.home
+pihole.srv.tfr.home
 vps1.thunderweb.uk
 
 [portainerclients]
-pihole.tfr.home
-docker2.tfr.home
+pihole.srv.tfr.home
+docker2.srv.tfr.home
+runtipi.srv.tfr.home
+nas1.srv.tfr.home
 
 [centos]
-nas1.thunderweb.co.uk
+nas1.srv.tfr.home
+
+[proxmox]
+proxmox1.srv.tfr.home
+proxmox2.srv.tfr.home
+
+[proxmox:vars]
+ansible_user=root

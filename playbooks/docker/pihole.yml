@@ -1,6 +1,6 @@
 ---
 - name: install pihole on pihole
-  hosts: pihole.tfr.home
+  hosts: pihole.srv.tfr.home
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -21,8 +21,8 @@
           DHCP_LEASETIME: "12"
           PIHOLE_DOMAIN: "tfr.home"
           PIHOLE_DNS_1: "127.0.0.1#5054"
-          FTLCONF_LOCAL_IPV4: "192.168.0.2"
-          LOCAL_IPV4: "192.168.0.2"
+          FTLCONF_LOCAL_IPV4: "192.168.250.53"
+          LOCAL_IPV4: "192.168.250.53"
         volumes:
           - pihole_etc:/etc/pihole
           - pihole_dnsmasq:/etc/dnsmasq.d

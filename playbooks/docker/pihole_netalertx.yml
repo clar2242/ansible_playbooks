@@ -1,6 +1,6 @@
 ---
 - name: install netalertx on pihole
-  hosts: pihole.tfr.home
+  hosts: pihole.srv.tfr.home
   gather_facts: false
   tasks:
     - community.docker.docker_container:

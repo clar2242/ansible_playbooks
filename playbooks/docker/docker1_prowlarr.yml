@@ -1,6 +1,6 @@
 ---
 - name: install prowlarr on docker1
-  hosts: docker1.thunderweb.co.uk
+  hosts: docker1.srv.tfr.home
   gather_facts: false
   tasks:
     - community.docker.docker_container:

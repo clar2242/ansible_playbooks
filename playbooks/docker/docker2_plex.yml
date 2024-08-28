@@ -1,6 +1,6 @@
 ---
 - name: install plex on docker2
-  hosts: docker2.tfr.home
+  hosts: docker2.srv.tfr.home
   gather_facts: false
   tasks:
     - community.docker.docker_container:

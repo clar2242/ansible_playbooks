@@ -1,6 +1,6 @@
 ---
 - name: install zigbee2mqtt on nas1
-  hosts: nas1.thunderweb.co.uk
+  hosts: nas1.srv.tfr.home
   gather_facts: false
   tasks:
     - community.docker.docker_container:
