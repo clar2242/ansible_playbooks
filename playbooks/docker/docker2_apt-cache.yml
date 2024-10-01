@@ -1,0 +1,17 @@
+---
+- name: install apt-cache-ng on docker2
+  hosts: docker2.srv.tfr.home
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: apt-cache
+        image: mbentley/apt-cacher-ng
+        pull: true
+        hostname: apt-cache
+        restart_policy: always
+        env:
+          TZ: "Europe/London"
+        volumes:
+          - /data/docker/apt-cache:/var/cache/apt-cacher-ng
+        ports:
+          - "3142:3142"

@@ -24,6 +24,7 @@
 - import_playbook: docker/docker1_tools.yml
 - import_playbook: docker/docker1_wallos.yml
 - import_playbook: docker/docker1_wordpress.yml
+- import_playbook: docker/docker2_apt-cache.yml
 - import_playbook: docker/docker2_jellyfin.yml
 - import_playbook: docker/docker2_plex.yml
 - import_playbook: docker/nas1_icloudpd.yml
