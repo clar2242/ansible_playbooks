@@ -17,8 +17,8 @@
           TZ: "Europe/London"
           UMASK: "002"
         volumes:
-          - stash_data:/config
-          - /data/shared/_Sort/GAY:/data/shared/_Sort/GAY
+          - /data/shared/_Sort:/data/shared/_Sort
+          - /data/shared/_Sort/stash_data:/config
         labels:
           caddy: stash.home.thunderweb.uk
           caddy.import_0: httpauth
