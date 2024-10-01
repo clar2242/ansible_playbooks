@@ -8,22 +8,19 @@ localhost ansible_connection="local"
 tfr
 
 [linuxboxes:children]
-tfrcentos
 tfrdebian
 proxmox
 
 [tfr:children]
-tfrcentos
 tfrdebian
 
-[tfrcentos]
-nas1.srv.tfr.home
-
 [tfrdebian]
+nas1.srv.tfr.home
 docker1.srv.tfr.home
 docker2.srv.tfr.home
 runtipi.srv.tfr.home
 pihole.srv.tfr.home
+landscape.srv.tfr.home
 vps1.thunderweb.uk
 
 [docker]
@@ -40,14 +37,19 @@ docker2.srv.tfr.home
 runtipi.srv.tfr.home
 nas1.srv.tfr.home
 
-[centos]
-nas1.srv.tfr.home
-
 [eximsmarthost]
+nas1.srv.tfr.home
 runtipi.srv.tfr.home
 docker1.srv.tfr.home
 docker2.srv.tfr.home
 pihole.srv.tfr.home
+landscape.srv.tfr.home
+
+[cloud]
+cloud0.srv.tfr.home
+cloud1.srv.tfr.home
+cloud2.srv.tfr.home
+cloud3.srv.tfr.home
 
 [proxmox]
 proxmox1.srv.tfr.home
