@@ -27,6 +27,7 @@
 - import_playbook: docker/docker2_apt-cache.yml
 - import_playbook: docker/docker2_jellyfin.yml
 - import_playbook: docker/docker2_plex.yml
+- import_playbook: docker/docker2_threadfin.yml
 - import_playbook: docker/nas1_icloudpd.yml
 - import_playbook: docker/nas1_unpackerr.yml
 - import_playbook: docker/nas1_zigbee2mqtt.yml
