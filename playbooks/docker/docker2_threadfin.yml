@@ -1,0 +1,20 @@
+---
+- name: install threadfin on docker2
+  hosts: docker2.srv.tfr.home
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: threadfin
+        image: fyb3roptik/threadfin
+        pull: true
+        hostname: threadfin
+        restart_policy: always
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+        volumes:
+          - threadfin_conf:/home/threadfin/conf
+          - threadfin_tmp:/tmp/threadfin:rw
+        ports:
+          - "34400:34400"
