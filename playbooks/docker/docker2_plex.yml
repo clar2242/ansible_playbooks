@@ -18,6 +18,7 @@
           # PLEX_CLAIM: ""
         volumes:
           - plex_data:/config
+          - threadfin_conf:/home/threadfin/conf
           - /data/media:/data/media
         devices:
           - /dev/dri:/dev/dri
