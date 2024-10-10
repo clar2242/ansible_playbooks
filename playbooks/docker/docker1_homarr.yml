@@ -14,6 +14,13 @@
         env:
           PUID: "1000"
           PGID: "1000"
+          AUTH_PROVIDER: oidc
+          AUTH_OIDC_URI: "https://auth.home.thunderweb.uk"
+          AUTH_OIDC_CLIENT_SECRET: "{{ homarr_oidc_secret }}"
+          AUTH_OIDC_CLIENT_ID: "{{ homarr_oidc_client }}"
+          AUTH_OIDC_CLIENT_NAME: "Authelia"  
+          AUTH_OIDC_AUTO_LOGIN: "true"
+          NEXTAUTH_URL: "https://start.home.thunderweb.uk/"
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
           - homarr_configs:/app/data/configs
