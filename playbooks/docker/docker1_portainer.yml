@@ -1,11 +1,11 @@
 ---
-- name: install portainer-ee on docker1
+- name: install portainer on docker1
   hosts: docker1.srv.tfr.home
   gather_facts: false
   tasks:
     - community.docker.docker_container:
         name: portainer
-        image: portainer/portainer-ee:latest
+        image: portainer/portainer-ce:latest
         pull: true
         hostname: portainer
         restart_policy: always
