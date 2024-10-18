@@ -1,6 +1,6 @@
 ---
-- name: install uptime kuma on vps1
-  hosts: vps1.thunderweb.uk
+- name: install uptime kuma on vps2
+  hosts: vps2.thunderweb.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
