@@ -35,10 +35,11 @@
 - import_playbook: docker/pihole.yml
 - import_playbook: docker/pihole_cloudflared.yml
 - import_playbook: docker/pihole_netalertx.yml
-- import_playbook: docker/vps1_caddy_proxy.yml
 - import_playbook: docker/vps1_linkstack.yml
 - import_playbook: docker/vps1_mariadb.yml
 - import_playbook: docker/vps1_portainer_agent.yml
 - import_playbook: docker/vps1_shlink.yml
-- import_playbook: docker/vps1_uptimekuma.yml
+- import_playbook: docker/vps2_portainer_agent.yml
+- import_playbook: docker/vps2_uptimekuma.yml
+- import_playbook: docker/vps_caddy_proxy.yml
 - import_playbook: docker_prune.yml
