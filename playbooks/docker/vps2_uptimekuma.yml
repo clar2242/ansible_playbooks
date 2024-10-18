@@ -18,6 +18,6 @@
         volumes:
           - uptimekuma_data:/app/data 
         labels:
-          caddy: kuma.thunderweb.uk
+          caddy: kuma.thunderweb.uk status.thunderweb.uk
           caddy.import_0: httpauth
           caddy.reverse_proxy: !unsafe "{{ upstreams 3001 }}"
