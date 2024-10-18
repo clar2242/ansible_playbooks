@@ -1,5 +1,5 @@
 ---
-- name: install caddy on vps1
+- name: install caddy on vps boxes
   hosts: vps1.thunderweb.uk , vps2.thunderweb.uk
   gather_facts: false
   tasks:
