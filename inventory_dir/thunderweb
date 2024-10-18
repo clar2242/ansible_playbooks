@@ -20,8 +20,8 @@ docker1.srv.tfr.home
 docker2.srv.tfr.home
 runtipi.srv.tfr.home
 pihole.srv.tfr.home
-landscape.srv.tfr.home
 vps1.thunderweb.uk
+vps2.thunderweb.uk
 
 [docker]
 nas1.srv.tfr.home
@@ -30,6 +30,7 @@ docker1.srv.tfr.home
 docker2.srv.tfr.home
 pihole.srv.tfr.home
 vps1.thunderweb.uk
+vps2.thunderweb.uk
 
 [portainerclients]
 pihole.srv.tfr.home
@@ -43,7 +44,6 @@ runtipi.srv.tfr.home
 docker1.srv.tfr.home
 docker2.srv.tfr.home
 pihole.srv.tfr.home
-landscape.srv.tfr.home
 
 [cloud]
 cloud0.srv.tfr.home
