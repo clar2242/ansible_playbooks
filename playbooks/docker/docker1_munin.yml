@@ -12,7 +12,7 @@
         networks:
           - name: infra
         env:
-          NODES: "mailgateway1.srv.tfr.home:192.168.250.25 nas1.srv.tfr.home:192.168.250.101 docker1.srv.tfr.home:192.168.250.11 docker2.srv.tfr.home:192.168.250.12 pihole.srv.tfr.home:192.168.250.53 proxmox1.srv.tfr.home:192.168.250.111 proxmox2.srv.tfr.home:192.168.250.112 vps1.thunderweb.uk:192.168.2.2 vps2.thunderweb.uk:192.168.2.3"
+          NODES: "mailgateway1.srv.tfr.home:192.168.250.25 nas1.srv.tfr.home:192.168.250.101 docker1.srv.tfr.home:192.168.250.11 docker2.srv.tfr.home:192.168.250.12 pihole.srv.tfr.home:192.168.250.53 proxmox1.srv.tfr.home:192.168.250.111 proxmox2.srv.tfr.home:192.168.250.112 vps1.thunderweb.uk:192.168.2.2 vps2.thunderweb.uk:192.168.2.3 vps3.thunderweb.uk:192.168.2.4"
           TZ: "Europe/London"
         volumes:
           - munin_config:/etc/munin/munin-conf.d
