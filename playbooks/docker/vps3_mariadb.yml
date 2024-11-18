@@ -1,6 +1,6 @@
 ---
-- name: install mariadb on vps1
-  hosts: vps1.thunderweb.uk
+- name: install mariadb on vps3
+  hosts: vps3.thunderweb.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
