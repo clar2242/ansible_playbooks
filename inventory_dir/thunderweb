@@ -22,6 +22,7 @@ runtipi.srv.tfr.home
 pihole.srv.tfr.home
 vps1.thunderweb.uk
 vps2.thunderweb.uk
+vps3.thunderweb.uk
 
 [docker]
 nas1.srv.tfr.home
@@ -31,6 +32,7 @@ docker2.srv.tfr.home
 pihole.srv.tfr.home
 vps1.thunderweb.uk
 vps2.thunderweb.uk
+vps3.thunderweb.uk
 
 [portainerclients]
 pihole.srv.tfr.home
