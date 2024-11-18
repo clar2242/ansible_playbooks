@@ -1,0 +1,20 @@
+---
+- name: update docker compose stacks on docker2
+  hosts: docker2.srv.tfr.home
+  gather_facts: false
+  vars: 
+    stack_name:
+      - paperless-ngx
+      - phpipam
+
+  tasks:
+    - name: pull latest containers on docker1
+      ansible.builtin.command: 
+        cmd: docker compose pull
+        chdir: /home/scott/docker/{{ item }}
+      loop: "{{ stack_name }}"
+    - name: restart containers
+      ansible.builtin.command: 
+        cmd: docker compose up -d
+        chdir: /home/scott/docker/{{ item }}
+      loop: "{{ stack_name }}"
