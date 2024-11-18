@@ -2,6 +2,7 @@
 - import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/docker1_calibreweb.yml
 - import_playbook: docker/docker1_changedetection.yml
+- import_playbook: docker/docker1_compose_updates.yml
 - import_playbook: docker/docker1_duplicati.yml
 - import_playbook: docker/docker1_gitea.yml
 - import_playbook: docker/docker1_homarr.yml
@@ -25,6 +26,7 @@
 - import_playbook: docker/docker1_wallos.yml
 - import_playbook: docker/docker1_wordpress.yml
 - import_playbook: docker/docker2_apt-cache.yml
+- import_playbook: docker/docker2_compose_updates.yml
 - import_playbook: docker/docker2_jellyfin.yml
 - import_playbook: docker/docker2_plex.yml
 - import_playbook: docker/docker2_threadfin.yml
@@ -34,12 +36,12 @@
 - import_playbook: docker/nodes_portainer_agent.yml
 - import_playbook: docker/pihole.yml
 - import_playbook: docker/pihole_cloudflared.yml
-- import_playbook: docker/pihole_netalertx.yml
-- import_playbook: docker/vps1_linkstack.yml
-- import_playbook: docker/vps1_mariadb.yml
-- import_playbook: docker/vps1_portainer_agent.yml
-- import_playbook: docker/vps1_shlink.yml
+- import_playbook: docker/vps1_caddy_proxy.yml
 - import_playbook: docker/vps2_portainer_agent.yml
 - import_playbook: docker/vps2_uptimekuma.yml
+- import_playbook: docker/vps3_linkstack.yml
+- import_playbook: docker/vps3_mariadb.yml
+- import_playbook: docker/vps3_portainer_agent.yml
+- import_playbook: docker/vps3_shlink.yml
 - import_playbook: docker/vps_caddy_proxy.yml
 - import_playbook: docker_prune.yml
