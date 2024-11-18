@@ -17,6 +17,23 @@
       mode: '0644'
     register: conf_results
 
+  - name: copy /etc/aliases to host
+    ansible.builtin.template:
+      src: ../files/aliases.j2
+      dest: /etc/aliases
+      owner: root
+      group: root
+      mode: '0644'
+
+  - name: Creating .forward
+    copy:
+      dest: "/home/scott/.forward"
+      content: |
+        scott@thunderweb.uk
+      mode: 0600
+      owner: scott
+      group: scott
+
   - when: conf_results is changed
     block:
     - name: rebuild exim config
