@@ -22,7 +22,6 @@
           - /var/run/docker.sock:/var/run/docker.sock
           - caddy_config:/config
           - caddy_data:/data
-          - wordpress_data:/var/www/html
         ports:
           - "80:80"
           - "443:443"
