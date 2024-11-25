@@ -1,6 +1,6 @@
 ---
-- name: install duplicati on docker1
-  hosts: docker1.srv.tfr.home
+- name: install duplicati on backup
+  hosts: backup.srv.tfr.home
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -22,5 +22,4 @@
           - /data:/data
         labels:
           caddy: duplicati.home.thunderweb.uk
-          caddy.import_0: httpauth
           caddy.reverse_proxy: !unsafe "{{ upstreams 8200 }}"
