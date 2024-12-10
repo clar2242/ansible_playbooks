@@ -1,0 +1,16 @@
+---
+- name: install dozzle agent on internal hosts
+  hosts: tfrdebian , !docker1.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: dozzle_agent
+        image: amir20/dozzle:latest
+        pull: true
+        hostname: dozzle_agent
+        restart_policy: always
+        command: agent
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock:ro
+        ports:
+          - "7007:7007"

@@ -1,0 +1,21 @@
+---
+- name: install dozzle on docker1
+  hosts: docker1.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: dozzle
+        image: amir20/dozzle:latest
+        pull: true
+        hostname: dozzle
+        restart_policy: always
+        networks:
+          - name: web
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock
+        env:
+          DOZZLE_REMOTE_AGENT: "docker2.srv.3fr.uk:7007,nas1.srv.3fr.uk:7007,backup.srv.3fr.uk:7007,pihole.srv.3fr.uk:7007,runtipi.srv.3fr.uk:7007,vps1.wg.3fr.uk:7007,vps2.wg.3fr.uk:7007,vps3.wg.3fr.uk:7007"
+        labels:
+          caddy: dozzle.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
