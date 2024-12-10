@@ -9,58 +9,61 @@ tfr
 
 [linuxboxes:children]
 tfrdebian
+externalboxes
 proxmox
 
 [tfr:children]
 tfrdebian
 
 [tfrdebian]
-nas1.srv.tfr.home
-docker1.srv.tfr.home
-docker2.srv.tfr.home
-runtipi.srv.tfr.home
-pihole.srv.tfr.home
-backup.srv.tfr.home
+nas1.srv.3fr.uk
+docker1.srv.3fr.uk
+docker2.srv.3fr.uk
+runtipi.srv.3fr.uk
+pihole.srv.3fr.uk
+backup.srv.3fr.uk
+
+[externalboxes]
 vps1.thunderweb.uk
 vps2.thunderweb.uk
 vps3.thunderweb.uk
 
 [docker]
-nas1.srv.tfr.home
-runtipi.srv.tfr.home
-docker1.srv.tfr.home
-docker2.srv.tfr.home
-pihole.srv.tfr.home
-backup.srv.tfr.home
+nas1.srv.3fr.uk
+runtipi.srv.3fr.uk
+docker1.srv.3fr.uk
+docker2.srv.3fr.uk
+pihole.srv.3fr.uk
+backup.srv.3fr.uk
 vps1.thunderweb.uk
 vps2.thunderweb.uk
 vps3.thunderweb.uk
 
 [portainerclients]
-pihole.srv.tfr.home
-docker2.srv.tfr.home
-runtipi.srv.tfr.home
-backup.srv.tfr.home
-nas1.srv.tfr.home
+pihole.srv.3fr.uk
+docker2.srv.3fr.uk
+runtipi.srv.3fr.uk
+backup.srv.3fr.uk
+nas1.srv.3fr.uk
 
 [eximsmarthost]
-nas1.srv.tfr.home
-runtipi.srv.tfr.home
-docker1.srv.tfr.home
-docker2.srv.tfr.home
-backup.srv.tfr.home
-pihole.srv.tfr.home
+nas1.srv.3fr.uk
+runtipi.srv.3fr.uk
+docker1.srv.3fr.uk
+docker2.srv.3fr.uk
+backup.srv.3fr.uk
+pihole.srv.3fr.uk
 
 [cloud]
-cloud0.srv.tfr.home
-cloud1.srv.tfr.home
-cloud2.srv.tfr.home
-cloud3.srv.tfr.home
+cloud0.srv.3fr.uk
+cloud1.srv.3fr.uk
+cloud2.srv.3fr.uk
+cloud3.srv.3fr.uk
 
 [proxmox]
-proxmox1.srv.tfr.home
-proxmox2.srv.tfr.home
-mailgateway1.srv.tfr.home
+proxmox1.srv.3fr.uk
+proxmox2.srv.3fr.uk
+mailgateway1.srv.3fr.uk
 
 [proxmox:vars]
 ansible_user=root
