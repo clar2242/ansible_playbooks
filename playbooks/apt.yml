@@ -1,0 +1,13 @@
+---
+- name: Deploy apt-cache proxy
+  hosts: tfrdebian , proxmox
+  gather_facts: true
+  become: true
+  tasks:
+  - name: copy proxy file to host
+    ansible.builtin.template:
+      src: ../files/proxy.j2
+      dest: /etc/apt/apt.conf.d/proxy
+      owner: root
+      group: root
+      mode: '0644'
