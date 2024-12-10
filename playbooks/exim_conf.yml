@@ -25,6 +25,14 @@
       group: root
       mode: '0644'
 
+  - name: copy /etc/mailname to host
+    ansible.builtin.template:
+      src: ../files/mailname.j2
+      dest: /etc/mailname
+      owner: root
+      group: root
+      mode: '0644'
+
   - name: Creating .forward
     copy:
       dest: "/home/scott/.forward"
