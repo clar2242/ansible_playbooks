@@ -1,0 +1,20 @@
+---
+- name: install coredns on vps2
+  hosts: vps2.thunderweb.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: coredns
+        image: coredns/coredns:latest
+        pull: true
+        hostname: coredns
+        restart_policy: always
+        networks:
+          - name: web
+        env:
+          TZ: "Europe/London"
+        volumes:
+          - /home/scott/config/coredns/Corefile:/Corefile:ro
+        ports:
+          - "127.0.0.1:53:53/udp"
+          - "127.0.0.1:53:53/tcp"
