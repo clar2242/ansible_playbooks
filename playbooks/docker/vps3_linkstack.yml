@@ -25,4 +25,4 @@
           caddy: comeandclick.me.uk www.comeandclick.me.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 443 }}"
           caddy.reverse_proxy.transport: "http"
-          caddy.reverse_proxy.transport.tls_insecure_skip_verify:
+          caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
