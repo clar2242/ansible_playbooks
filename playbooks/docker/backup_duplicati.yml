@@ -1,6 +1,6 @@
 ---
 - name: install duplicati on backup
-  hosts: backup.srv.tfr.home
+  hosts: backup.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:

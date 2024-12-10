@@ -1,6 +1,6 @@
 ---
 - name: install wordpress on docker1
-  hosts: docker1.srv.tfr.home
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -23,7 +23,7 @@
           caddy: dev.scottclark.uk
           caddy.php_fastcgi: !unsafe "{{ upstreams 9000 }}"
           caddy.root: "* /var/www/html"
-          caddy.file_server:
+          caddy.file_server: ""
           caddy.encode: gzip
           caddy.@forbidden.path: "/.user.ini"
           caddy.respond: "@forbidden 404"

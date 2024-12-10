@@ -1,6 +1,6 @@
 ---
 - name: install homarr on docker1
-  hosts: docker1.srv.tfr.home
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -20,6 +20,8 @@
           AUTH_OIDC_CLIENT_ID: "{{ homarr_oidc_client }}"
           AUTH_OIDC_CLIENT_NAME: "Authelia"  
           AUTH_OIDC_AUTO_LOGIN: "true"
+          AUTH_OIDC_ADMIN_GROUP: "homarr_admin"
+          AUTH_OIDC_OWNER_GROUP: "homarr_admin"
           NEXTAUTH_URL: "https://start.home.thunderweb.uk/"
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock

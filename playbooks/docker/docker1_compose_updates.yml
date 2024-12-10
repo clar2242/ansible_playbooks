@@ -1,6 +1,6 @@
 ---
 - name: update docker compose stacks on docker1
-  hosts: docker1.srv.tfr.home
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   vars: 
     stack_name:

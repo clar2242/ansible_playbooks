@@ -1,6 +1,6 @@
 ---
 - name: install pihole on pihole
-  hosts: pihole.srv.tfr.home
+  hosts: pihole.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:

@@ -1,6 +1,6 @@
 ---
 - name: install threadfin on docker2
-  hosts: docker2.srv.tfr.home
+  hosts: docker2.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:

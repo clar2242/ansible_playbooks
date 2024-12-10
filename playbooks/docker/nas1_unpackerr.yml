@@ -1,6 +1,6 @@
 ---
 - name: install unpackerr on nas1
-  hosts: nas1.srv.tfr.home
+  hosts: nas1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -10,6 +10,5 @@
         hostname: unpackerr
         restart_policy: always
         volumes:
-          - /data/download/:/data/download
           - /data/media/download:/data/media/download
           - /home/scott/configs/unpackerr:/config

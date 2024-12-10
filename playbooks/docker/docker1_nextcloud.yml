@@ -1,6 +1,6 @@
 ---
 - name: install nextcloud on docker1
-  hosts: docker1.srv.tfr.home
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -22,4 +22,4 @@
           caddy: drive.thunderweb.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 443 }}"
           caddy.reverse_proxy.transport: "http"
-          caddy.reverse_proxy.transport.tls_insecure_skip_verify:
+          caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
