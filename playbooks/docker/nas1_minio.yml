@@ -1,0 +1,24 @@
+---
+- name: install minio on nas1
+  hosts: nas1.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: minio
+        image: minio/minio:latest
+        pull: true
+        hostname: minio
+        restart_policy: always
+        env:
+          TZ: "Europe/London"
+          MINIO_ROOT_USER: "root" 
+          MINIO_ROOT_PASSWORD: "{{ docker1_mysql_root }}"
+          MINIO_BROWSER_REDIRECT_URL: "https://s3.srv.3fr.uk/"
+        volumes:
+          - /data/docker/minio:/data
+        command: "server /data --console-address \":9001\""
+        labels:
+          caddy_0: "s3.srv.3fr.uk"
+          caddy_0.reverse_proxy: !unsafe "{{ upstreams 9001 }}"
+          caddy_1: "*.s3.srv.3fr.uk"
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 9000 }}"

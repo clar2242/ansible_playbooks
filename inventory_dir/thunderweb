@@ -22,6 +22,7 @@ docker2.srv.3fr.uk
 runtipi.srv.3fr.uk
 pihole.srv.3fr.uk
 backup.srv.3fr.uk
+logger.srv.3fr.uk
 
 [externalboxes]
 vps1.thunderweb.uk
@@ -35,6 +36,7 @@ docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 pihole.srv.3fr.uk
 backup.srv.3fr.uk
+logger.srv.3fr.uk
 vps1.thunderweb.uk
 vps2.thunderweb.uk
 vps3.thunderweb.uk
@@ -45,6 +47,7 @@ docker2.srv.3fr.uk
 runtipi.srv.3fr.uk
 backup.srv.3fr.uk
 nas1.srv.3fr.uk
+logger.srv.3fr.uk
 
 [eximsmarthost]
 nas1.srv.3fr.uk
@@ -53,6 +56,29 @@ docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 backup.srv.3fr.uk
 pihole.srv.3fr.uk
+logger.srv.3fr.uk
+
+[netdatalocal]
+nas1.srv.3fr.uk
+runtipi.srv.3fr.uk
+docker1.srv.3fr.uk
+docker2.srv.3fr.uk
+backup.srv.3fr.uk
+pihole.srv.3fr.uk
+proxmox1.srv.3fr.uk
+proxmox2.srv.3fr.uk
+mailgateway1.srv.3fr.uk
+
+[netdatalocal:vars]
+netdata_server=logger.srv.3fr.uk
+
+[netdataremote]
+vps1.thunderweb.uk
+vps2.thunderweb.uk
+vps3.thunderweb.uk
+
+[netdataremote:vars]
+netdata_server=192.168.250.70
 
 [cloud]
 cloud0.srv.3fr.uk

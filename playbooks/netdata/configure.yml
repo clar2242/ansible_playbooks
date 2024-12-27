@@ -1,0 +1,27 @@
+---
+- name: Configure Netdata
+  hosts: netdatalocal,netdataremote
+  become: true
+
+  tasks:
+  - template:
+      src: ../../files/netdata.conf.j2
+      dest: /etc/netdata/netdata.conf
+      owner: root
+      group: root
+      mode: u=wrx,g=rx,o=r,+x
+    notify: Restart Netdata
+ 
+  - template:
+      src: ../../files/stream.conf.j2
+      dest: /etc/netdata/stream.conf
+      owner: root
+      group: root
+      mode: u=wrx,g=rx,o=r,+x
+    notify: Restart Netdata
+ 
+  handlers:
+  - name: Restart Netdata
+    service:
+      name: netdata
+      state: restarted

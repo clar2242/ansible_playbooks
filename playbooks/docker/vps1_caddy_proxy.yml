@@ -5,8 +5,8 @@
   tasks:
     - community.docker.docker_container:
         name: caddy
-        image: caddy:custom
-        pull: false
+        image: registry.srv.3fr.uk/caddy
+        pull: true
         hostname: caddy
         restart_policy: always
         default_host_ip: ""

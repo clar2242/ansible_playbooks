@@ -13,7 +13,7 @@
         shm_size: 256M
         env:
           TZ: "Europe/London"
-          WEBPASSWORD: "{{ pihole_admin }}"
+          # WEBPASSWORD: "{{ pihole_admin }}"
           WEB_PORT: "80"
           DHCP_START: "192.168.0.150"
           DHCP_END: "192.168.0.200"

@@ -1,0 +1,18 @@
+---
+- name: install docker registry on docker1
+  hosts: docker1.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: registry
+        image: registry:2
+        pull: true
+        hostname: registry
+        restart_policy: always
+        networks:
+          - name: infra
+        volumes:
+          - registry_repo:/var/lib/registry
+        labels:
+          caddy: registry.srv.3fr.uk
+          caddy.reverse_proxy: !unsafe "{{ upstreams 5000 }}"

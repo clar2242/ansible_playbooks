@@ -1,5 +1,5 @@
 ---
-- name: install dozzle agent on internal hosts
+- name: install dozzle agent on external hosts
   hosts: externalboxes
   gather_facts: true
   tasks:
