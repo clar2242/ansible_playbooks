@@ -1,0 +1,26 @@
+---
+- name: uninstall Netdata
+  hosts: netdatalocal,netdataremote
+  become: true
+
+  tasks:
+  - name: stop service
+    systemd:
+      name: netdata
+      enabled: false
+      state: stopped
+      daemon_reload: true
+
+  - name: Download the installation script
+    get_url:
+      url: https://my-netdata.io/kickstart.sh
+      dest: ~/kickstart.sh
+      mode: +x
+
+  - name: Install Netdata
+    command: ~/kickstart.sh --dont-wait --uninstall
+
+  - name: Cleanup installation script
+    file:
+      path: ~/kickstart.sh
+      state: absent
