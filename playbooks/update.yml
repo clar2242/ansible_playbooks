@@ -9,6 +9,9 @@
       name: "*"
       state: latest
     register: package_update
+  - ansible.builtin.apt:
+      autoremove: yes
+    when: ansible_facts['os_family'] == "Debian"
 
 - name: update homebrew
   hosts: localhost
