@@ -1,0 +1,21 @@
+---
+- name: install pairdrop on docker1
+  hosts: docker1.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: pairdrop
+        image: lscr.io/linuxserver/pairdrop:latest
+        pull: true
+        hostname: pairdrop
+        restart_policy: always
+        networks:
+          - name: media
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+        labels:
+          caddy: drop.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
