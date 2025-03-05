@@ -13,15 +13,14 @@
         shm_size: 256M
         env:
           TZ: "Europe/London"
-          # WEBPASSWORD: "{{ pihole_admin }}"
-          WEB_PORT: "80"
-          DHCP_START: "192.168.0.150"
-          DHCP_END: "192.168.0.200"
-          DHCP_ROUTER: "192.168.0.1"
-          DHCP_LEASETIME: "12"
-          PIHOLE_DOMAIN: "tfr.home"
-          PIHOLE_DNS_1: "127.0.0.1#5054"
-          FTLCONF_LOCAL_IPV4: "192.168.250.53"
+          FTLCONF_webserver_port: "80"
+          FTLCONF_dhcp_start: "192.168.0.150"
+          FTLCONF_dhcp_end: "192.168.0.200"
+          FTLCONF_dhcp_router: "192.168.0.1"
+          FTLCONF_dhcp_leaseTime: "24"
+          FTLCONF_dns_domain: "3fr.uk"
+          FTLCONF_dns_upstreams: "127.0.0.1#5054"
+          FTLCONF_webserver_api_password: ""
           LOCAL_IPV4: "192.168.250.53"
         volumes:
           - pihole_etc:/etc/pihole
