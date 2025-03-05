@@ -1,6 +1,4 @@
 ---
-- import_playbook: docker/backup_caddy_proxy.yml
-- import_playbook: docker/backup_duplicati.yml
 - import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/docker1_calibreweb.yml
 - import_playbook: docker/docker1_changedetection.yml
@@ -13,6 +11,7 @@
 - import_playbook: docker/docker1_nextcloud.yml
 - import_playbook: docker/docker1_openbooks.yml
 - import_playbook: docker/docker1_overseerr.yml
+- import_playbook: docker/docker1_pairdrop.yml
 - import_playbook: docker/docker1_phpmyadmin.yml
 - import_playbook: docker/docker1_portainer.yml
 - import_playbook: docker/docker1_prowlarr.yml
@@ -33,6 +32,7 @@
 - import_playbook: docker/internal_dozzle_agent.yml
 - import_playbook: docker/logger_caddy_proxy.yml
 - import_playbook: docker/nas1_caddy.yml
+- import_playbook: docker/nas1_duplicati.yml
 - import_playbook: docker/nas1_icloudpd.yml
 - import_playbook: docker/nas1_minio.yml
 - import_playbook: docker/nas1_unpackerr.yml
