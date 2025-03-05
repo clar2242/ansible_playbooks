@@ -1,6 +1,6 @@
 ---
 - name: install dozzle agent on external hosts
-  hosts: externalboxes
+  hosts: externalboxes , !vps2.thunderweb.uk
   gather_facts: true
   tasks:
     - community.docker.docker_container:

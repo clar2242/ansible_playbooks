@@ -15,8 +15,8 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
-        memory: 512M
-        memory_swap: 512M
+        memory: 256M
+        memory_swap: 256M
         volumes:
           - uptimekuma_data:/app/data 
         labels:
