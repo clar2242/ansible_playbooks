@@ -1,6 +1,6 @@
 ---
-- name: install duplicati on backup
-  hosts: backup.srv.3fr.uk
+- name: install duplicati on nas1
+  hosts: nas1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -9,8 +9,6 @@
         pull: true
         hostname: duplicati
         restart_policy: always
-        networks:
-          - name: infra
         env:
           PUID: "1000"
           PGID: "1000"
