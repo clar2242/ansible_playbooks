@@ -23,3 +23,4 @@
           caddy: kuma.thunderweb.uk status.thunderweb.uk
           caddy.import_0: httpauth
           caddy.reverse_proxy: !unsafe "{{ upstreams 3001 }}"
+          caddy.header: "Strict-Transport-Security max-age=31536000;"
