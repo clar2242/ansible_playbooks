@@ -23,7 +23,6 @@
 - import_playbook: docker/docker1_stash.yml
 - import_playbook: docker/docker1_tautulli.yml
 - import_playbook: docker/docker1_tools.yml
-- import_playbook: docker/docker1_wallos.yml
 - import_playbook: docker/docker1_wordpress.yml
 - import_playbook: docker/docker2_apt-cache.yml
 - import_playbook: docker/docker2_compose_updates.yml
