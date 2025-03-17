@@ -5,17 +5,15 @@
   tasks:
     - community.docker.docker_container:
         name: homarr
-        image: ghcr.io/ajnart/homarr:latest
+        image: ghcr.io/homarr-labs/homarr:latest
         pull: true
         hostname: homarr
         restart_policy: always
         networks:
           - name: web
         env:
-          PUID: "1000"
-          PGID: "1000"
-          AUTH_PROVIDER: oidc
-          AUTH_OIDC_URI: "https://auth.home.thunderweb.uk"
+          AUTH_PROVIDERS: oidc
+          AUTH_OIDC_ISSUER: "https://auth.home.thunderweb.uk"
           AUTH_OIDC_CLIENT_SECRET: "{{ homarr_oidc_secret }}"
           AUTH_OIDC_CLIENT_ID: "{{ homarr_oidc_client }}"
           AUTH_OIDC_CLIENT_NAME: "Authelia"  
@@ -23,11 +21,10 @@
           AUTH_OIDC_ADMIN_GROUP: "homarr_admin"
           AUTH_OIDC_OWNER_GROUP: "homarr_admin"
           NEXTAUTH_URL: "https://start.home.thunderweb.uk/"
+          SECRET_ENCRYPTION_KEY: "{{ homarr_encryption }}"
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
-          - homarr_configs:/app/data/configs
-          - homarr_icons:/app/public/icons
-          - homarr_data:/data
+          - homarr_data:/appdata
         ports:
         labels:
           caddy: start.home.thunderweb.uk
