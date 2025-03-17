@@ -20,7 +20,7 @@
           FTLCONF_dhcp_leaseTime: "24"
           FTLCONF_dns_domain: "3fr.uk"
           FTLCONF_dns_upstreams: "127.0.0.1#5054"
-          FTLCONF_webserver_api_password: ""
+          # FTLCONF_webserver_api_password: ""
           LOCAL_IPV4: "192.168.250.53"
         volumes:
           - pihole_etc:/etc/pihole
