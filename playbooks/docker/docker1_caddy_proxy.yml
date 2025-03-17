@@ -10,6 +10,10 @@
         hostname: caddy
         restart_policy: always
         default_host_ip: ""
+        dns_servers:
+          - 8.8.8.8
+          - 1.1.1.1
+          - 8.8.4.4
         networks:
           - name: web
           - name: infra
