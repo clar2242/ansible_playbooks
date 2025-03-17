@@ -5,13 +5,19 @@
   become: true
   gather_facts: true
   tasks:
+  - name: Update all packages to their latest version
+    ansible.builtin.apt:
+      clean: yes
+      update_cache: yes
+      autoremove: yes
+      name: "*"
+      state: latest
+    when: ansible_facts['os_family'] == "Debian"
+    
   - package:
       name: "*"
       state: latest
-    register: package_update
-  - ansible.builtin.apt:
-      autoremove: yes
-    when: ansible_facts['os_family'] == "Debian"
+    when: ansible_facts['os_family'] != "Debian"
 
 - name: update homebrew
   hosts: localhost
