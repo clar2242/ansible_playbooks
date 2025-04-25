@@ -1,6 +1,6 @@
 ---
-- name: install caddy on logger
-  hosts: logger.srv.3fr.uk
+- name: install caddy on pihole
+  hosts: pihole.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -24,8 +24,6 @@
           - /var/run/docker.sock:/var/run/docker.sock
           - caddy_config:/config
           - caddy_data:/data
-        networks:
-          - name: infra
         ports:
           - "80:80"
           - "443:443"

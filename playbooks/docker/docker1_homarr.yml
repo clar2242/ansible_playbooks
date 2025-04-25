@@ -11,9 +11,11 @@
         restart_policy: always
         networks:
           - name: web
+        dns_servers:
+          - 192.168.250.11
         env:
           AUTH_PROVIDERS: oidc
-          AUTH_OIDC_ISSUER: "https://auth.home.thunderweb.uk"
+          AUTH_OIDC_ISSUER: "https://auth.thunderweb.uk"
           AUTH_OIDC_CLIENT_SECRET: "{{ homarr_oidc_secret }}"
           AUTH_OIDC_CLIENT_ID: "{{ homarr_oidc_client }}"
           AUTH_OIDC_CLIENT_NAME: "Authelia"  

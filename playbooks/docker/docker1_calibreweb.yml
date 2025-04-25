@@ -23,4 +23,7 @@
         labels:
           caddy: calibre.home.thunderweb.uk
           caddy.import_0: httpauth
+          caddy.handle: "/opds/*"
+          caddy.handle.reverse_proxy: !unsafe "{{ upstreams 8083 }}"
+          caddy.handle.reverse_proxy.header_up: 'Authorization "Basic: {{ calibre_hash }}"'
           caddy.reverse_proxy: !unsafe "{{ upstreams 8083 }}"

@@ -1,6 +1,6 @@
 ---
 - name: Configure Systemd
-  hosts: netdatalocal
+  hosts: plex.srv.3fr.uk
   become: true
 
   tasks:

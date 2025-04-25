@@ -1,6 +1,6 @@
 ---
-- name: install plex on docker2
-  hosts: docker2.srv.3fr.uk
+- name: install plex on plex
+  hosts: plex.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -18,7 +18,6 @@
           # PLEX_CLAIM: ""
         volumes:
           - plex_data:/config
-          - threadfin_conf:/home/threadfin/conf
           - /data/media:/data/media
         devices:
           - /dev/dri:/dev/dri
