@@ -20,7 +20,10 @@
         volumes:
           - uptimekuma_data:/app/data 
         labels:
-          caddy: kuma.thunderweb.uk status.thunderweb.uk
-          caddy.import_0: httpauth
-          caddy.reverse_proxy: !unsafe "{{ upstreams 3001 }}"
-          caddy.header: "Strict-Transport-Security max-age=31536000;"
+          caddy_1: kuma.thunderweb.uk
+          caddy_1.import_0: httpauth
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 3001 }}"
+          caddy_1.header: "Strict-Transport-Security max-age=31536000;"
+          caddy_2: status.thunderweb.uk
+          caddy_2.reverse_proxy: !unsafe "{{ upstreams 3001 }}"
+          caddy_2.header: "Strict-Transport-Security max-age=31536000;"
