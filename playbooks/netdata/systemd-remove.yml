@@ -1,0 +1,17 @@
+---
+- name: Configure Systemd
+  hosts: linuxboxes
+  become: true
+
+  tasks:
+  - name: Start service
+    systemd:
+      name: wazuh-agent
+      enabled: false
+      state: stopped
+      daemon_reload: true
+
+  - name: ensure systemd-journal-remote package is removed
+    ansible.builtin.apt:
+      name: wazuh-agent
+      state: absent
