@@ -1,0 +1,7 @@
+- hosts: docker
+  vars:
+    docker_users:
+      - scott
+  become: true
+  roles:
+    - geerlingguy.docker
