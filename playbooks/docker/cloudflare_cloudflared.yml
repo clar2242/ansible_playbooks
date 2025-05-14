@@ -1,0 +1,12 @@
+---
+- name: install cloudflared on cloudflare
+  hosts: cloudflare.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: cloudflared
+        image: cloudflare/cloudflared:latest
+        pull: true
+        restart_policy: always
+        command: tunnel --no-autoupdate run --token {{ cloudflare_tunnel }}
+
