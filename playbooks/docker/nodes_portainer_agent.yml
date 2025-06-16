@@ -1,6 +1,6 @@
 ---
 - name: install portainer_agent on portainerclients group
-  hosts: portainerclients
+  hosts: dockerinternal, !docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:

@@ -1,6 +1,6 @@
 ---
 - name: install dozzle agent on internal hosts
-  hosts: tfrdebian , !docker1.srv.3fr.uk 
+  hosts: dockerinternal, !docker1.srv.3fr.uk 
   gather_facts: false
   tasks:
     - community.docker.docker_container:
