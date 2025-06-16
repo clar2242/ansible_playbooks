@@ -21,6 +21,7 @@
           - wordpress_data:/var/www/html
         labels:
           caddy: dev.scottclark.uk
+          caddy.import_0: accesslogs
           caddy.php_fastcgi: !unsafe "{{ upstreams 9000 }}"
           caddy.root: "* /var/www/html"
           caddy.file_server: ""

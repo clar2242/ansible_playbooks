@@ -22,4 +22,5 @@
         labels:
           caddy: stash.home.thunderweb.uk
           caddy.import_0: httpauth
+          caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 9999 }}"

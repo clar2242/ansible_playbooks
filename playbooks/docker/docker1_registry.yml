@@ -43,4 +43,5 @@
         labels:
           caddy: registry.srv.3fr.uk
           caddy.import_0: httpauthold
+          caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"

@@ -20,6 +20,7 @@
           - nextcloud_data:/data
         labels:
           caddy: drive.thunderweb.uk
+          caddy.import_0: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 443 }}"
           caddy.reverse_proxy.transport: "http"
           caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
