@@ -29,6 +29,7 @@
 - import_playbook: docker/docker2_apt-cache.yml
 - import_playbook: docker/docker2_compose_updates.yml
 - import_playbook: docker/internal_dozzle_agent.yml
+- import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/nas1_caddy.yml
 - import_playbook: docker/nas1_duplicati.yml
 - import_playbook: docker/nas1_icloudpd.yml
