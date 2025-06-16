@@ -17,7 +17,7 @@
           FTLCONF_dhcp_start: "192.168.0.150"
           FTLCONF_dhcp_end: "192.168.0.200"
           FTLCONF_dhcp_router: "192.168.0.1"
-          FTLCONF_dhcp_leaseTime: "24"
+          FTLCONF_dhcp_leaseTime: "24h"
           FTLCONF_dns_domain: "3fr.uk"
           FTLCONF_dns_upstreams: "127.0.0.1#5054"
           LOCAL_IPV4: "192.168.250.53"
