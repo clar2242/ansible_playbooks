@@ -19,10 +19,14 @@ tfrdebian
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
+docker3.srv.3fr.uk
 runtipi.srv.3fr.uk
 pihole.srv.3fr.uk
 plex.srv.3fr.uk
 cloudflare.srv.3fr.uk
+monitoring.srv.3fr.uk
+dc1.ad.3fr.uk
+dc2.ad.3fr.uk
 
 [externalboxes]
 vps1.thunderweb.uk
@@ -34,33 +38,47 @@ nas1.srv.3fr.uk
 runtipi.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
+docker3.srv.3fr.uk
 pihole.srv.3fr.uk
 vps1.thunderweb.uk
 vps2.thunderweb.uk
 vps3.thunderweb.uk
 plex.srv.3fr.uk
 cloudflare.srv.3fr.uk
+monitoring.srv.3fr.uk
 
-[portainerclients]
+[dockerinternal]
 pihole.srv.3fr.uk
+docker1.srv.3fr.uk
 docker2.srv.3fr.uk
+docker3.srv.3fr.uk
 runtipi.srv.3fr.uk
 nas1.srv.3fr.uk
 plex.srv.3fr.uk
 cloudflare.srv.3fr.uk
+monitoring.srv.3fr.uk
 
 [eximsmarthost]
 nas1.srv.3fr.uk
 runtipi.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
+docker3.srv.3fr.uk
 pihole.srv.3fr.uk
 plex.srv.3fr.uk
 cloudflare.srv.3fr.uk
+monitoring.srv.3fr.uk
+dc1.ad.3fr.uk
+dc2.ad.3fr.uk
+
+[ad]
+dc1.ad.3fr.uk
+dc2.ad.3fr.uk
 
 [proxmox]
 proxmox1.srv.3fr.uk
 proxmox2.srv.3fr.uk
+proxmox3.srv.3fr.uk
 mailgateway1.srv.3fr.uk
 
 [proxmox:vars]
