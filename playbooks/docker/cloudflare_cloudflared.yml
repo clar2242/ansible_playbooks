@@ -7,6 +7,10 @@
         name: cloudflared
         image: cloudflare/cloudflared:latest
         pull: true
+        env:
+          TUNNEL_METRICS: 0.0.0.0:60123
+        ports:
+          - "60123:60123"
         restart_policy: always
         command: tunnel --no-autoupdate run --token {{ cloudflare_tunnel }}
 
