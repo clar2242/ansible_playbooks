@@ -17,9 +17,7 @@
           - duplicati_data:/config
           - duplicati_source:/source
           - duplicati_backups:/backups
-          - /data/icloud/photos:/data/icloud/photos
-          - /data/backups/mail:/data/backups/mail
-          - /data/backups/nextcloud:/data/backups/nextcloud
+          - /data:/data
         labels:
           caddy: duplicati.home.thunderweb.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 8200 }}"
