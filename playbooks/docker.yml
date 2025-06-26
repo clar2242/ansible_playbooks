@@ -40,6 +40,8 @@
 - import_playbook: docker/pihole_caddy_proxy.yml
 - import_playbook: docker/pihole_cloudflared.yml
 - import_playbook: docker/pihole.yml
+- import_playbook: docker/plex_caddy.yml
+- import_playbook: docker/plex_jellyfin.yml
 - import_playbook: docker/plex_plex.yml
 - import_playbook: docker/vps_caddy_proxy.yml
 - import_playbook: docker/vps_dozzle_agent.yml

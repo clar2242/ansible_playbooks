@@ -1,7 +1,7 @@
 ---
-- name: install jellyfin on docker1
-  hosts: docker1.thunderweb.co.uk
-  gather_facts: false
+- name: install jellyfin on plex
+  hosts: plex.srv.3fr.uk
+  gather_facts: true
   tasks:
     - community.docker.docker_container:
         name: jellyfin
@@ -13,13 +13,16 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Etc/UTC"
-          JELLYFIN_PublishedServerUrl: "192.168.0.253"
+          JELLYFIN_PublishedServerUrl: "{{ ansible_enp6s18.ipv4.address }}"
           DOCKER_MODS: "linuxserver/mods:jellyfin-amd"
+        networks:
+          - name: web
         volumes:
           - jellyfin_config:/config
-          - /data/media:/data/media
+          - /data:/data
         devices:
           - /dev/dri:/dev/dri
           - /dev/kfd:/dev/kfd
-        ports:
-          - "8096:8096"
+        labels:
+          caddy: jellyfin.srv.3fr.uk
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8096 }}"
