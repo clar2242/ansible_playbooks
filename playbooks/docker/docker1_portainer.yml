@@ -19,3 +19,11 @@
           caddy.import_0: httpauth
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 9000 }}"
+    - name: Create portainer.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: portainer.home.thunderweb.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

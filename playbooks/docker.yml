@@ -19,14 +19,14 @@
 - import_playbook: docker/docker1_prowlarr.yml
 - import_playbook: docker/docker1_radarr.yml
 - import_playbook: docker/docker1_registry.yml
-- import_playbook: docker/docker1_sickchill.yml
 - import_playbook: docker/docker1_sonarr.yml
 - import_playbook: docker/docker1_speedtest.yml
+- import_playbook: docker/docker1_sshwifty.yml
 - import_playbook: docker/docker1_stash.yml
 - import_playbook: docker/docker1_tautulli.yml
 - import_playbook: docker/docker1_tools.yml
 - import_playbook: docker/docker1_wordpress.yml
-- import_playbook: docker/docker2_apt-cache.yml
+- import_playbook: docker/docker2_caddy_proxy.yml
 - import_playbook: docker/docker2_compose_updates.yml
 - import_playbook: docker/internal_dozzle_agent.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
@@ -42,7 +42,6 @@
 - import_playbook: docker/pihole.yml
 - import_playbook: docker/plex_caddy.yml
 - import_playbook: docker/plex_jellyfin.yml
-- import_playbook: docker/plex_plex.yml
 - import_playbook: docker/vps_caddy_proxy.yml
 - import_playbook: docker/vps_dozzle_agent.yml
 - import_playbook: docker/vps_portainer_agent.yml

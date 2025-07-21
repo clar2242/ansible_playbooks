@@ -17,7 +17,19 @@
           - duplicati_data:/config
           - duplicati_source:/source
           - duplicati_backups:/backups
-          - /data:/data
+          - /data/icloud/photos:/data/icloud/photos
+          - /data/backups/mail:/data/backups/mail
+          - /data/backups/nextcloud:/data/backups/nextcloud
+          - /data/backups/applications:/data/backups/applications
+          - /data/shared:/data/shared
         labels:
           caddy: duplicati.home.thunderweb.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 8200 }}"
+    - name: Create duplicati.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: duplicati.home.thunderweb.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

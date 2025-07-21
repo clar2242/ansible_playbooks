@@ -7,6 +7,8 @@ op whoami
 # disable screensave
 defaults -currentHost write com.apple.screensaver idleTime 0
 
+source ./.venv/bin/activate
+
 ansible-playbook -e@credentials playbooks/update.yml
 ansible-playbook -e@credentials playbooks/docker.yml
 

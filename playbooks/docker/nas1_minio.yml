@@ -22,3 +22,11 @@
           caddy_0.reverse_proxy: !unsafe "{{ upstreams 9001 }}"
           caddy_1: "*.s3.srv.3fr.uk"
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 9000 }}"
+    - name: Create s3.srv.3fr.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: s3.srv.3fr.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

@@ -1,25 +1,25 @@
 ---
-- name: install IT Tools on docker1
+- name: install sshwifty on docker1
   hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: ittools
-        image: ghcr.io/corentinth/it-tools:latest
+        name: sshwifty
+        image: niruix/sshwifty:latest
         pull: true
-        hostname: ittools
+        hostname: sshwifty
         restart_policy: always
         networks:
           - name: web
         labels:
-          caddy: tools.home.thunderweb.uk
+          caddy: ssh.home.thunderweb.uk
           caddy.import_0: httpauth
           caddy.import_1: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
-    - name: Create tools.home.thunderweb.uk CNAME
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8182 }}"
+    - name: Create ssh.home.thunderweb.uk CNAME
       delegate_to: localhost
       sbarbett.pihole.local_cname:
-        host: tools.home.thunderweb.uk
+        host: ssh.home.thunderweb.uk
         target: "{{ inventory_hostname }}"
         state: present
         url: "https://pihole.home.thunderweb.uk"

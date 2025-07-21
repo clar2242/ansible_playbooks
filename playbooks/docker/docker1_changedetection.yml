@@ -40,3 +40,12 @@
           SCREEN_HEIGHT: "1024"
           SCREEN_DEPTH: "16"
           MAX_CONCURRENT_CHROME_PROCESSES: "10"
+
+    - name: Create change.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: change.home.thunderweb.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

@@ -1,6 +1,6 @@
 ---
-- name: install caddy on nas1
-  hosts: nas1.srv.3fr.uk
+- name: install caddy on docker2
+  hosts: docker2.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -14,6 +14,8 @@
           - 8.8.8.8
           - 1.1.1.1
           - 8.8.4.4
+        networks:
+          - name: web
         env:
           PUID: "1000"
           PGID: "1000"
@@ -24,7 +26,6 @@
           - /var/run/docker.sock:/var/run/docker.sock
           - caddy_config:/config
           - caddy_data:/data
-          - /usr/share/urbackup/www:/usr/share/urbackup/www
           - caddy_logs:/var/log/caddy
         ports:
           - "80:80"

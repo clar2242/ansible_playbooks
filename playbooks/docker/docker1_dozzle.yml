@@ -14,9 +14,17 @@
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
         env:
-          DOZZLE_REMOTE_AGENT: "plex.srv.3fr.uk:7007,docker2.srv.3fr.uk:7007,nas1.srv.3fr.uk:7007,pihole.srv.3fr.uk:7007,runtipi.srv.3fr.uk:7007,vps1.wg.3fr.uk:7007,vps2.wg.3fr.uk:7007,vps3.wg.3fr.uk:7007"
+          DOZZLE_REMOTE_AGENT: "plex.srv.3fr.uk:7007,docker2.srv.3fr.uk:7007,nas1.srv.3fr.uk:7007,pihole.srv.3fr.uk:7007,vps1.wg.3fr.uk:7007,vps2.wg.3fr.uk:7007,vps3.wg.3fr.uk:7007"
         labels:
           caddy: dozzle.home.thunderweb.uk
           caddy.import_0: httpauth
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
+    - name: Create dozzle.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: dozzle.home.thunderweb.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

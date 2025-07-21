@@ -5,8 +5,8 @@
   vars: 
     stack_name:
       - atuin
-      - authelia
-      - immich-app
+      - auth
+      - immich
       - romm
 
   tasks:
@@ -20,3 +20,12 @@
         cmd: docker compose up -d
         chdir: /home/scott/docker/{{ item }}
       loop: "{{ stack_name }}"
+    - name: "Create CNAMEs"
+      delegate_to: localhost
+      loop: "{{ stack_name }}"
+      sbarbett.pihole.local_cname:
+        host: "{{ item }}.home.thunderweb.uk"
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

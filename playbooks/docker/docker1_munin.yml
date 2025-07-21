@@ -24,3 +24,11 @@
           caddy.import_0: httpauth
           caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
           caddy.redir: / https://munin.home.thunderweb.uk/munin/
+    - name: Create munin.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: munin.home.thunderweb.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

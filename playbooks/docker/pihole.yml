@@ -28,3 +28,4 @@
           - pihole_log:/var/log/pihole/
         capabilities:
           - NET_ADMIN
+          

@@ -24,3 +24,11 @@
           caddy.reverse_proxy: !unsafe "{{ upstreams 443 }}"
           caddy.reverse_proxy.transport: "http"
           caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
+    - name: Create drive.thunderweb.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: drive.thunderweb.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

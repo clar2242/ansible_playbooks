@@ -5,19 +5,19 @@
   tasks:
     - community.docker.docker_container:
         name: plex
-        image: lscr.io/linuxserver/plex:latest
+        image: plexinc/pms-docker:plexpass
         pull: true
         hostname: plex
         restart_policy: always
         network_mode: host
         env:
-          PUID: "1000"
-          PGID: "1000"
+          PLEX_UID: "1000"
+          PLEX_GID: "1000"
           TZ: "Europe/London"
-          VERSION: "latest"
-          # PLEX_CLAIM: ""
+          PLEX_CLAIM: "claim-i9rJjZRxoSsmH6FtF_2F"
         volumes:
           - plex_data:/config
           - /data/media:/data/media
+          - /opt/plex/transcode:/transcode
         devices:
           - /dev/dri:/dev/dri

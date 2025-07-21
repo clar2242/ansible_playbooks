@@ -28,3 +28,11 @@
           caddy.handle.reverse_proxy: !unsafe "{{ upstreams 8083 }}"
           caddy.handle.reverse_proxy.header_up: 'Authorization "Basic: {{ calibre_hash }}"'
           caddy.reverse_proxy: !unsafe "{{ upstreams 8083 }}"
+    - name: Create calibre.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: calibre.home.thunderweb.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

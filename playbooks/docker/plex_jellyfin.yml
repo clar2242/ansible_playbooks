@@ -1,7 +1,7 @@
 ---
 - name: install jellyfin on plex
   hosts: plex.srv.3fr.uk
-  gather_facts: true
+  gather_facts: false
   tasks:
     - community.docker.docker_container:
         name: jellyfin
@@ -13,16 +13,20 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Etc/UTC"
-          JELLYFIN_PublishedServerUrl: "{{ ansible_enp6s18.ipv4.address }}"
-          DOCKER_MODS: "linuxserver/mods:jellyfin-amd"
+          JELLYFIN_PublishedServerUrl: "https://jellyfin.srv.3fr.uk"
         networks:
           - name: web
         volumes:
           - jellyfin_config:/config
           - /data:/data
-        devices:
-          - /dev/dri:/dev/dri
-          - /dev/kfd:/dev/kfd
         labels:
           caddy: jellyfin.srv.3fr.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 8096 }}"
+    - name: Create jellyfin.srv.3fr.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: jellyfin.srv.3fr.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

@@ -18,3 +18,17 @@
           - /run/udev:/run/udev:ro
         devices:
           - "/dev/ttyUSB0:/dev/ttyUSB0"
+        labels:
+          caddy: zigbee.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.import_1: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
+
+    - name: Create zigbee.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: zigbee.home.thunderweb.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

@@ -1,0 +1,26 @@
+---
+- name: install retroarch on docker1
+  hosts: docker1.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: retroarch
+        image: lscr.io/linuxserver/retroarch:latest
+        pull: true
+        hostname: retroarch
+        restart_policy: always
+        networks:
+          - name: web
+        devices:
+          - /dev/dri:/dev/dri
+        volumes:
+          - retroarch_config:/config
+          - /data/shared/romm/library:/roms
+        shm_size: "1GB"
+        labels:
+          caddy: retroarch.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.import_1: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 3001 }}"
+          caddy.reverse_proxy.transport: "http"
+          caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""

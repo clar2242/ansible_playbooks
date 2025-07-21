@@ -2,7 +2,7 @@
 ansible_user=scott
 
 [mac]
-localhost ansible_connection="local"
+localhost ansible_connection="local" ansible_python_interpreter=/Users/scott/ansible/.venv/bin/python
 
 [thunderweb:children]
 tfr
@@ -11,6 +11,7 @@ tfr
 tfrdebian
 externalboxes
 proxmox
+tfrk8s
 
 [tfr:children]
 tfrdebian
@@ -20,13 +21,17 @@ nas1.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 docker3.srv.3fr.uk
-runtipi.srv.3fr.uk
 pihole.srv.3fr.uk
 plex.srv.3fr.uk
 cloudflare.srv.3fr.uk
 monitoring.srv.3fr.uk
 dc1.ad.3fr.uk
 dc2.ad.3fr.uk
+
+[tfrk8s]
+cloud0.srv.3fr.uk
+cloud1.srv.3fr.uk
+cloud2.srv.3fr.uk
 
 [externalboxes]
 vps1.thunderweb.uk
@@ -35,7 +40,6 @@ vps3.thunderweb.uk
 
 [docker]
 nas1.srv.3fr.uk
-runtipi.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 docker3.srv.3fr.uk
@@ -52,7 +56,6 @@ pihole.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 docker3.srv.3fr.uk
-runtipi.srv.3fr.uk
 nas1.srv.3fr.uk
 plex.srv.3fr.uk
 cloudflare.srv.3fr.uk
@@ -60,7 +63,6 @@ monitoring.srv.3fr.uk
 
 [eximsmarthost]
 nas1.srv.3fr.uk
-runtipi.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 docker3.srv.3fr.uk

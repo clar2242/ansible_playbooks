@@ -28,3 +28,11 @@
           caddy.encode: gzip
           caddy.@forbidden.path: "/.user.ini"
           caddy.respond: "@forbidden 404"
+    - name: Create dev.scottclark.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: dev.scottclark.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"

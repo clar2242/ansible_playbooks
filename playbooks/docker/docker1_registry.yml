@@ -45,3 +45,11 @@
           caddy.import_0: httpauthold
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+    - name: Create registry.srv.3fr.uk CNAME
+      delegate_to: localhost
+      sbarbett.pihole.local_cname:
+        host: registry.srv.3fr.uk
+        target: "{{ inventory_hostname }}"
+        state: present
+        url: "https://pihole.home.thunderweb.uk"
+        password: "{{ pihole_admin }}"
