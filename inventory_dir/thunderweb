@@ -17,11 +17,11 @@ tfrk8s
 tfrdebian
 
 [tfrdebian]
+dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 docker3.srv.3fr.uk
-pihole.srv.3fr.uk
 plex.srv.3fr.uk
 cloudflare.srv.3fr.uk
 monitoring.srv.3fr.uk
@@ -39,11 +39,11 @@ vps2.thunderweb.uk
 vps3.thunderweb.uk
 
 [docker]
+dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 docker3.srv.3fr.uk
-pihole.srv.3fr.uk
 vps1.thunderweb.uk
 vps2.thunderweb.uk
 vps3.thunderweb.uk
@@ -52,7 +52,7 @@ cloudflare.srv.3fr.uk
 monitoring.srv.3fr.uk
 
 [dockerinternal]
-pihole.srv.3fr.uk
+dns.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 docker3.srv.3fr.uk
@@ -62,11 +62,11 @@ cloudflare.srv.3fr.uk
 monitoring.srv.3fr.uk
 
 [eximsmarthost]
+dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 docker3.srv.3fr.uk
-pihole.srv.3fr.uk
 plex.srv.3fr.uk
 cloudflare.srv.3fr.uk
 monitoring.srv.3fr.uk
