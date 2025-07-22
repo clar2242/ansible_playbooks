@@ -24,11 +24,16 @@
           caddy.reverse_proxy: !unsafe "{{ upstreams 443 }}"
           caddy.reverse_proxy.transport: "http"
           caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
-    - name: Create drive.thunderweb.uk CNAME
+    - name: Create drive.thunderweb.uk ANAME
       delegate_to: localhost
-      sbarbett.pihole.local_cname:
-        host: drive.thunderweb.uk
-        target: "{{ inventory_hostname }}"
-        state: present
-        url: "https://pihole.home.thunderweb.uk"
-        password: "{{ pihole_admin }}"
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: drive.thunderweb.uk
+          type: ANAME
+          aname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200

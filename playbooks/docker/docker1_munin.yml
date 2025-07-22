@@ -12,7 +12,7 @@
         networks:
           - name: infra
         env:
-          NODES: "mailgateway1.srv.3fr.uk:192.168.250.25 nas1.srv.3fr.uk:192.168.250.101 docker1.srv.3fr.uk:192.168.250.11 docker2.srv.3fr.uk:192.168.250.12 docker3.srv.3fr.uk:192.168.250.13 pihole.srv.3fr.uk:192.168.250.53 proxmox1.srv.3fr.uk:192.168.250.111 proxmox2.srv.3fr.uk:192.168.250.112 proxmox3.srv.3fr.uk:192.168.250.113 plex.srv.3fr.uk:192.168.250.50 cloudflare.srv.3fr.uk:192.168.250.250 vps1.thunderweb.uk:192.168.2.2 vps2.thunderweb.uk:192.168.2.3 vps3.thunderweb.uk:192.168.2.4 dc1.ad.3fr.uk:192.168.250.120 dc2.ad.3fr.uk:192.168.250.121"
+          NODES: "mailgateway1.srv.3fr.uk:192.168.250.25 nas1.srv.3fr.uk:192.168.250.101 docker1.srv.3fr.uk:192.168.250.11 docker2.srv.3fr.uk:192.168.250.12 docker3.srv.3fr.uk:192.168.250.13 dns.srv.3fr.uk:192.168.250.53 proxmox1.srv.3fr.uk:192.168.250.111 proxmox2.srv.3fr.uk:192.168.250.112 proxmox3.srv.3fr.uk:192.168.250.113 plex.srv.3fr.uk:192.168.250.50 cloudflare.srv.3fr.uk:192.168.250.250 vps1.thunderweb.uk:192.168.2.2 vps2.thunderweb.uk:192.168.2.3 vps3.thunderweb.uk:192.168.2.4 dc1.ad.3fr.uk:192.168.250.120 dc2.ad.3fr.uk:192.168.250.121"
           TZ: "Europe/London"
         volumes:
           - munin_config:/etc/munin/munin-conf.d
@@ -26,9 +26,14 @@
           caddy.redir: / https://munin.home.thunderweb.uk/munin/
     - name: Create munin.home.thunderweb.uk CNAME
       delegate_to: localhost
-      sbarbett.pihole.local_cname:
-        host: munin.home.thunderweb.uk
-        target: "{{ inventory_hostname }}"
-        state: present
-        url: "https://pihole.home.thunderweb.uk"
-        password: "{{ pihole_admin }}"
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: munin.home.thunderweb.uk
+          type: CNAME
+          cname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200

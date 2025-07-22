@@ -18,9 +18,14 @@
           caddy.reverse_proxy: !unsafe "{{ upstreams 8182 }}"
     - name: Create ssh.home.thunderweb.uk CNAME
       delegate_to: localhost
-      sbarbett.pihole.local_cname:
-        host: ssh.home.thunderweb.uk
-        target: "{{ inventory_hostname }}"
-        state: present
-        url: "https://pihole.home.thunderweb.uk"
-        password: "{{ pihole_admin }}"
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: ssh.home.thunderweb.uk
+          type: CNAME
+          cname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200
