@@ -1,4 +1,4 @@
-- hosts: swarm
+- hosts: dns.srv.3fr.uk
   vars:
     docker_users:
       - scott
