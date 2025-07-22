@@ -1,6 +1,6 @@
 ---
 - name: Deploy apt-cache proxy
-  hosts: tfrdebian , proxmox
+  hosts: tfrdebian , proxmox , tfrk8s
   gather_facts: true
   become: true
   tasks:
