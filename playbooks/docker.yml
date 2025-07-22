@@ -1,5 +1,6 @@
 ---
 - import_playbook: docker/cloudflare_cloudflared.yml
+- import_playbook: docker/dns_caddy_proxy.yml
 - import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/docker1_calibreweb.yml
 - import_playbook: docker/docker1_changedetection.yml
@@ -37,9 +38,6 @@
 - import_playbook: docker/nas1_unpackerr.yml
 - import_playbook: docker/nas1_zigbee2mqtt.yml
 - import_playbook: docker/nodes_portainer_agent.yml
-- import_playbook: docker/pihole_caddy_proxy.yml
-- import_playbook: docker/pihole_cloudflared.yml
-- import_playbook: docker/pihole.yml
 - import_playbook: docker/plex_caddy.yml
 - import_playbook: docker/plex_jellyfin.yml
 - import_playbook: docker/vps_caddy_proxy.yml
