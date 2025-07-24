@@ -1,6 +1,6 @@
 ---
-- name: install prowlarr on docker1
-  hosts: docker1.srv.3fr.uk
+- name: install prowlarr on plex.srv.3fr.uk
+  hosts: plex.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -10,7 +10,7 @@
         hostname: prowlarr
         restart_policy: always
         networks:
-          - name: media
+          - name: web
         env:
           PUID: "1000"
           PGID: "1000"
@@ -19,8 +19,7 @@
           - prowlarr_data:/config
         labels:
           caddy: prowlarr.home.thunderweb.uk
-          caddy.import_0: httpauth
-          caddy.import_1: accesslogs
+          caddy.import_0: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 9696 }}"
     - name: Create prowlarr.home.thunderweb.uk CNAME
       delegate_to: localhost
