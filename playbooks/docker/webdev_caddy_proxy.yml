@@ -1,6 +1,6 @@
 ---
-- name: install caddy on docker1
-  hosts: docker1.srv.3fr.uk
+- name: install caddy on webdev
+  hosts: webdev.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -16,8 +16,6 @@
           - 8.8.4.4
         networks:
           - name: web
-          - name: infra
-          - name: media
         env:
           PUID: "1000"
           PGID: "1000"
@@ -29,6 +27,7 @@
           - caddy_config:/config
           - caddy_data:/data
           - caddy_logs:/var/log/caddy
+          - wordpress_data_scottclark:/var/www/html
         ports:
           - "80:80"
           - "443:443"

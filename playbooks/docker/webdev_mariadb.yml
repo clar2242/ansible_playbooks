@@ -1,0 +1,22 @@
+---
+- name: install mariadb on webdev.srv.3fr.uk
+  hosts: webdev.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: mariadb
+        image: lscr.io/linuxserver/mariadb:latest
+        pull: true
+        hostname: mariadb
+        restart_policy: always
+        networks:
+          - name: web
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+          MYSQL_ROOT_PASSWORD: "{{ docker1_mysql_root }}"
+        volumes:
+          - mariadb_data:/config
+        ports:
+          - "3306:3306"

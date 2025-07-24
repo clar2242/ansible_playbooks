@@ -1,4 +1,4 @@
-- hosts: dns.srv.3fr.uk
+- hosts: dockerinternal
   vars:
     docker_users:
       - scott

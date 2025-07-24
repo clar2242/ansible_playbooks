@@ -1,0 +1,37 @@
+---
+- name: install phpmyadmin on webdev
+  hosts: webdev.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: phpmyadmin
+        image: lscr.io/linuxserver/phpmyadmin:latest
+        pull: true
+        hostname: phpmyadmin
+        restart_policy: always
+        networks:
+          - name: web
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+          PMA_ABSOLUTE_URI: "https://phpmyadmin.home.thunderweb.uk"
+        volumes:
+          - phpmyadmin_data:/config
+        labels:
+          caddy: phpmyadmin.webdev.srv.3fr.uk
+          caddy.import_1: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+    - name: Create phpmyadmin.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: phpmyadmin.webdev.srv.3fr.uk
+          type: CNAME
+          cname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200

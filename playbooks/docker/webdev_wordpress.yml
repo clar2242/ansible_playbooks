@@ -1,13 +1,13 @@
 ---
-- name: install wordpress on docker1
-  hosts: docker1.srv.3fr.uk
+- name: install wordpress on webdev.srv.3fr.uk for dev.scottclark.uk
+  hosts: webdev.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: wordpress
+        name: wordpress_dev_scottclark
         image: wordpress:php8.3-fpm
         pull: true
-        hostname: wordpress
+        hostname: wordpress_dev_scottclark
         restart_policy: always
         networks:
           - name: web
@@ -18,7 +18,7 @@
           WORDPRESS_DB_USER: "scottclark"
           WORDPRESS_DB_PASSWORD: "{{ wordpress_mysql_pass }}"
         volumes:
-          - wordpress_data:/var/www/html
+          - wordpress_data_scottclark:/var/www/html
         labels:
           caddy: dev.scottclark.uk
           caddy.import_0: accesslogs
@@ -28,7 +28,7 @@
           caddy.encode: gzip
           caddy.@forbidden.path: "/.user.ini"
           caddy.respond: "@forbidden 404"
-    - name: Create dev.scottclark.uk CNAME
+    - name: Create dev.scottclark.uk ANAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -37,7 +37,7 @@
         body:
           token: "{{ dns_token }}"
           domain: dev.scottclark.uk
-          type: CNAME
-          cname: "{{ inventory_hostname }}"
+          type: ANAME
+          aname: "{{ inventory_hostname }}"
           overwrite: true
         status_code: 200
