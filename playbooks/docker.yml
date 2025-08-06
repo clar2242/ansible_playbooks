@@ -1,4 +1,6 @@
 ---
+- import_playbook: docker/auth_caddy_proxy.yml
+- import_playbook: docker/auth_compose_updates.yml
 - import_playbook: docker/cloudflare_cloudflared.yml
 - import_playbook: docker/dns_caddy_proxy.yml
 - import_playbook: docker/docker1_caddy_proxy.yml
@@ -9,22 +11,18 @@
 - import_playbook: docker/docker1_dozzle.yml
 - import_playbook: docker/docker1_gitea.yml
 - import_playbook: docker/docker1_homarr.yml
-- import_playbook: docker/docker1_mariadb.yml
-- import_playbook: docker/docker1_munin.yml
-- import_playbook: docker/docker1_nextcloud.yml
 - import_playbook: docker/docker1_openbooks.yml
 - import_playbook: docker/docker1_pairdrop.yml
-- import_playbook: docker/docker1_phpmyadmin.yml
 - import_playbook: docker/docker1_portainer.yml
 - import_playbook: docker/docker1_registry.yml
 - import_playbook: docker/docker1_speedtest.yml
 - import_playbook: docker/docker1_sshwifty.yml
-- import_playbook: docker/docker1_stash.yml
 - import_playbook: docker/docker1_tools.yml
 - import_playbook: docker/docker2_caddy_proxy.yml
 - import_playbook: docker/docker2_compose_updates.yml
 - import_playbook: docker/internal_dozzle_agent.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
+- import_playbook: docker/monitoring_munin.yml
 - import_playbook: docker/nas1_caddy.yml
 - import_playbook: docker/nas1_duplicati.yml
 - import_playbook: docker/nas1_icloudpd.yml
@@ -49,6 +47,11 @@
 - import_playbook: docker/vps3_linkstack.yml
 - import_playbook: docker/vps3_mariadb.yml
 - import_playbook: docker/vps3_shlink.yml
+- import_playbook: docker/webapps_compose_updates.yml
+- import_playbook: docker/webapps_mariadb.yml
+- import_playbook: docker/webapps_nextcloud.yml
+- import_playbook: docker/webapps_phpmyadmin.yml
+- import_playbook: docker/webapps_stash.yml
 - import_playbook: docker/webdev_caddy_proxy.yml
 - import_playbook: docker/webdev_mariadb.yml
 - import_playbook: docker/webdev_phpmyadmin.yml

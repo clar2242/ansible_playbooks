@@ -1,30 +1,28 @@
 ---
-- name: install stash on docker1
-  hosts: docker1.srv.3fr.uk
+- name: install phpmyadmin on webapps
+  hosts: webapps.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: stash
-        image: ghcr.io/hotio/stash
+        name: phpmyadmin
+        image: lscr.io/linuxserver/phpmyadmin:latest
         pull: true
-        hostname: stash
+        hostname: phpmyadmin
         restart_policy: always
         networks:
-          - name: media
+          - name: web
         env:
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
-          UMASK: "002"
+          PMA_ABSOLUTE_URI: "https://phpmyadmin.home.thunderweb.uk"
         volumes:
-          - /data/shared/_Sort:/data/shared/_Sort
-          - /data/shared/_Sort/stash_data:/config
+          - phpmyadmin_data:/config
         labels:
-          caddy: stash.home.thunderweb.uk
-          caddy.import_0: httpauth
-          caddy.import_1: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 9999 }}"
-    - name: Create stash.home.thunderweb.uk CNAME
+          caddy: phpmyadmin.home.thunderweb.uk
+          caddy.import_0: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+    - name: Create phpmyadmin.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -32,7 +30,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: stash.home.thunderweb.uk
+          domain: phpmyadmin.home.thunderweb.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true

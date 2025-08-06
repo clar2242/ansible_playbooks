@@ -1,14 +1,13 @@
 ---
-- name: update docker compose stacks on docker1
-  hosts: docker1.srv.3fr.uk
+- name: update docker compose stacks on webapps
+  hosts: webapps.srv.3fr.uk
   gather_facts: false
   vars: 
     stack_name:
-      - atuin
-      - romm
+      - immich
 
   tasks:
-    - name: pull latest containers on docker1
+    - name: pull latest containers on webapps
       ansible.builtin.command: 
         cmd: docker compose pull
         chdir: /home/scott/docker/{{ item }}

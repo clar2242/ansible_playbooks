@@ -1,6 +1,6 @@
 ---
-- name: install nextcloud on docker1
-  hosts: docker1.srv.3fr.uk
+- name: install nextcloud on webapps
+  hosts: webapps.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
