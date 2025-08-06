@@ -19,6 +19,7 @@
           - radarr_data:/config
           - /data/media:/data/media
           - /data/download/:/data/download
+          - /data2/media:/data2/media
         labels:
           caddy: radarr.home.thunderweb.uk
           caddy.import_0: accesslogs
