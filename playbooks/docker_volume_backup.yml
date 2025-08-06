@@ -1,0 +1,36 @@
+---
+- name: Deploy Docker Backup Script
+  hosts: dockerinternal
+  gather_facts: false
+  become: true
+  tasks:
+
+  - name: Create directory /root/scripts
+    ansible.builtin.file:
+      path: /root/scripts
+      state: directory
+      mode: '0700'
+
+  - name: copy docker-backup.sh to host
+    ansible.builtin.copy:
+      src: ../files/docker-backup.sh
+      dest: /root/scripts/docker-backup.sh
+      owner: root
+      group: root
+      mode: '0700'
+
+  - name: copy docker-volume-backup.sh to host
+    ansible.builtin.copy:
+      src: ../files/docker-volume-backup.sh
+      dest: /root/scripts/docker-volume-backup.sh
+      owner: root
+      group: root
+      mode: '0700'
+
+  - name: Create Cronjob
+    ansible.builtin.cron:
+      name: "Docker Backup"
+      minute: "3"
+      hour: "0"
+      user: root
+      job: "/root/scripts/docker-backup.sh"
