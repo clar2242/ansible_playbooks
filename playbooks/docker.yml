@@ -47,6 +47,7 @@
 - import_playbook: docker/vps3_linkstack.yml
 - import_playbook: docker/vps3_mariadb.yml
 - import_playbook: docker/vps3_shlink.yml
+- import_playbook: docker/webapps_caddy_proxy.yml
 - import_playbook: docker/webapps_compose_updates.yml
 - import_playbook: docker/webapps_mariadb.yml
 - import_playbook: docker/webapps_nextcloud.yml
