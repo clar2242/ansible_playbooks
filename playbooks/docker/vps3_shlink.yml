@@ -25,3 +25,4 @@
         labels:
           caddy: yag.me.uk www.yag.me.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
+          caddy.import_0: accesslogs
