@@ -19,9 +19,9 @@
 #      state: latest
 #    when: ansible_facts['os_family'] != "Debian"
 
-- name: update homebrew
-  hosts: localhost
-  tasks:
-  - homebrew:
-      update_homebrew: yes
-      upgrade_all: yes
+#- name: update homebrew
+#  hosts: localhost
+#  - homebrew:
+#  tasks:
+#      update_homebrew: yes
+#      upgrade_all: yes
