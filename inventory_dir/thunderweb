@@ -1,9 +1,6 @@
 [all:vars]
 ansible_user=scott
 
-[mac]
-localhost ansible_connection="local" ansible_python_interpreter=/Users/scott/ansible/.venv/bin/python
-
 [thunderweb:children]
 tfr
 
@@ -11,7 +8,6 @@ tfr
 tfrdebian
 externalboxes
 proxmox
-#tfrk8s
 
 [tfr:children]
 tfrdebian
@@ -28,11 +24,6 @@ webdev.srv.3fr.uk
 webapps.srv.3fr.uk
 auth.srv.3fr.uk
 public.srv.3fr.uk
-
-[tfrk8s]
-cloud0.srv.3fr.uk
-cloud1.srv.3fr.uk
-cloud2.srv.3fr.uk
 
 [externalboxes]
 vps1.thunderweb.uk
