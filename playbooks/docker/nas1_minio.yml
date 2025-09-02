@@ -20,8 +20,10 @@
         labels:
           caddy_0: "s3.srv.3fr.uk"
           caddy_0.reverse_proxy: !unsafe "{{ upstreams 9001 }}"
+          caddy_0.import: accesslogs
           caddy_1: "*.s3.srv.3fr.uk"
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 9000 }}"
+          caddy_1.import: accesslogs
     - name: Create s3.srv.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
