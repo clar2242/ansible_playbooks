@@ -28,7 +28,6 @@ public.srv.3fr.uk
 [externalboxes]
 vps1.thunderweb.uk
 vps2.thunderweb.uk
-vps3.thunderweb.uk
 
 [docker]
 dns.srv.3fr.uk
@@ -37,7 +36,6 @@ docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 vps1.thunderweb.uk
 vps2.thunderweb.uk
-vps3.thunderweb.uk
 plex.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
