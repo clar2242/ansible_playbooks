@@ -12,7 +12,7 @@
         networks:
           - name: web
         env:
-          NODES: "mailgateway1.srv.3fr.uk:192.168.250.25 nas1.srv.3fr.uk:192.168.250.101 docker1.srv.3fr.uk:192.168.250.11 docker2.srv.3fr.uk:192.168.250.12 dns.srv.3fr.uk:192.168.250.53 proxmox1.srv.3fr.uk:192.168.250.111 proxmox2.srv.3fr.uk:192.168.250.112 proxmox3.srv.3fr.uk:192.168.250.113 plex.srv.3fr.uk:192.168.250.50 cloudflare.srv.3fr.uk:192.168.250.250 vps1.thunderweb.uk:192.168.2.2 vps2.thunderweb.uk:192.168.2.3 vps3.thunderweb.uk:192.168.2.4 auth.srv.3fr.uk:192.168.250.51 public.srv.3fr.uk:192.168.250.90"
+          NODES: "mailgateway1.srv.3fr.uk:192.168.250.25 nas1.srv.3fr.uk:192.168.250.101 docker1.srv.3fr.uk:192.168.250.11 docker2.srv.3fr.uk:192.168.250.12 dns.srv.3fr.uk:192.168.250.53 proxmox1.srv.3fr.uk:192.168.250.111 proxmox2.srv.3fr.uk:192.168.250.112 proxmox3.srv.3fr.uk:192.168.250.113 plex.srv.3fr.uk:192.168.250.50 cloudflare.srv.3fr.uk:192.168.250.250 vps1.thunderweb.uk:192.168.2.2 vps2.thunderweb.uk:192.168.2.3 auth.srv.3fr.uk:192.168.250.51 public.srv.3fr.uk:192.168.250.90"
           TZ: "Europe/London"
         volumes:
           - munin_config:/etc/munin/munin-conf.d
