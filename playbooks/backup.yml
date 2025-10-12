@@ -7,8 +7,9 @@
 
   - name: stop urbackup service
     ansible.builtin.systemd_service:
-      name: urbackupclient.service
+      name: urbackupclientbackend.service
       state: stopped
+      ignore_errors: yes
 
   - name: ensure backup2l package is installed
     ansible.builtin.apt:
