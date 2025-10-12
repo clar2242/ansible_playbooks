@@ -1,6 +1,6 @@
 ---
 - name: Configure Backups
-  hosts: linuxservers
+  hosts: linuxboxes
   gather_facts: true
   become: true
   tasks:
