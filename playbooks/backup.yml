@@ -1,0 +1,17 @@
+---
+- name: Configure Backups
+  hosts: linuxservers
+  gather_facts: true
+  become: true
+  tasks:
+
+  - name: stop urbackup service
+    ansible.builtin.systemd_service:
+      name: urbackupclient.service
+      state: stopped
+
+  - name: ensure backup2l package is installed
+    ansible.builtin.apt:
+      name: backup2l
+      state: present
+      update_cache: yes
