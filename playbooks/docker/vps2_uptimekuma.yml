@@ -5,7 +5,7 @@
   tasks:
     - community.docker.docker_container:
         name: uptimekuma
-        image: louislam/uptime-kuma:latest
+        image: louislam/uptime-kuma:2
         pull: true
         hostname: uptimekuma
         restart_policy: always
