@@ -5,6 +5,7 @@
   vars: 
     stack_name:
       - romm
+      - qui
 
   tasks:
     - name: pull latest containers on docker1
