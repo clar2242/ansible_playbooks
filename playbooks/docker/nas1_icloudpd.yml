@@ -13,20 +13,4 @@
           - icloudpd_config:/config
           - /data/icloud/photos:/home/scott/iCloud
         env:
-          user: "scott"
-          user_id: "1000"
-          group: "scott"
-          group_id: "1000"
-          apple_id: "clar2242@me.com"
-          authentication_type: "2FA"
-          auto_delete: "True"
-          notification_days: "14"
-          synchronisation_interval: "43200"
-          single_pass: "true"
-          convert_heic_to_jpeg: "false"
           TZ: "Europe/London"
-          pushover_user: "{{ pushover_user }}"
-          pushover_token: "{{ pushover_token }}"
-          pushover_sound: "intermission"
-          notification_title: "icloudpd"
-          notification_type: "Pushover"
