@@ -26,7 +26,6 @@
 - import_playbook: docker/nas1_caddy.yml
 - import_playbook: docker/nas1_duplicati.yml
 - import_playbook: docker/nas1_icloudpd.yml
-- import_playbook: docker/nas1_minio.yml
 - import_playbook: docker/nas1_unpackerr.yml
 - import_playbook: docker/nas1_zigbee2mqtt.yml
 - import_playbook: docker/nodes_portainer_agent.yml

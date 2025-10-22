@@ -2,7 +2,7 @@
 
 # Generate docker.yml to include all docker playbooks
 
-cd ~/ansible/playbooks
+cd ~/git/ansible/playbooks
 
 echo "---" > docker.yml
 
