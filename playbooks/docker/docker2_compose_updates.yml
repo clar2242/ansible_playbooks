@@ -6,6 +6,7 @@
     stack_name:
       - paperless
       - ipam
+      - pulse
 
   tasks:
     - name: pull latest containers on docker2
