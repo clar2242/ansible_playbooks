@@ -19,6 +19,7 @@
         volumes:
           - jellyfin_config:/config
           - /data:/data
+          - /data2:/data2
         labels:
           caddy: jellyfin.srv.3fr.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 8096 }}"
