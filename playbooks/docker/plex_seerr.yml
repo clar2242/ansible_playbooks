@@ -1,0 +1,36 @@
+---
+- name: install seerr on plex.srv.3fr.uk
+  hosts: plex.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: seerr
+        image: ghcr.io/fallenbagel/jellyseerr:latest
+        pull: true
+        hostname: seerr
+        restart_policy: always
+        networks:
+          - name: web
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+        volumes:
+          - seerr_data:/config
+        labels:
+          caddy: seerr.home.thunderweb.uk
+          caddy.import_0: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 5055 }}"
+    - name: Create seerr.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: seerr.home.thunderweb.uk
+          type: CNAME
+          cname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200
