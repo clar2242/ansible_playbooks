@@ -16,7 +16,7 @@
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
-          - seerr_data:/config
+          - seerr_data:/app/config
         labels:
           caddy: seerr.home.thunderweb.uk
           caddy.import_0: accesslogs
