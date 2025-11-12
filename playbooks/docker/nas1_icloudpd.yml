@@ -8,7 +8,7 @@
         image: boredazfcuk/icloudpd:latest
         pull: true
         hostname: icloudpd
-        restart_policy: no
+        restart_policy: always
         volumes:
           - icloudpd_config:/config
           - /data/icloud/photos:/home/scott/iCloud
