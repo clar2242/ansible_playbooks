@@ -13,6 +13,7 @@ proxmox
 tfrdebian
 
 [tfrdebian]
+mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
@@ -30,6 +31,7 @@ vps1.thunderweb.uk
 vps2.thunderweb.uk
 
 [docker]
+mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
@@ -58,6 +60,7 @@ auth.srv.3fr.uk
 public.srv.3fr.uk
 
 [eximsmarthost]
+mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
