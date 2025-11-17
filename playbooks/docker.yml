@@ -8,12 +8,10 @@
 - import_playbook: docker/docker1_changedetection.yml
 - import_playbook: docker/docker1_compose_updates.yml
 - import_playbook: docker/docker1_coredns.yml
-- import_playbook: docker/docker1_dozzle.yml
 - import_playbook: docker/docker1_gitea.yml
 - import_playbook: docker/docker1_homarr.yml
 - import_playbook: docker/docker1_openbooks.yml
 - import_playbook: docker/docker1_pairdrop.yml
-- import_playbook: docker/docker1_portainer.yml
 - import_playbook: docker/docker1_registry.yml
 - import_playbook: docker/docker1_speedtest.yml
 - import_playbook: docker/docker1_sshwifty.yml
@@ -23,6 +21,8 @@
 - import_playbook: docker/internal_dozzle_agent.yml
 - import_playbook: docker/mgmt_caddy.yml
 - import_playbook: docker/mgmt_compose_updates.yml
+- import_playbook: docker/mgmt_dozzle.yml
+- import_playbook: docker/mgmt_portainer.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/monitoring_munin.yml
 - import_playbook: docker/nas1_caddy.yml
