@@ -10,7 +10,7 @@
         hostname: portainer
         restart_policy: always
         networks:
-          - name: infra
+          - name: web
         volumes:
           - portainer_data:/data
           - /var/run/docker.sock:/var/run/docker.sock
