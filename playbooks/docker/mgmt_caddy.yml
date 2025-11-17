@@ -16,8 +16,6 @@
           - 8.8.4.4
         networks:
           - name: web
-          - name: infra
-          - name: media
         env:
           PUID: "1000"
           PGID: "1000"
