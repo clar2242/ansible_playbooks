@@ -22,6 +22,7 @@
 - import_playbook: docker/docker2_compose_updates.yml
 - import_playbook: docker/internal_dozzle_agent.yml
 - import_playbook: docker/mgmt_caddy.yml
+- import_playnook: docker/mgmt_compose_updates.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/monitoring_munin.yml
 - import_playbook: docker/nas1_caddy.yml
