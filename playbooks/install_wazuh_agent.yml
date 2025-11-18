@@ -1,0 +1,32 @@
+---
+- name: Install Wazuh Agent
+  hosts: wazuhagents , !nas1.srv.3fr.uk
+  become: true
+
+# wget https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.1-1_amd64.deb && sudo WAZUH_MANAGER='wazuh.srv.3fr.uk' dpkg -i ./wazuh-agent_4.14.1-1_amd64.deb
+  tasks:
+  - name: remove old wazuh agent if present
+    apt:
+      name: wazuh-agent
+      state: absent
+      purge: yes
+
+  - name: Download the installation package
+    get_url:
+      url: https://packages.wazuh.com/4.x/apt/pool/main/w/wazuh-agent/wazuh-agent_4.14.1-1_amd64.deb
+      dest: ~/wazuh-agent_4.14.1-1_amd64.deb
+
+  - name: Install Wazuh
+    shell: WAZUH_MANAGER='wazuh.srv.3fr.uk' dpkg -i ~/wazuh-agent_4.14.1-1_amd64.deb
+
+  - name: Cleanup installation package
+    file:
+      path: ~/wazuh-agent_4.14.1-1_amd64.deb
+      state: absent
+
+  - name: Start service
+    systemd:
+      name: wazuh-agent
+      enabled: true
+      state: started
+      daemon_reload: true
