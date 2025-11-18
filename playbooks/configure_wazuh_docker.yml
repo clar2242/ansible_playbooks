@@ -1,0 +1,24 @@
+---
+- name: Install Wazuh Agent
+  hosts: wazuhagents 
+  become: true
+
+  tasks:
+  - name: copy DockerListener to host
+    ansible.builtin.copy:
+      src: ../files/wazuh/DockerListener
+      dest: /var/ossec/wodles/docker/DockerListener
+      owner: root
+      group: wazuh
+      mode: '0750'
+
+  - name: copy install.sh to host
+    ansible.builtin.copy:
+      src: ../files/wazuh/install.sh
+      dest: /root/install.sh
+      owner: root
+      group: wazuh
+      mode: '0750'
+
+  - name: Install Wazuh
+    shell: /root/install.sh
