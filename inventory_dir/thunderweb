@@ -79,6 +79,7 @@ wazuh.srv.3fr.uk
 [wazuhagents:children]
 dockerinternal
 proxmox
+externalboxes
 
 [proxmox]
 proxmox1.srv.3fr.uk
