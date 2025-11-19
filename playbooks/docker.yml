@@ -37,6 +37,7 @@
 - import_playbook: docker/plex_overseerr.yml
 - import_playbook: docker/plex_prowlarr.yml
 - import_playbook: docker/plex_radarr.yml
+- import_playbook: docker/plex_reaparr.yml
 - import_playbook: docker/plex_seerr.yml
 - import_playbook: docker/plex_sonarr.yml
 - import_playbook: docker/plex_tautulli.yml
