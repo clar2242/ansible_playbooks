@@ -17,7 +17,7 @@
           TZ: "Europe/London"
         volumes:
           - reaparr_data:/Config
-          - /data/media/downloads:/Downloads
+          - /data/media/download:/Downloads
           - /data/media/Movies:/Movies
           - /data/media/TV:/TvShows
         labels:
