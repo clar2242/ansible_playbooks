@@ -1,6 +1,6 @@
 ---
 - name: Install Wazuh Agent
-  hosts: wazuhagents 
+  hosts: vps1.thunderweb.uk , vps2.thunderweb.uk
   become: true
 
   tasks:
