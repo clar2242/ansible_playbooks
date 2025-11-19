@@ -12,6 +12,14 @@
       group: wazuh
       mode: '0750'
 
+  - name: copy rootkit_trojans.txt to host
+    ansible.builtin.copy:
+      src: ../files/wazuh/rootkit_trojans.txt
+      dest: /var/ossec/etc/shared/rootkit_trojans.txt
+      owner: wazuh
+      group: wazuh
+      mode: '0600'
+
   - name: copy install.sh to host
     ansible.builtin.copy:
       src: ../files/wazuh/install.sh
@@ -20,5 +28,10 @@
       group: wazuh
       mode: '0750'
 
-  - name: Install Wazuh
-    shell: /root/install.sh
+  - name: restart Wazuh
+    #shell: /root/install.sh
+    systemd:
+      name: wazuh-agent
+      enabled: true
+      state: restarted
+      daemon_reload: true    
