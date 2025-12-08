@@ -18,9 +18,11 @@
         volumes:
           - seerr_data:/app/config
         labels:
-          caddy: seerr.home.thunderweb.uk
-          caddy.import_0: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 5055 }}"
+          caddy_1: seerr.home.thunderweb.uk
+          caddy_1.import: accesslogs
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 5055 }}"
+          caddy_2: overseerr.home.thunderweb.uk
+          caddy_2.redir: https://seerr.home.thunderweb.uk{uri}
     - name: Create seerr.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:

@@ -34,7 +34,6 @@
 - import_playbook: docker/nodes_portainer_agent.yml
 - import_playbook: docker/plex_caddy.yml
 - import_playbook: docker/plex_jellyfin.yml
-- import_playbook: docker/plex_overseerr.yml
 - import_playbook: docker/plex_prowlarr.yml
 - import_playbook: docker/plex_radarr.yml
 - import_playbook: docker/plex_reaparr.yml
