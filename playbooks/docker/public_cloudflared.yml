@@ -1,6 +1,6 @@
 ---
-- name: install cloudflared on cloudflare
-  hosts: cloudflare.srv.3fr.uk
+- name: install cloudflared on public
+  hosts: public.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:

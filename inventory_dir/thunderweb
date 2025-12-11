@@ -19,7 +19,6 @@ nas1.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
 plex.srv.3fr.uk
-cloudflare.srv.3fr.uk
 monitoring.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
@@ -42,7 +41,6 @@ vps2.thunderweb.uk
 plex.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
-cloudflare.srv.3fr.uk
 monitoring.srv.3fr.uk
 auth.srv.3fr.uk
 public.srv.3fr.uk
@@ -56,7 +54,6 @@ nas1.srv.3fr.uk
 plex.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
-cloudflare.srv.3fr.uk
 monitoring.srv.3fr.uk
 auth.srv.3fr.uk
 public.srv.3fr.uk
@@ -70,7 +67,6 @@ docker2.srv.3fr.uk
 plex.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
-cloudflare.srv.3fr.uk
 monitoring.srv.3fr.uk
 auth.srv.3fr.uk
 public.srv.3fr.uk

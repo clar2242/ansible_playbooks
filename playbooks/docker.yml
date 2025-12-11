@@ -1,7 +1,6 @@
 ---
 - import_playbook: docker/auth_caddy_proxy.yml
 - import_playbook: docker/auth_compose_updates.yml
-- import_playbook: docker/cloudflare_cloudflared.yml
 - import_playbook: docker/dns_caddy_proxy.yml
 - import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/docker1_calibreweb.yml
@@ -41,6 +40,7 @@
 - import_playbook: docker/plex_sonarr.yml
 - import_playbook: docker/plex_tautulli.yml
 - import_playbook: docker/public_caddy_proxy.yml
+- import_playbook: docker/public_cloudflared.yml
 - import_playbook: docker/public_linkstack.yml
 - import_playbook: docker/public_mariadb.yml
 - import_playbook: docker/public_shlink.yml
