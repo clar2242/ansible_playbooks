@@ -1,0 +1,36 @@
+---
+- name: install vaultwarden on mgmt
+  hosts: mgmt.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: vaultwarden
+        image: vaultwarden/server:latest
+        pull: true
+        hostname: vaultwarden
+        restart_policy: always
+        networks:
+          - name: web
+        volumes:
+          - vaultwarden_data:/data
+        env:  
+          DOMAIN: "https://vault.home.thunderweb.uk"
+          SIGNUPS_ALLOWED: "false"
+          ADMIN_TOKEN: "{{ vaultwarden_admin_token }}"
+        labels:
+          caddy: vault.home.thunderweb.uk
+          caddy.import_0: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+    - name: Create vault.home.thunderweb.uk CNAME
+      delegate_to: localhost
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: vault.home.thunderweb.uk
+          type: CNAME
+          cname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200
