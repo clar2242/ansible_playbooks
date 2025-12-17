@@ -27,8 +27,8 @@ public.srv.3fr.uk
 wazuh.srv.3fr.uk
 
 [externalboxes]
-vps1.wg.3fr.uk
-vps2.wg.3fr.uk
+vps1.thunderweb.uk
+vps2.thunderweb.uk
 
 [docker]
 mgmt.srv.3fr.uk
@@ -36,8 +36,8 @@ dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
 docker2.srv.3fr.uk
-vps1.wg.3fr.uk
-vps2.wg.3fr.uk
+vps1.thunderweb.uk
+vps2.thunderweb.uk
 plex.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
