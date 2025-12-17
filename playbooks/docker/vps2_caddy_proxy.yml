@@ -1,6 +1,6 @@
 ---
 - name: install caddy on vps2
-  hosts: vps2.thunderweb.uk
+  hosts: vps2.wg.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
