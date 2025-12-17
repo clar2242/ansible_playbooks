@@ -1,6 +1,6 @@
 ---
 - name: update docker compose stacks on vps1
-  hosts: vps1.thunderweb.uk
+  hosts: vps1.wg.3fr.uk
   gather_facts: false
   vars: 
     stack_name:
