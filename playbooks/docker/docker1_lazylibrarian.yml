@@ -23,7 +23,7 @@
           caddy: lazylibrarian.home.thunderweb.uk
           caddy.import_0: httpauth
           caddy.import_1: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+          caddy.reverse_proxy: !unsafe "{{ upstreams 5299 }}"
     - name: Create lazylibrarian.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
