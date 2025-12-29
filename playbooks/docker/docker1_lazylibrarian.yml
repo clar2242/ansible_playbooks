@@ -15,6 +15,7 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
+          DOCKER_MODS: "linuxserver/mods:universal-calibre|linuxserver/mods:lazylibrarian-ffmpeg"
         volumes:
           - lazylibrarian_data:/config
           - /data/media/downloads:/data/media/downloads
