@@ -16,8 +16,10 @@
           TZ: "Europe/London"
           N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS: "true"
           N8N_RUNNERS_ENABLED: "true"
+          NODES_EXCLUDE: "[]"
         volumes:
           - n8n_data:/home/node/.n8n
+          - /data:/data
         labels:
           caddy: n8n.home.thunderweb.uk
           caddy.import_0: httpauth
