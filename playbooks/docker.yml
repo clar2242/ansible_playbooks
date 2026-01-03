@@ -33,6 +33,7 @@
 - import_playbook: docker/nas1_zigbee2mqtt.yml
 - import_playbook: docker/nodes_portainer_agent.yml
 - import_playbook: docker/plex_caddy.yml
+- import_playbook: docker/plex_compose_updates.yml
 - import_playbook: docker/plex_jellyfin.yml
 - import_playbook: docker/plex_prowlarr.yml
 - import_playbook: docker/plex_radarr.yml
