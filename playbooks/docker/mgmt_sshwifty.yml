@@ -16,7 +16,7 @@
           caddy.import_0: httpauth
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 8182 }}"
-        environment:
+        env:
           SSHWIFTY_CONFIG: "/sshwifty.conf"
         volumes:
           - /home/scott/config/sshwifty/sshwifty.conf:/sshwifty.conf:ro
