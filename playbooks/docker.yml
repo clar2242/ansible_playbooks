@@ -9,7 +9,6 @@
 - import_playbook: docker/docker1_coredns.yml
 - import_playbook: docker/docker1_gitea.yml
 - import_playbook: docker/docker1_homarr.yml
-- import_playbook: docker/docker1_lazylibrarian.yml
 - import_playbook: docker/docker1_openbooks.yml
 - import_playbook: docker/docker1_pairdrop.yml
 - import_playbook: docker/docker1_registry.yml
