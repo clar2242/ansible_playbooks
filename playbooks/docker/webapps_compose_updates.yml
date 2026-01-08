@@ -5,6 +5,7 @@
   vars: 
     stack_name:
       - immich
+      - domainlocker
 
   tasks:
     - name: pull latest containers on webapps
