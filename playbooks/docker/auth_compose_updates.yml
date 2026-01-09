@@ -31,3 +31,11 @@
           cname: "{{ inventory_hostname }}"
           overwrite: true
         status_code: 200
+    - name: "Configure UptimeKuma monitor for auth"
+      lucasheld.uptime_kuma.uptime_kuma_monitor:
+        api_url: https://kuma.thunderweb.uk
+        api_token: "{{ kuma_api }}"
+        name: "{{ item }}.home.thunderweb.uk"
+        type: http
+        url: "{{ item }}.home.thunderweb.uk"
+        state: present
