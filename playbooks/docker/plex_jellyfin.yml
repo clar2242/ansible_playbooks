@@ -17,7 +17,7 @@
         networks:
           - name: web
         volumes:
-          - /data/docker/jellyfin:/config
+          - jellyfin_config:/config
           - /data:/data
         labels:
           caddy: jellyfin.srv.3fr.uk
