@@ -1,4 +1,4 @@
-- hosts: dockerinternal
+- hosts: swarm
   vars:
     docker_users:
       - scott

@@ -8,6 +8,7 @@ tfr
 tfrdebian
 externalboxes
 proxmox
+swarm
 
 [tfr:children]
 tfrdebian
@@ -76,6 +77,11 @@ wazuh.srv.3fr.uk
 dockerinternal
 proxmox
 externalboxes
+
+[swarm]
+swarm1.srv.3fr.uk
+swarm2.srv.3fr.uk
+swarm3.srv.3fr.uk
 
 [proxmox]
 proxmox1.srv.3fr.uk
