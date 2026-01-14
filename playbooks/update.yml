@@ -13,8 +13,9 @@
       name: "*"
       state: latest
     when: ansible_facts['os_family'] == "Debian"
-    
-  - package:
+
+  - name: Update all non Debian machine packages to latest version    
+    package:
       name: "*"
       state: latest
     when: ansible_facts['os_family'] != "Debian"
