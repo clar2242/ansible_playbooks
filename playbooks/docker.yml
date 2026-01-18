@@ -9,6 +9,7 @@
 - import_playbook: docker/docker0_reaparr.yml
 - import_playbook: docker/docker0_seerr.yml
 - import_playbook: docker/docker0_sonarr.yml
+- import_playbook: docker/docker0_stash.yml
 - import_playbook: docker/docker0_tautulli.yml
 - import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/docker1_calibreweb.yml
@@ -52,11 +53,9 @@
 - import_playbook: docker/vps2_coredns.yml
 - import_playbook: docker/vps2_uptimekuma.yml
 - import_playbook: docker/webapps_caddy_proxy.yml
-- import_playbook: docker/webapps_compose_updates.yml
 - import_playbook: docker/webapps_mariadb.yml
 - import_playbook: docker/webapps_nextcloud.yml
 - import_playbook: docker/webapps_phpmyadmin.yml
-- import_playbook: docker/webapps_stash.yml
 - import_playbook: docker/webdev_caddy_proxy.yml
 - import_playbook: docker/webdev_mariadb.yml
 - import_playbook: docker/webdev_phpmyadmin.yml
