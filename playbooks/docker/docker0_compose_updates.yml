@@ -1,6 +1,6 @@
 ---
-- name: update docker compose stacks on plex
-  hosts: plex.srv.3fr.uk
+- name: update docker compose stacks on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   vars: 
     stack_name:
