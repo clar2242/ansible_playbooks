@@ -14,7 +14,7 @@
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
         env:
-          DOZZLE_REMOTE_AGENT: "webapps.srv.3fr.uk:7007,public.srv.3fr.uk:7007,auth.srv.3fr.uk:7007,webdev.srv.3fr.uk:7007,plex.srv.3fr.uk:7007,docker1.srv.3fr.uk:7007,docker2.srv.3fr.uk:7007,nas1.srv.3fr.uk:7007,dns.srv.3fr.uk:7007,vps1.wg.3fr.uk:7007,vps2.wg.3fr.uk:7007"
+          DOZZLE_REMOTE_AGENT: "mini0.srv.3fr.uk:7007,public.srv.3fr.uk:7007,auth.srv.3fr.uk:7007,webdev.srv.3fr.uk:7007,docker1.srv.3fr.uk:7007,docker0.srv.3fr.uk:7007,nas1.srv.3fr.uk:7007,dns.srv.3fr.uk:7007,vps1.wg.3fr.uk:7007,vps2.wg.3fr.uk:7007"
         labels:
           caddy: dozzle.home.thunderweb.uk
           caddy.import_0: httpauth
