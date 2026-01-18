@@ -19,8 +19,6 @@ mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
-docker2.srv.3fr.uk
-plex.srv.3fr.uk
 monitoring.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
@@ -39,10 +37,8 @@ mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
-docker2.srv.3fr.uk
 vps1.wg.3fr.uk
 vps2.wg.3fr.uk
-plex.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
 monitoring.srv.3fr.uk
@@ -55,9 +51,7 @@ docker0.srv.3fr.uk
 mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 docker1.srv.3fr.uk
-docker2.srv.3fr.uk
 nas1.srv.3fr.uk
-plex.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
 monitoring.srv.3fr.uk
@@ -71,8 +65,6 @@ mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 docker1.srv.3fr.uk
-docker2.srv.3fr.uk
-plex.srv.3fr.uk
 webdev.srv.3fr.uk
 webapps.srv.3fr.uk
 monitoring.srv.3fr.uk
