@@ -1,6 +1,6 @@
 ---
-- name: install stash on webapps
-  hosts: webapps.srv.3fr.uk
+- name: install stash on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:

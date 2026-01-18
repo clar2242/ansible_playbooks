@@ -5,6 +5,7 @@
   vars: 
     stack_name:
       - frigate
+      - immich
 
   tasks:
     - name: pull latest containers on mini0
