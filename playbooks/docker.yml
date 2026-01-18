@@ -23,8 +23,6 @@
 - import_playbook: docker/docker0_stash.yml
 - import_playbook: docker/docker0_tautulli.yml
 - import_playbook: docker/docker0_tools.yml
-- import_playbook: docker/docker1_caddy_proxy.yml
-- import_playbook: docker/docker1_compose_updates.yml
 - import_playbook: docker/internal_dozzle_agent.yml
 - import_playbook: docker/mgmt_caddy.yml
 - import_playbook: docker/mgmt_compose_updates.yml
