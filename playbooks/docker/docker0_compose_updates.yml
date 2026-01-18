@@ -5,6 +5,8 @@
   vars: 
     stack_name:
       - audiobookshelf
+      - paperless
+      - ipam
 
   tasks:
     - name: pull latest containers on docker2
