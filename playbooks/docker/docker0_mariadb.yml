@@ -1,6 +1,6 @@
 ---
-- name: install mariadb on webapps
-  hosts: webapps.srv.3fr.uk
+- name: install mariadb on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
