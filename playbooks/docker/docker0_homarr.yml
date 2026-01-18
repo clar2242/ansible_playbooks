@@ -11,8 +11,6 @@
         restart_policy: always
         networks:
           - name: web
-        dns_servers:
-          - 192.168.250.10
         env:
           AUTH_PROVIDERS: oidc
           AUTH_OIDC_ISSUER: "https://auth.thunderweb.uk"
