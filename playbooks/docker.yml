@@ -3,6 +3,7 @@
 - import_playbook: docker/auth_compose_updates.yml
 - import_playbook: docker/dns_caddy_proxy.yml
 - import_playbook: docker/docker0_caddy.yml
+- import_playbook: docker/docker0_compose_updates.yml
 - import_playbook: docker/docker0_prowlarr.yml
 - import_playbook: docker/docker0_radarr.yml
 - import_playbook: docker/docker0_reaparr.yml
@@ -40,7 +41,6 @@
 - import_playbook: docker/nas1_unpackerr.yml
 - import_playbook: docker/nas1_zigbee2mqtt.yml
 - import_playbook: docker/nodes_portainer_agent.yml
-- import_playbook: docker/plex_compose_updates.yml
 - import_playbook: docker/public_caddy_proxy.yml
 - import_playbook: docker/public_cloudflared.yml
 - import_playbook: docker/public_linkstack.yml
