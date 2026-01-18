@@ -1,4 +1,4 @@
-- hosts: mini0.srv.3fr.uk
+- hosts: docker0.srv.3fr.uk
   vars:
     docker_users:
       - scott
