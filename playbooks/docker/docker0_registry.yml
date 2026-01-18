@@ -42,8 +42,7 @@
           NGINX_PROXY_PASS_URL: http://registry:5000
         labels:
           caddy: registry.srv.3fr.uk
-          caddy.import_0: httpauthold
-          caddy.import_1: accesslogs
+          caddy.import_0: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
     - name: Create registry.srv.3fr.uk CNAME
       delegate_to: localhost
