@@ -1,6 +1,6 @@
 ---
 - name: Install Wazuh Agent
-  hosts: wazuhagents, swarm, cctv.srv.3fr.uk
+  hosts: wazuhagents, swarm, mini0.srv.3fr.uk
   become: true
 
   tasks:

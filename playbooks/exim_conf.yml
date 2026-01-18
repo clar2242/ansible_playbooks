@@ -1,6 +1,6 @@
 ---
 - name: Deploy eximconf
-  hosts: eximsmarthost , swarm
+  hosts: eximsmarthost
   gather_facts: true
   become: true
   tasks:
