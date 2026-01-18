@@ -1,6 +1,6 @@
 ---
-- name: install sonarr on plex.srv.3fr.uk
-  hosts: plex.srv.3fr.uk
+- name: install sonarr on docker0.srv.3fr.uk
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:

@@ -1,13 +1,13 @@
 ---
-- name: install prowlarr on plex.srv.3fr.uk
-  hosts: plex.srv.3fr.uk
+- name: install tautulli on docker0.srv.3fr.uk
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: prowlarr
-        image: lscr.io/linuxserver/prowlarr:latest
+        name: tautulli
+        image: lscr.io/linuxserver/tautulli:latest
         pull: true
-        hostname: prowlarr
+        hostname: tautulli
         restart_policy: always
         networks:
           - name: web
@@ -16,12 +16,12 @@
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
-          - prowlarr_data:/config
+          - tautulli_data:/config
         labels:
-          caddy: prowlarr.home.thunderweb.uk
+          caddy: tautulli.home.thunderweb.uk
           caddy.import_0: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 9696 }}"
-    - name: Create prowlarr.home.thunderweb.uk CNAME
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8181 }}"
+    - name: Create tautulli.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -29,7 +29,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: prowlarr.home.thunderweb.uk
+          domain: tautulli.home.thunderweb.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true

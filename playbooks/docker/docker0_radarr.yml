@@ -1,13 +1,13 @@
 ---
-- name: install tautulli on plex.srv.3fr.uk
-  hosts: plex.srv.3fr.uk
+- name: install radarr on docker0.srv.3fr.uk
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: tautulli
-        image: lscr.io/linuxserver/tautulli:latest
+        name: radarr
+        image: lscr.io/linuxserver/radarr:latest
         pull: true
-        hostname: tautulli
+        hostname: radarr
         restart_policy: always
         networks:
           - name: web
@@ -16,12 +16,14 @@
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
-          - tautulli_data:/config
+          - radarr_data:/config
+          - /data/media:/data/media
+          - /data/download/:/data/download
         labels:
-          caddy: tautulli.home.thunderweb.uk
+          caddy: radarr.home.thunderweb.uk
           caddy.import_0: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 8181 }}"
-    - name: Create tautulli.home.thunderweb.uk CNAME
+          caddy.reverse_proxy: !unsafe "{{ upstreams 7878 }}"
+    - name: Create radarr.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -29,7 +31,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: tautulli.home.thunderweb.uk
+          domain: radarr.home.thunderweb.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true

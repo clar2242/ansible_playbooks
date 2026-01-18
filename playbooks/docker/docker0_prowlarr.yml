@@ -1,13 +1,13 @@
 ---
-- name: install seerr on plex.srv.3fr.uk
-  hosts: plex.srv.3fr.uk
+- name: install prowlarr on docker0.srv.3fr.uk
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: seerr
-        image: ghcr.io/fallenbagel/jellyseerr:latest
+        name: prowlarr
+        image: lscr.io/linuxserver/prowlarr:latest
         pull: true
-        hostname: seerr
+        hostname: prowlarr
         restart_policy: always
         networks:
           - name: web
@@ -16,14 +16,12 @@
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
-          - seerr_data:/app/config
+          - prowlarr_data:/config
         labels:
-          caddy_1: seerr.home.thunderweb.uk
-          caddy_1.import: accesslogs
-          caddy_1.reverse_proxy: !unsafe "{{ upstreams 5055 }}"
-          caddy_2: overseerr.home.thunderweb.uk
-          caddy_2.redir: https://seerr.home.thunderweb.uk{uri}
-    - name: Create seerr.home.thunderweb.uk CNAME
+          caddy: prowlarr.home.thunderweb.uk
+          caddy.import_0: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 9696 }}"
+    - name: Create prowlarr.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -31,7 +29,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: seerr.home.thunderweb.uk
+          domain: prowlarr.home.thunderweb.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true
