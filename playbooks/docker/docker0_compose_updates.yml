@@ -10,7 +10,7 @@
       - domainlocker
 
   tasks:
-    - name: pull latest containers on docker2
+    - name: pull latest containers on docker0
       ansible.builtin.command: 
         cmd: docker compose pull
         chdir: /home/scott/docker/{{ item }}
