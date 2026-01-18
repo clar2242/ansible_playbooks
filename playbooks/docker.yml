@@ -1,7 +1,6 @@
 ---
 - import_playbook: docker/auth_caddy_proxy.yml
 - import_playbook: docker/auth_compose_updates.yml
-- import_playbook: docker/cctv_caddy_proxy.yml
 - import_playbook: docker/dns_caddy_proxy.yml
 - import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/docker1_calibreweb.yml
@@ -23,6 +22,9 @@
 - import_playbook: docker/mgmt_dozzle.yml
 - import_playbook: docker/mgmt_portainer.yml
 - import_playbook: docker/mgmt_sshwifty.yml
+- import_playbook: docker/mini0_caddy_proxy.yml
+- import_playbook: docker/mini0_compose_updates.yml
+- import_playbook: docker/mini0_jellyfin.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/monitoring_munin.yml
 - import_playbook: docker/nas1_caddy.yml
@@ -33,7 +35,6 @@
 - import_playbook: docker/nodes_portainer_agent.yml
 - import_playbook: docker/plex_caddy.yml
 - import_playbook: docker/plex_compose_updates.yml
-- import_playbook: docker/plex_jellyfin.yml
 - import_playbook: docker/plex_prowlarr.yml
 - import_playbook: docker/plex_radarr.yml
 - import_playbook: docker/plex_reaparr.yml

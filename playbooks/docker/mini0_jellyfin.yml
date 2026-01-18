@@ -1,6 +1,6 @@
 ---
-- name: install jellyfin on plex
-  hosts: plex.srv.3fr.uk
+- name: install jellyfin on mini0
+  hosts: mini0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
