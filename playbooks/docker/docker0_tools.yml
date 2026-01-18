@@ -1,29 +1,22 @@
 ---
-- name: install openbooks on docker1
-  hosts: docker1.srv.3fr.uk
+- name: install IT Tools on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: openbooks
-        image: evanbuss/openbooks:latest
+        name: ittools
+        image: ghcr.io/corentinth/it-tools:latest
         pull: true
-        hostname: openbooks
+        hostname: ittools
         restart_policy: always
         networks:
           - name: web
-        env:
-          PUID: "1000"
-          PGID: "1000"
-          TZ: "Europe/London"
-        volumes:
-          - openbooks_data:/books
-        command: "--persist --name {{ openbooks_user }} --log --debug --tls=false -s irc.irchighway.net:6660"
         labels:
-          caddy: ob.home.thunderweb.uk
+          caddy: tools.home.thunderweb.uk
           caddy.import_0: httpauth
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
-    - name: Create ob.home.thunderweb.uk CNAME
+    - name: Create tools.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -31,7 +24,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: ob.home.thunderweb.uk
+          domain: tools.home.thunderweb.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true

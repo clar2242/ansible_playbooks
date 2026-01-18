@@ -1,6 +1,6 @@
 ---
-- name: install changedetection.io on docker1
-  hosts: docker1.srv.3fr.uk
+- name: install changedetection.io on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:

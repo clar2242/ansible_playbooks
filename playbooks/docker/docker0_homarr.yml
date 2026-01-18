@@ -1,6 +1,6 @@
 ---
-- name: install homarr on docker1
-  hosts: docker1.srv.3fr.uk
+- name: install homarr on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -12,7 +12,7 @@
         networks:
           - name: web
         dns_servers:
-          - 192.168.250.11
+          - 192.168.250.10
         env:
           AUTH_PROVIDERS: oidc
           AUTH_OIDC_ISSUER: "https://auth.thunderweb.uk"

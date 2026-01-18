@@ -1,6 +1,6 @@
 ---
-- name: install docker registry on docker1
-  hosts: docker1.srv.3fr.uk
+- name: install docker registry on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -10,7 +10,7 @@
         hostname: registry
         restart_policy: always
         networks:
-          - name: infra
+          - name: web
         volumes:
           - registry_repo:/var/lib/registry
         env:
@@ -27,7 +27,7 @@
         hostname: registry-ui
         restart_policy: always
         networks:
-          - name: infra
+          - name: web
         env:
           SINGLE_REGISTRY: "true"
           REGISTRY_TITLE: "Docker Registry UI"
