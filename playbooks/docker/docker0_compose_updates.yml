@@ -8,6 +8,8 @@
       - paperless
       - ipam
       - domainlocker
+      - romm
+      - qui
 
   tasks:
     - name: pull latest containers on docker0
