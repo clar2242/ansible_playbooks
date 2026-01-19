@@ -1,6 +1,6 @@
 ---
-- name: install wordpress on webdev.srv.3fr.uk for dev.scottclark.uk
-  hosts: webdev.srv.3fr.uk
+- name: install wordpress on docker0.srv.3fr.uk for dev.scottclark.uk
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
