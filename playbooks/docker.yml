@@ -6,7 +6,6 @@
 - import_playbook: docker/docker0_calibreweb.yml
 - import_playbook: docker/docker0_changedetection.yml
 - import_playbook: docker/docker0_compose_updates.yml
-- import_playbook: docker/docker0_coredns.yml
 - import_playbook: docker/docker0_gitea.yml
 - import_playbook: docker/docker0_homarr.yml
 - import_playbook: docker/docker0_mariadb.yml
