@@ -6,6 +6,7 @@
 - import_playbook: docker/docker0_calibreweb.yml
 - import_playbook: docker/docker0_changedetection.yml
 - import_playbook: docker/docker0_compose_updates.yml
+- import_playbook: docker/docker0_coredns.yml
 - import_playbook: docker/docker0_gitea.yml
 - import_playbook: docker/docker0_homarr.yml
 - import_playbook: docker/docker0_mariadb.yml
@@ -23,6 +24,8 @@
 - import_playbook: docker/docker0_stash.yml
 - import_playbook: docker/docker0_tautulli.yml
 - import_playbook: docker/docker0_tools.yml
+- import_playbook: docker/docker0_wordpress.yml
+- import_playbook: docker/docker1_caddy_proxy.yml
 - import_playbook: docker/internal_dozzle_agent.yml
 - import_playbook: docker/mgmt_caddy.yml
 - import_playbook: docker/mgmt_compose_updates.yml
@@ -55,5 +58,4 @@
 - import_playbook: docker/webdev_caddy_proxy.yml
 - import_playbook: docker/webdev_mariadb.yml
 - import_playbook: docker/webdev_phpmyadmin.yml
-- import_playbook: docker/webdev_wordpress.yml
 - import_playbook: docker_prune.yml
