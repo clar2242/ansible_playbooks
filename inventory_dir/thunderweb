@@ -8,7 +8,6 @@ tfr
 tfrdebian
 externalboxes
 proxmox
-alma
 
 [tfr:children]
 tfrdebian
@@ -72,9 +71,6 @@ proxmox1.srv.3fr.uk
 proxmox2.srv.3fr.uk
 proxmox3.srv.3fr.uk
 mailgateway1.srv.3fr.uk
-
-[alma]
-alma10.srv.3fr.uk
 
 [proxmox:vars]
 ansible_user=root
