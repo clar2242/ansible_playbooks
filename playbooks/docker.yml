@@ -24,10 +24,7 @@
 - import_playbook: docker/docker0_tautulli.yml
 - import_playbook: docker/docker0_tools.yml
 - import_playbook: docker/docker0_wordpress.yml
-- import_playbook: docker/internal_dozzle_agent.yml
 - import_playbook: docker/mgmt_caddy.yml
-- import_playbook: docker/mgmt_compose_updates.yml
-- import_playbook: docker/mgmt_dozzle.yml
 - import_playbook: docker/mgmt_portainer.yml
 - import_playbook: docker/mgmt_sshwifty.yml
 - import_playbook: docker/mini0_caddy_proxy.yml
@@ -46,7 +43,6 @@
 - import_playbook: docker/public_linkstack.yml
 - import_playbook: docker/public_mariadb.yml
 - import_playbook: docker/public_shlink.yml
-- import_playbook: docker/vps_dozzle_agent.yml
 - import_playbook: docker/vps_portainer_agent.yml
 - import_playbook: docker/vps1_caddy_proxy.yml
 - import_playbook: docker/vps1_compose_updates.yml
