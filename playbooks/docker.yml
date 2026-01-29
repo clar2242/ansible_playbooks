@@ -41,12 +41,12 @@
 - import_playbook: docker/nodes_portainer_agent.yml
 - import_playbook: docker/public_caddy_proxy.yml
 - import_playbook: docker/public_cloudflared.yml
-- import_playbook: docker/public_linkstack.yml
-- import_playbook: docker/public_mariadb.yml
-- import_playbook: docker/public_shlink.yml
 - import_playbook: docker/vps_portainer_agent.yml
 - import_playbook: docker/vps1_caddy_proxy.yml
 - import_playbook: docker/vps1_compose_updates.yml
 - import_playbook: docker/vps2_caddy_proxy.yml
 - import_playbook: docker/vps2_coredns.yml
+- import_playbook: docker/vps2_linkstack.yml
+- import_playbook: docker/vps2_mariadb.yml
+- import_playbook: docker/vps2_shlink.yml
 - import_playbook: docker_prune.yml

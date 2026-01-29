@@ -1,6 +1,6 @@
 ---
-- name: install linkstack on public
-  hosts: public.srv.3fr.uk
+- name: install linkstack on vps2
+  hosts: vps2.wg.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
