@@ -20,6 +20,7 @@
           CF_API_TOKEN:  "{{ cloudflare_api }}"
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
+          - caddy_logs:/var/log/caddy
           - caddy_config:/config
           - caddy_data:/data
           - roundcube_www:/var/www/html
