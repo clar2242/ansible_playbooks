@@ -32,6 +32,7 @@
 - import_playbook: docker/mini0_jellyfin.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/monitoring_munin.yml
+- import_playbook: docker/monitoring_uptimekuma.yml
 - import_playbook: docker/nas1_caddy.yml
 - import_playbook: docker/nas1_duplicati.yml
 - import_playbook: docker/nas1_icloudpd.yml
@@ -48,5 +49,4 @@
 - import_playbook: docker/vps1_compose_updates.yml
 - import_playbook: docker/vps2_caddy_proxy.yml
 - import_playbook: docker/vps2_coredns.yml
-- import_playbook: docker/vps2_uptimekuma.yml
 - import_playbook: docker_prune.yml
