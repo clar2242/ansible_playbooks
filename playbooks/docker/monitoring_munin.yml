@@ -21,6 +21,7 @@
           - munin_log:/var/log/munin
         labels:
           caddy: munin.home.thunderweb.uk
+          caddy.import: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
           caddy.redir: / https://munin.home.thunderweb.uk/munin/
     - name: Create munin.home.thunderweb.uk CNAME
