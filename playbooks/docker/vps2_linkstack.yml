@@ -9,6 +9,8 @@
         pull: true
         hostname: linkstack
         restart_policy: always
+        memory: 512M
+        memory_swap: 512M
         networks:
           - name: web
         volumes:
@@ -24,6 +26,7 @@
         labels:
           caddy: comeandclick.me.uk www.comeandclick.me.uk
           caddy.import_0: accesslogs
+          caddy.import_1: blocklist
           caddy.reverse_proxy: !unsafe "{{ upstreams 443 }}"
           caddy.reverse_proxy.transport: "http"
           caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
