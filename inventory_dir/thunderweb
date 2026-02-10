@@ -22,7 +22,6 @@ auth.srv.3fr.uk
 public.srv.3fr.uk
 wazuh.srv.3fr.uk
 mini0.srv.3fr.uk
-playground.srv.3fr.uk
 
 [externalboxes]
 vps1.wg.3fr.uk
@@ -39,7 +38,6 @@ monitoring.srv.3fr.uk
 auth.srv.3fr.uk
 public.srv.3fr.uk
 mini0.srv.3fr.uk
-playground.srv.3fr.uk
 
 [dockerinternal]
 docker0.srv.3fr.uk
@@ -50,7 +48,6 @@ monitoring.srv.3fr.uk
 auth.srv.3fr.uk
 public.srv.3fr.uk
 mini0.srv.3fr.uk
-playground.srv.3fr.uk
 
 [eximsmarthost]
 docker0.srv.3fr.uk
@@ -62,7 +59,6 @@ monitoring.srv.3fr.uk
 auth.srv.3fr.uk
 public.srv.3fr.uk
 wazuh.srv.3fr.uk
-playground.srv.3fr.uk
 
 [wazuhagents:children]
 dockerinternal
