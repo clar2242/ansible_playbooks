@@ -12,11 +12,10 @@
         networks:
           - name: web
         env:
-          PUID: "1000"
-          PGID: "1000"
           TZ: "Europe/London"
         volumes:
           - seerr_data:/app/config
+        user: 1000:1000
         labels:
           caddy_1: seerr.home.thunderweb.uk
           caddy_1.import: accesslogs
