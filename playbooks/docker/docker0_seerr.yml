@@ -5,8 +5,9 @@
   tasks:
     - community.docker.docker_container:
         name: seerr
-        image: ghcr.io/fallenbagel/jellyseerr:latest
+        image: ghcr.io/seerr-team/seerr:latest
         pull: true
+        init: true
         hostname: seerr
         restart_policy: always
         networks:
@@ -15,13 +16,18 @@
           TZ: "Europe/London"
         volumes:
           - seerr_data:/app/config
-        user: 1000:1000
         labels:
           caddy_1: seerr.home.thunderweb.uk
           caddy_1.import: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 5055 }}"
           caddy_2: overseerr.home.thunderweb.uk
           caddy_2.redir: https://seerr.home.thunderweb.uk{uri}
+        healthcheck:
+          test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/status || exit 1
+          start_period: 20s
+          timeout: 3s
+          interval: 15s
+          retries: 3
     - name: Create seerr.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
