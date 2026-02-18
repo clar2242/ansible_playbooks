@@ -28,6 +28,7 @@
           caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
           caddy.rewrite: '/user/login /user/oauth2/authelia'
         memory: 1G
+        memory_swap: 1G
     - name: Create git.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
