@@ -31,6 +31,7 @@
           caddy.import_0: httpauth
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 7575 }}"
+        memory: 1G
     - name: Create start.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
