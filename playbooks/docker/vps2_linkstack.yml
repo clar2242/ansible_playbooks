@@ -28,5 +28,6 @@
           caddy.import_0: accesslogs
           caddy.import_1: blocklist
           caddy.reverse_proxy: !unsafe "{{ upstreams 443 }}"
+          caddy.reverse_proxy.header_up:  "Host {host}"
           caddy.reverse_proxy.transport: "http"
           caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
