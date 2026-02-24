@@ -24,7 +24,9 @@
 - import_playbook: docker/docker0_tautulli.yml
 - import_playbook: docker/docker0_tools.yml
 - import_playbook: docker/docker0_wordpress.yml
+- import_playbook: docker/mgmt_3fr_compose_updates.yml
 - import_playbook: docker/mgmt_caddy.yml
+- import_playbook: docker/mgmt_home_compose_updates.yml
 - import_playbook: docker/mgmt_portainer.yml
 - import_playbook: docker/mgmt_sshwifty.yml
 - import_playbook: docker/mini0_caddy_proxy.yml

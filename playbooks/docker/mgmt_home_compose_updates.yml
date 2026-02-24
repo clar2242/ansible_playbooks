@@ -1,10 +1,11 @@
 ---
-- name: update docker compose stacks on auth
-  hosts: auth.srv.3fr.uk
+- name: update docker compose stacks on mgmt (home.thunderweb.uk)
+  hosts: mgmt.srv.3fr.uk
   gather_facts: false
   vars: 
     stack_name:
-      - auth
+      - pulse
+      - dockhand
 
   tasks:
     - name: pull latest containers on auth
