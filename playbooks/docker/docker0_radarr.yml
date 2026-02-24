@@ -18,6 +18,7 @@
         volumes:
           - radarr_data:/config
           - /data/media:/data/media
+          - /data2/media:/data2/media
           - /data/download/:/data/download
         labels:
           caddy: radarr.home.thunderweb.uk
