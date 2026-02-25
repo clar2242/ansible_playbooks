@@ -19,7 +19,6 @@
         volumes:
           - jellyfin_config:/config
           - /data:/data
-          - /data2:/data2
         devices:
           - /dev/dri:/dev/dri
         labels:
