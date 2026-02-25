@@ -29,6 +29,7 @@
 - import_playbook: docker/mgmt_home_compose_updates.yml
 - import_playbook: docker/mgmt_portainer.yml
 - import_playbook: docker/mgmt_sshwifty.yml
+- import_playbook: docker/mgmt_vaultwarden.yml
 - import_playbook: docker/mini0_caddy_proxy.yml
 - import_playbook: docker/mini0_compose_updates.yml
 - import_playbook: docker/mini0_jellyfin.yml
