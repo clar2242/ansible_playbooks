@@ -7,7 +7,7 @@
       - repo
 
   tasks:
-    - name: pull latest containers on auth
+    - name: pull latest containers on mgmt
       ansible.builtin.command: 
         cmd: docker compose pull
         chdir: /home/scott/docker/{{ item }}
