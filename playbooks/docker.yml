@@ -2,6 +2,7 @@
 - import_playbook: docker/auth_caddy_proxy.yml
 - import_playbook: docker/auth_compose_updates.yml
 - import_playbook: docker/dns_caddy_proxy.yml
+- import_playbook: docker/dns_mariadb.yml
 - import_playbook: docker/docker0_caddy.yml
 - import_playbook: docker/docker0_calibreweb.yml
 - import_playbook: docker/docker0_changedetection.yml
