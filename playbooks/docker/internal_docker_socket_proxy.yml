@@ -1,0 +1,15 @@
+---
+- name: install docker socket proxy on dockerinternal hosts
+  hosts: dockerinternal
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: docker_proxy
+        image: ghcr.io/tecnativa/docker-socket-proxy:latest
+        pull: true
+        restart_policy: always
+        volumes:
+          - /var/run/docker.sock:/var/run/docker.sock:ro
+        ports:
+          - 2375:2375
+
