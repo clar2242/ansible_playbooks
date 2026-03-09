@@ -29,9 +29,9 @@
           caddy.handle.reverse_proxy.header_up: 'Authorization "Basic: {{ calibre_hash }}"'
           caddy.reverse_proxy: !unsafe "{{ upstreams 8083 }}"
           homepage.group: Media
-          homepage.name: calibre-web
+          homepage.name: Calibre
           homepage.icon: "calibre-web.png"
-          homepage.url: "https://calibre.home.thunderweb.uk"
+          homepage.href: "https://calibre.home.thunderweb.uk"
           homepage.widget.type: calibreweb
           homepage.widget.url: "https://calibre.home.thunderweb.uk"
           homepage.username: "scott"
