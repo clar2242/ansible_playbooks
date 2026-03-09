@@ -15,6 +15,7 @@
           PUID: "1000"
           PGID: "1000"
           PLAYWRIGHT_DRIVER_URL: "ws://browserless:3000"
+          ALLOW_IANA_RESTRICTED_ADDRESSES: "true"
           LC_ALL: en_US.UTF-8
         volumes:
           - changedetection_data:/config
