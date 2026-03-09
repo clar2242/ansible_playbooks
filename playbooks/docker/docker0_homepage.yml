@@ -12,18 +12,18 @@
         networks:
           - name: web
         env:
-          HOMEPAGE_ALLOWED_HOSTS: "start.home.thunderweb.uk"
+          HOMEPAGE_ALLOWED_HOSTS: "homepage.svc.3fr.uk"
           PUID: "1000"
           PGID: "1000"
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock:ro
           - /home/scott/config/homepage:/app/config
         labels:
-          caddy: start.home.thunderweb.uk
+          caddy: homepage.svc.3fr.uk
           caddy.import_0: httpauth
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
-    - name: Create start.home.thunderweb.uk CNAME
+    - name: Create homepage.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -31,7 +31,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: start.home.thunderweb.uk
+          domain: homepage.svc.3fr.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true

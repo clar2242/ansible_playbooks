@@ -8,6 +8,7 @@
 - import_playbook: docker/docker0_changedetection.yml
 - import_playbook: docker/docker0_compose_updates.yml
 - import_playbook: docker/docker0_gitea.yml
+- import_playbook: docker/docker0_homarr.yml
 - import_playbook: docker/docker0_homepage.yml
 - import_playbook: docker/docker0_mariadb.yml
 - import_playbook: docker/docker0_nextcloud.yml
