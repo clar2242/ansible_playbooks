@@ -1,0 +1,35 @@
+---
+- name: install glances
+  hosts: dockerinternal
+  gather_facts: true
+  become: true
+  tasks:
+  - name: ensure python3-venv package is installed
+    ansible.builtin.apt:
+      name: python3-venv
+  - name: check if virtualenv exists
+    ansible.builtin.stat:
+      path: /opt/glances
+    register: glances_venv
+  - name: create virtualenv
+    ansible.builtin.command:
+      cmd: python3 -m venv /opt/glances
+    when: not glances_venv.stat.exists
+  - name: install glances in virtualenv
+    ansible.builtin.command:
+      cmd: /opt/glances/bin/pip install 'glances[web]'
+  - name: create systemd service file
+    ansible.builtin.template:
+      src: ../files/glances.service.j2
+      dest: /etc/systemd/system/glances.service
+      owner: root
+      group: root
+      mode: '0644'
+  - name: reload systemd
+    ansible.builtin.systemd:
+      daemon_reload: true
+  - name: enable and start glances service
+    ansible.builtin.systemd:
+      name: glances
+      state: started
+      enabled: true

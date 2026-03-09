@@ -1,0 +1,11 @@
+[Unit]
+Description=Glances
+After=network.target
+
+[Service]
+ExecStart=/opt/glances/bin/glances -w
+Restart=always
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
