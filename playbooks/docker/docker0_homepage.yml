@@ -20,7 +20,7 @@
           - /home/scott/config/homepage:/app/config
         labels:
           caddy: homepage.svc.3fr.uk
-          caddy.import_0: httpauth
+          caddy.import_0: httpauth_3fr
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
     - name: Create homepage.svc.3fr.uk CNAME
