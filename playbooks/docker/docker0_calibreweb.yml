@@ -34,6 +34,8 @@
           homepage.url: "https://calibre.home.thunderweb.uk"
           homepage.widget.type: calibreweb
           homepage.widget.url: "https://calibre.home.thunderweb.uk"
+          homepage.username: "scott"
+          homepage.password: "{{ homepage_calibre_web_password }}"
     - name: Create calibre.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
