@@ -68,7 +68,6 @@ externalboxes
 [proxmox]
 proxmox1.srv.3fr.uk
 proxmox2.srv.3fr.uk
-proxmox3.srv.3fr.uk
 mailgateway1.srv.3fr.uk
 
 [proxmox:vars]
