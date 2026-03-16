@@ -5,6 +5,7 @@
   vars: 
     stack_name:
       - hlh
+      - toolkit
 
   tasks:
     - name: pull latest containers on mgmt
