@@ -18,6 +18,8 @@
           - /run/udev:/run/udev:ro
         devices:
           - "/dev/ttyUSB0:/dev/ttyUSB0"
+        networks:
+          - name: web
         labels:
           caddy: zigbee.home.thunderweb.uk
           caddy.import_0: httpauth

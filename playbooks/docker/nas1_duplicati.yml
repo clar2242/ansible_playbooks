@@ -22,6 +22,8 @@
           - /data/backups/nextcloud:/data/backups/nextcloud
           - /data/backups/applications:/data/backups/applications
           - /data/shared:/data/shared
+        networks:
+          - name: web
         labels:
           caddy: duplicati.home.thunderweb.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 8200 }}"
