@@ -1,4 +1,4 @@
-- hosts: mini1.srv.3fr.uk
+- hosts: ollama.srv.3fr.uk
   vars:
     docker_users:
       - scott
