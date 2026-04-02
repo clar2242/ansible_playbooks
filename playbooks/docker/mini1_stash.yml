@@ -5,7 +5,11 @@
   tasks:
     - community.docker.docker_container:
         name: stash
+<<<<<<< HEAD
         image: ghcr.io/feederbox826/stash-s6:hwaccel
+=======
+        image: ghcr.io/hotio/stash
+>>>>>>> parent of fc8802a (Update mini1_stash.yml)
         pull: true
         hostname: stash
         restart_policy: always
@@ -19,8 +23,6 @@
         volumes:
           - /data/shared/_Sort:/data/shared/_Sort
           - /data/shared/_Sort/stash_data:/config
-        devices:
-          - /dev/dri:/dev/dri
         labels:
           caddy: stash.home.thunderweb.uk
           caddy.import_0: httpauth
