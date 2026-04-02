@@ -13,7 +13,6 @@ proxmox
 tfrdebian
 
 [tfrdebian]
-docker0.srv.3fr.uk
 mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
@@ -30,7 +29,6 @@ vps1.wg.3fr.uk
 vps2.wg.3fr.uk
 
 [docker]
-docker0.srv.3fr.uk
 mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
@@ -44,7 +42,6 @@ mini1.srv.3fr.uk
 nomad.srv.3fr.uk
 
 [dockerinternal]
-docker0.srv.3fr.uk
 mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
@@ -56,7 +53,6 @@ mini1.srv.3fr.uk
 nomad.srv.3fr.uk
 
 [eximsmarthost]
-docker0.srv.3fr.uk
 mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
