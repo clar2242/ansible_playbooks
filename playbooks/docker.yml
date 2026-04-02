@@ -37,6 +37,7 @@
 - import_playbook: docker/mini0_caddy_proxy.yml
 - import_playbook: docker/mini0_compose_updates.yml
 - import_playbook: docker/mini0_jellyfin.yml
+- import_playbook: docker/mini1_caddy.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/monitoring_munin.yml
 - import_playbook: docker/monitoring_uptimekuma.yml
