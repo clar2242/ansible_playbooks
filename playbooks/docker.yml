@@ -3,9 +3,6 @@
 - import_playbook: docker/auth_compose_updates.yml
 - import_playbook: docker/dns_caddy_proxy.yml
 - import_playbook: docker/dns_mariadb.yml
-- import_playbook: docker/docker0_caddy.yml
-- import_playbook: docker/docker0_compose_updates_home.yml
-- import_playbook: docker/docker0_compose_updates_svc.yml
 - import_playbook: docker/internal_docker_socket_proxy.yml
 - import_playbook: docker/mgmt_caddy.yml
 - import_playbook: docker/mgmt_home_compose_updates.yml
@@ -20,6 +17,8 @@
 - import_playbook: docker/mini1_caddy.yml
 - import_playbook: docker/mini1_calibreweb.yml
 - import_playbook: docker/mini1_changedetection.yml
+- import_playbook: docker/mini1_compose_updates_home.yml
+- import_playbook: docker/mini1_compose_updates_svc.yml
 - import_playbook: docker/mini1_gitea.yml
 - import_playbook: docker/mini1_homarr.yml
 - import_playbook: docker/mini1_homepage.yml
