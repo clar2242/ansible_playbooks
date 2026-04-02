@@ -5,7 +5,7 @@
   tasks:
     - community.docker.docker_container:
         name: stash
-        image: ghcr.io/hotio/stash
+        image: nerethos/stash:latest
         pull: true
         hostname: stash
         restart_policy: always
@@ -19,6 +19,8 @@
         volumes:
           - /data/shared/_Sort:/data/shared/_Sort
           - /data/shared/_Sort/stash_data:/config
+        devices:
+          - /dev/dri:/dev/dri
         labels:
           caddy: stash.home.thunderweb.uk
           caddy.import_0: httpauth
