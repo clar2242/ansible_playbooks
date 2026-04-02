@@ -23,7 +23,6 @@
           - "2222:22"
         labels:
           caddy: git.home.thunderweb.uk
-          caddy.import_0: httpauth
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
           caddy.rewrite: '/user/login /user/oauth2/authelia'
