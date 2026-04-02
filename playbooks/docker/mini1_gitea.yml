@@ -1,29 +1,35 @@
 ---
-- name: install homepage on docker0
-  hosts: docker0.srv.3fr.uk
+- name: install gitea on mini1.srv.3fr.uk
+  hosts: mini1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: homepage
-        image: ghcr.io/gethomepage/homepage:latest
+        name: gitea
+        image: gitea/gitea:latest
         pull: true
-        hostname: homepage
+        hostname: gitea
         restart_policy: always
         networks:
           - name: web
         env:
-          HOMEPAGE_ALLOWED_HOSTS: "homepage.svc.3fr.uk"
-          PUID: "1000"
-          PGID: "1000"
+          USER_UID: "1000"
+          USER_GID: "1000"
+          TZ: "Europe/London"
         volumes:
-          - /var/run/docker.sock:/var/run/docker.sock:ro
-          - /home/scott/config/homepage:/app/config
+          - gitea_data:/data
+          - /etc/timezone:/etc/timezone:ro
+          - /etc/localtime:/etc/localtime:ro
+        ports:
+          - "2222:22"
         labels:
-          caddy: homepage.svc.3fr.uk
-          caddy.import_0: httpauth_3fr
+          caddy: git.home.thunderweb.uk
+          caddy.import_0: httpauth
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
-    - name: Create homepage.svc.3fr.uk CNAME
+          caddy.rewrite: '/user/login /user/oauth2/authelia'
+        memory: 1G
+        memory_swap: 1G
+    - name: Create git.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -31,7 +37,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: homepage.svc.3fr.uk
+          domain: git.home.thunderweb.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"
