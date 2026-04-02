@@ -5,11 +5,7 @@
   tasks:
     - community.docker.docker_container:
         name: stash
-<<<<<<< HEAD
-        image: ghcr.io/feederbox826/stash-s6:hwaccel
-=======
         image: ghcr.io/hotio/stash
->>>>>>> parent of fc8802a (Update mini1_stash.yml)
         pull: true
         hostname: stash
         restart_policy: always
