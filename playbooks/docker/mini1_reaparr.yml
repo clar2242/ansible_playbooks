@@ -1,13 +1,13 @@
 ---
-- name: install stash on docker0
-  hosts: docker0.srv.3fr.uk
+- name: install reaparr on mini1.srv.3fr.uk
+  hosts: mini1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: stash
-        image: ghcr.io/hotio/stash
+        name: reaparr
+        image: reaparr/reaparr:latest
         pull: true
-        hostname: stash
+        hostname: reaparr
         restart_policy: always
         networks:
           - name: web
@@ -15,16 +15,16 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
-          UMASK: "002"
         volumes:
-          - /data/shared/_Sort:/data/shared/_Sort
-          - /data/shared/_Sort/stash_data:/config
+          - reaparr_data:/Config
+          - /data/media/download:/Downloads
+          - /data/media/Movies:/Movies
+          - /data/media/TV:/TvShows
         labels:
-          caddy: stash.home.thunderweb.uk
-          caddy.import_0: httpauth
-          caddy.import_1: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 9999 }}"
-    - name: Create stash.home.thunderweb.uk CNAME
+          caddy: reaparr.home.thunderweb.uk
+          caddy.import_0: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 7000 }}"
+    - name: Create reaparr.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -32,7 +32,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: stash.home.thunderweb.uk
+          domain: reaparr.home.thunderweb.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"

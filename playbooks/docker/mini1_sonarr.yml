@@ -1,13 +1,13 @@
 ---
-- name: install prowlarr on docker0.srv.3fr.uk
-  hosts: docker0.srv.3fr.uk
+- name: install sonarr on mini1.srv.3fr.uk
+  hosts: mini1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: prowlarr
-        image: lscr.io/linuxserver/prowlarr:latest
+        name: sonarr
+        image: lscr.io/linuxserver/sonarr:latest
         pull: true
-        hostname: prowlarr
+        hostname: sonarr
         restart_policy: always
         networks:
           - name: web
@@ -16,12 +16,14 @@
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
-          - prowlarr_data:/config
+          - sonarr_data:/config
+          - /data/media:/data/media
+          - /data/download/:/data/download
         labels:
-          caddy: prowlarr.home.thunderweb.uk
+          caddy: sonarr.home.thunderweb.uk
           caddy.import_0: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 9696 }}"
-    - name: Create prowlarr.home.thunderweb.uk CNAME
+          caddy.reverse_proxy: !unsafe "{{ upstreams 8989 }}"
+    - name: Create sonarr.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -29,7 +31,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: prowlarr.home.thunderweb.uk
+          domain: sonarr.home.thunderweb.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"

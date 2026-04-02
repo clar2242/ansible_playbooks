@@ -1,13 +1,13 @@
 ---
-- name: install sonarr on docker0.srv.3fr.uk
-  hosts: docker0.srv.3fr.uk
+- name: install stash on mini1
+  hosts: mini1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: sonarr
-        image: lscr.io/linuxserver/sonarr:latest
+        name: stash
+        image: ghcr.io/hotio/stash
         pull: true
-        hostname: sonarr
+        hostname: stash
         restart_policy: always
         networks:
           - name: web
@@ -15,15 +15,16 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
+          UMASK: "002"
         volumes:
-          - sonarr_data:/config
-          - /data/media:/data/media
-          - /data/download/:/data/download
+          - /data/shared/_Sort:/data/shared/_Sort
+          - /data/shared/_Sort/stash_data:/config
         labels:
-          caddy: sonarr.home.thunderweb.uk
-          caddy.import_0: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 8989 }}"
-    - name: Create sonarr.home.thunderweb.uk CNAME
+          caddy: stash.home.thunderweb.uk
+          caddy.import_0: httpauth
+          caddy.import_1: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 9999 }}"
+    - name: Create stash.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -31,7 +32,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: sonarr.home.thunderweb.uk
+          domain: stash.home.thunderweb.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"

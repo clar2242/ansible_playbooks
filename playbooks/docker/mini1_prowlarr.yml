@@ -1,13 +1,13 @@
 ---
-- name: install reaparr on docker0.srv.3fr.uk
-  hosts: docker0.srv.3fr.uk
+- name: install prowlarr on mini1.srv.3fr.uk
+  hosts: mini1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: reaparr
-        image: reaparr/reaparr:latest
+        name: prowlarr
+        image: lscr.io/linuxserver/prowlarr:latest
         pull: true
-        hostname: reaparr
+        hostname: prowlarr
         restart_policy: always
         networks:
           - name: web
@@ -16,15 +16,12 @@
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
-          - reaparr_data:/Config
-          - /data/media/download:/Downloads
-          - /data/media/Movies:/Movies
-          - /data/media/TV:/TvShows
+          - prowlarr_data:/config
         labels:
-          caddy: reaparr.home.thunderweb.uk
+          caddy: prowlarr.home.thunderweb.uk
           caddy.import_0: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 7000 }}"
-    - name: Create reaparr.home.thunderweb.uk CNAME
+          caddy.reverse_proxy: !unsafe "{{ upstreams 9696 }}"
+    - name: Create prowlarr.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -32,7 +29,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: reaparr.home.thunderweb.uk
+          domain: prowlarr.home.thunderweb.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"
