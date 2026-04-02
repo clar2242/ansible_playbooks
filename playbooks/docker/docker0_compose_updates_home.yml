@@ -1,5 +1,5 @@
 ---
-- name: update docker compose stacks on docker0
+- name: update docker compose stacks on docker0 (home.thunderweb.uk)
   hosts: docker0.srv.3fr.uk
   gather_facts: false
   vars: 
