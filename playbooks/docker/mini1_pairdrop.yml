@@ -1,6 +1,6 @@
 ---
-- name: install pairdrop on docker0
-  hosts: docker0.srv.3fr.uk
+- name: install pairdrop on mini1
+  hosts: mini1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -17,7 +17,6 @@
           TZ: "Europe/London"
         labels:
           caddy: drop.home.thunderweb.uk
-          caddy.import_0: httpauth
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
     - name: Create drop.home.thunderweb.uk CNAME

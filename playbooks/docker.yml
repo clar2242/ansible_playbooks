@@ -14,7 +14,6 @@
 - import_playbook: docker/docker0_mariadb.yml
 - import_playbook: docker/docker0_nextcloud.yml
 - import_playbook: docker/docker0_openbooks.yml
-- import_playbook: docker/docker0_pairdrop.yml
 - import_playbook: docker/docker0_phpmyadmin.yml
 - import_playbook: docker/docker0_prowlarr.yml
 - import_playbook: docker/docker0_radarr.yml
@@ -37,6 +36,7 @@
 - import_playbook: docker/mini0_compose_updates.yml
 - import_playbook: docker/mini0_jellyfin.yml
 - import_playbook: docker/mini1_caddy.yml
+- import_playbook: docker/mini1_pairdrop.yml
 - import_playbook: docker/mini1_tools.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/monitoring_munin.yml
