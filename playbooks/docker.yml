@@ -25,7 +25,6 @@
 - import_playbook: docker/docker0_speedtest.yml
 - import_playbook: docker/docker0_stash.yml
 - import_playbook: docker/docker0_tautulli.yml
-- import_playbook: docker/docker0_tools.yml
 - import_playbook: docker/docker0_wordpress.yml
 - import_playbook: docker/internal_docker_socket_proxy.yml
 - import_playbook: docker/mgmt_caddy.yml
@@ -38,6 +37,7 @@
 - import_playbook: docker/mini0_compose_updates.yml
 - import_playbook: docker/mini0_jellyfin.yml
 - import_playbook: docker/mini1_caddy.yml
+- import_playbook: docker/mini1_tools.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/monitoring_munin.yml
 - import_playbook: docker/monitoring_uptimekuma.yml
