@@ -6,13 +6,7 @@
 - import_playbook: docker/docker0_caddy.yml
 - import_playbook: docker/docker0_compose_updates_home.yml
 - import_playbook: docker/docker0_compose_updates_svc.yml
-- import_playbook: docker/docker0_mariadb.yml
-- import_playbook: docker/docker0_nextcloud.yml
-- import_playbook: docker/docker0_openbooks.yml
-- import_playbook: docker/docker0_phpmyadmin.yml
 - import_playbook: docker/docker0_registry.yml
-- import_playbook: docker/docker0_tautulli.yml
-- import_playbook: docker/docker0_wordpress.yml
 - import_playbook: docker/internal_docker_socket_proxy.yml
 - import_playbook: docker/mgmt_caddy.yml
 - import_playbook: docker/mgmt_home_compose_updates.yml
@@ -29,7 +23,11 @@
 - import_playbook: docker/mini1_gitea.yml
 - import_playbook: docker/mini1_homarr.yml
 - import_playbook: docker/mini1_homepage.yml
+- import_playbook: docker/mini1_mariadb.yml
+- import_playbook: docker/mini1_nextcloud.yml
+- import_playbook: docker/mini1_openbooks.yml
 - import_playbook: docker/mini1_pairdrop.yml
+- import_playbook: docker/mini1_phpmyadmin.yml
 - import_playbook: docker/mini1_prowlarr.yml
 - import_playbook: docker/mini1_radarr.yml
 - import_playbook: docker/mini1_reaparr.yml
@@ -37,7 +35,9 @@
 - import_playbook: docker/mini1_sonarr.yml
 - import_playbook: docker/mini1_speedtest.yml
 - import_playbook: docker/mini1_stash.yml
+- import_playbook: docker/mini1_tautulli.yml
 - import_playbook: docker/mini1_tools.yml
+- import_playbook: docker/mini1_wordpress.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/monitoring_munin.yml
 - import_playbook: docker/monitoring_uptimekuma.yml
