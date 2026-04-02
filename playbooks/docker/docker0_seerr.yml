@@ -38,6 +38,7 @@
           token: "{{ dns_token }}"
           domain: seerr.home.thunderweb.uk
           type: CNAME
+          ttl: 300
           cname: "{{ inventory_hostname }}"
           overwrite: true
         status_code: 200

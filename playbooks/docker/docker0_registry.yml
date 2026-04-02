@@ -54,6 +54,7 @@
           token: "{{ dns_token }}"
           domain: registry.srv.3fr.uk
           type: CNAME
+          ttl: 300
           cname: "{{ inventory_hostname }}"
           overwrite: true
         status_code: 200

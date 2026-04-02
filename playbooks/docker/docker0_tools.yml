@@ -26,6 +26,7 @@
           token: "{{ dns_token }}"
           domain: tools.home.thunderweb.uk
           type: CNAME
+          ttl: 300
           cname: "{{ inventory_hostname }}"
           overwrite: true
         status_code: 200
