@@ -6,11 +6,11 @@
 - import_playbook: docker/docker0_caddy.yml
 - import_playbook: docker/docker0_compose_updates_home.yml
 - import_playbook: docker/docker0_compose_updates_svc.yml
-- import_playbook: docker/docker0_registry.yml
 - import_playbook: docker/internal_docker_socket_proxy.yml
 - import_playbook: docker/mgmt_caddy.yml
 - import_playbook: docker/mgmt_home_compose_updates.yml
 - import_playbook: docker/mgmt_portainer.yml
+- import_playbook: docker/mgmt_registry.yml
 - import_playbook: docker/mgmt_srv_3fr_compose_updates.yml
 - import_playbook: docker/mgmt_svc_3fr_compose_updates.yml
 - import_playbook: docker/mgmt_vaultwarden.yml
