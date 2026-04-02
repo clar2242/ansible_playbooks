@@ -12,7 +12,7 @@
       - qui
 
   tasks:
-    - name: pull latest containers on docker0
+    - name: pull latest containers on mini1
       ansible.builtin.command: 
         cmd: docker compose pull
         chdir: /home/scott/docker/{{ item }}
