@@ -1,6 +1,6 @@
 ---
-- name: update docker compose stacks on mgmt (srv.3fr.uk)
-  hosts: mgmt.srv.3fr.uk
+- name: update docker compose stacks on mini1 (srv.3fr.uk)
+  hosts: mini1.srv.3fr.uk
   gather_facts: false
   vars: 
     stack_name:

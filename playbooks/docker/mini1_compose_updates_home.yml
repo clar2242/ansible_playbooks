@@ -10,6 +10,9 @@
       - domainlocker
       - romm
       - qui
+      - pulse
+      - dockhand
+      - ssh
 
   tasks:
     - name: pull latest containers on mini1

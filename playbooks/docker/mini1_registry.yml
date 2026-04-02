@@ -1,6 +1,6 @@
 ---
-- name: install docker registry on mgmt.srv.3fr.uk
-  hosts: mgmt.srv.3fr.uk
+- name: install docker registry on mini1.srv.3fr.uk
+  hosts: mini1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
