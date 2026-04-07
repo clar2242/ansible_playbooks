@@ -32,7 +32,6 @@
 - import_playbook: docker/mini1_stash.yml
 - import_playbook: docker/mini1_tautulli.yml
 - import_playbook: docker/mini1_tools.yml
-- import_playbook: docker/mini1_vaultwarden.yml
 - import_playbook: docker/mini1_wordpress.yml
 - import_playbook: docker/monitoring_caddy_proxy.yml
 - import_playbook: docker/monitoring_munin.yml
