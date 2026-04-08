@@ -25,6 +25,11 @@
       owner: root
       group: root
       mode: '0644'
+  - name: Create config directory for glances
+    ansible.builtin.file:
+      path: /root/.config/glances
+      state: directory
+      mode: '0700'
   - name: create password file for glances
     ansible.builtin.template:
       src: ../files/glances.pwd.j2
