@@ -3,7 +3,7 @@ Description=Glances
 After=network.target
 
 [Service]
-ExecStart=/opt/glances/bin/glances -w
+ExecStart=/opt/glances/bin/glances -w --password
 Restart=always
 RemainAfterExit=no
 
