@@ -43,5 +43,5 @@
   - name: enable and start glances service
     ansible.builtin.systemd:
       name: glances
-      state: started
+      state: restarted
       enabled: true
