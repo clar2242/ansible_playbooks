@@ -5,6 +5,7 @@
   vars: 
     stack_name:
       - audiobookshelf
+      - auth
       - paperless
       - ipam
       - domainlocker

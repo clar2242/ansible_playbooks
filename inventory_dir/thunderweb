@@ -16,12 +16,10 @@ tfrdebian
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 monitoring.srv.3fr.uk
-auth.srv.3fr.uk
 public.srv.3fr.uk
 mini0.srv.3fr.uk
 mini1.srv.3fr.uk
 nomad.srv.3fr.uk
-downloads.srv.3fr.uk
 
 [externalboxes]
 vps1.wg.3fr.uk
@@ -33,34 +31,28 @@ nas1.srv.3fr.uk
 vps1.wg.3fr.uk
 vps2.wg.3fr.uk
 monitoring.srv.3fr.uk
-auth.srv.3fr.uk
 public.srv.3fr.uk
 mini0.srv.3fr.uk
 mini1.srv.3fr.uk
 nomad.srv.3fr.uk
-downloads.srv.3fr.uk
 
 [dockerinternal]
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 monitoring.srv.3fr.uk
-auth.srv.3fr.uk
 public.srv.3fr.uk
 mini0.srv.3fr.uk
 mini1.srv.3fr.uk
 nomad.srv.3fr.uk
-downloads.srv.3fr.uk
 
 [eximsmarthost]
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 monitoring.srv.3fr.uk
-auth.srv.3fr.uk
 public.srv.3fr.uk
 mini0.srv.3fr.uk
 mini1.srv.3fr.uk
 nomad.srv.3fr.uk
-downloads.srv.3fr.uk
 
 [proxmox]
 proxmox1.srv.3fr.uk
