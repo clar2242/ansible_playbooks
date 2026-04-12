@@ -5,6 +5,7 @@
   tasks:
     - community.docker.docker_container:
         name: calibre-web
+        user: "1000:1000"
         image: crocodilestick/calibre-web-automated:latest
         pull: true
         hostname: calibre-web
