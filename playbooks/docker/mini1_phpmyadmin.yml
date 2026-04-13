@@ -19,7 +19,7 @@
         volumes:
           - phpmyadmin_data:/config
         labels:
-          caddy_0: phpymadmin.home.thunderweb.uk
+          caddy_0: phpmyadmin.home.thunderweb.uk
           caddy_0.redir: https://phpmyadmin.svc.3fr.uk{uri}
           caddy_1: phpmyadmin.svc.3fr.uk
           caddy_1.import_0: accesslogs
