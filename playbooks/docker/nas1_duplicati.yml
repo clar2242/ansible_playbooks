@@ -17,16 +17,14 @@
           - duplicati_data:/config
           - duplicati_source:/source
           - duplicati_backups:/backups
-          - /data/icloud/photos:/data/icloud/photos
-          - /data/backups/mail:/data/backups/mail
-          - /data/backups/nextcloud:/data/backups/nextcloud
-          - /data/backups/applications:/data/backups/applications
-          - /data/shared:/data/shared
+          - /data:/data
         networks:
           - name: web
         labels:
-          caddy: duplicati.home.thunderweb.uk
-          caddy.reverse_proxy: !unsafe "{{ upstreams 8200 }}"
+          caddy_0: duplicati.home.thunderweb.uk
+          caddy_0.redir: https://duplicati.svc.3fr.uk{uri}
+          caddy_1: duplicati.svc.3fr.uk
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 8200 }}"
     - name: Create duplicati.home.thunderweb.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
@@ -35,7 +33,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: duplicati.home.thunderweb.uk
+          domain: duplicati.svc.3fr.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true
