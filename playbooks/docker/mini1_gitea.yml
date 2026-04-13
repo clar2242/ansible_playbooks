@@ -23,7 +23,7 @@
           - "2222:22"
         labels:
           caddy_0: git.home.thunderweb.uk
-          caddy_0.redirect: https://git.svc.3fr.uk{uri}
+          caddy_0.redir: https://git.svc.3fr.uk{uri}
           caddy_1: git.svc.3fr.uk
           caddy_1.import_1: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 3000 }}"

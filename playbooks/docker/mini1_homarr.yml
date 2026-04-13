@@ -28,7 +28,7 @@
         ports:
         labels:
           caddy_0: start.home.thunderweb.uk
-          caddy_0.redirect: https://start.svc.3fr.uk{uri}
+          caddy_0.redir: https://start.svc.3fr.uk{uri}
           caddy_1: start.svc.3fr.uk
           caddy_1.import_1: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 7575 }}"
