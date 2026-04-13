@@ -21,12 +21,14 @@
         networks:
           - name: web
         labels:
-          caddy: zigbee.home.thunderweb.uk
-          caddy.import_0: httpauth
-          caddy.import_1: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
+          caddy_0: zigbee.home.thunderweb.uk
+          caddy_0.redir: https://zigbee.svc.3fr.uk{uri}
+          caddy_1: zigbee.svc.3fr.uk
+          caddy_1.import_0: httpauth_3fr
+          caddy_1.import_1: accesslogs
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
 
-    - name: Create zigbee.home.thunderweb.uk CNAME
+    - name: Create zigbee.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -34,7 +36,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: zigbee.home.thunderweb.uk
+          domain: zigbee.svc.3fr.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true
