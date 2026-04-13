@@ -20,11 +20,13 @@
           - munin_lib:/var/lib/munin
           - munin_log:/var/log/munin
         labels:
-          caddy: munin.home.thunderweb.uk
-          caddy.import: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
-          caddy.redir: / https://munin.home.thunderweb.uk/munin/
-    - name: Create munin.home.thunderweb.uk CNAME
+          caddy_0: munin.home.thunderweb.uk
+          caddy_0.redir: https://munin.svc.3fr.uk{uri}
+          caddy_1: munin.svc.3fr.uk
+          caddy_1.import: accesslogs
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+          caddy_1.redir: / https://munin.svc.3fr.uk/munin/
+    - name: Create munin.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -32,7 +34,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: munin.home.thunderweb.uk
+          domain: munin.svc.3fr.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true
