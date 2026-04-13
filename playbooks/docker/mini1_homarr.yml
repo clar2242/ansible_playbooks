@@ -31,7 +31,7 @@
           caddy_0.redirect: https://start.svc.3fr.uk{uri}
           caddy_1: start.svc.3fr.uk
           caddy_1.import_1: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 7575 }}"
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 7575 }}"
         memory: 1G
     - name: Create start.svc.3fr.uk CNAME
       delegate_to: localhost
