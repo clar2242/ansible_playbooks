@@ -25,11 +25,10 @@
           caddy_0: calibre.home.thunderweb.uk
           caddy_0.redir: https://calibre.svc.3fr.uk{uri}
           caddy_1: calibre.svc.3fr.uk
-          caddy_1.import_0: httpauth
           caddy_1.import_1: accesslogs
           caddy_1.handle: "/opds/*"
           caddy_1.handle.reverse_proxy: !unsafe "{{ upstreams 8083 }}"
-          caddy_!.handle.reverse_proxy.header_up: 'Authorization "Basic: {{ calibre_hash }}"'
+          caddy_1.handle.reverse_proxy.header_up: 'Authorization "Basic: {{ calibre_hash }}"'
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 8083 }}"
     - name: Create calibre.svc.3fr.uk CNAME
       delegate_to: localhost
