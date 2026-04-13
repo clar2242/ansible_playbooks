@@ -20,10 +20,11 @@
         volumes:
           - changedetection_data:/config
         labels:
-          caddy: change.home.thunderweb.uk
-          caddy.import_0: httpauth
-          caddy.import_1: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 5000 }}"
+          caddy_0: change.home.thunderweb.uk
+          caddy_0.redir: https://change.svc.3fr.uk{uri}
+          caddy_1: change.svc.3fr.uk
+          caddy_1.import_1: accesslogs
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 5000 }}"
 
     - community.docker.docker_container:
         name: browserless
@@ -42,7 +43,7 @@
           SCREEN_DEPTH: "16"
           MAX_CONCURRENT_CHROME_PROCESSES: "10"
 
-    - name: Create change.home.thunderweb.uk CNAME
+    - name: Create change.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -50,7 +51,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: change.home.thunderweb.uk
+          domain: change.svc.3fr.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"
