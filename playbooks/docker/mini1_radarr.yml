@@ -20,10 +20,12 @@
           - /data/media:/data/media
           - /data/download/:/data/download
         labels:
-          caddy: radarr.home.thunderweb.uk
-          caddy.import_0: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 7878 }}"
-    - name: Create radarr.home.thunderweb.uk CNAME
+          caddy_0: radarr.home.thunderweb.uk
+          caddy_0.redir: https://radarr.svc.3fr.uk{uri}
+          caddy_1: radarr.svc.3fr.uk
+          caddy_1.import_0: accesslogs
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 7878 }}"
+    - name: Create radarr.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -31,7 +33,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: radarr.home.thunderweb.uk
+          domain: radarr.svc.3fr.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"

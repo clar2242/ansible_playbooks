@@ -17,18 +17,18 @@
         volumes:
           - seerr_data:/app/config
         labels:
-          caddy_1: seerr.home.thunderweb.uk
+          caddy_0: overseerr.home.thunderweb.uk seerr.home.thunderweb.uk
+          caddy_0.redir: https://seerr.home.thunderweb.uk{uri}
+          caddy_1: seerr.svc.3fr.uk
           caddy_1.import: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 5055 }}"
-          caddy_2: overseerr.home.thunderweb.uk
-          caddy_2.redir: https://seerr.home.thunderweb.uk{uri}
         healthcheck:
           test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/status || exit 1
           start_period: 20s
           timeout: 3s
           interval: 15s
           retries: 3
-    - name: Create seerr.home.thunderweb.uk CNAME
+    - name: Create seerr.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -36,7 +36,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: seerr.home.thunderweb.uk
+          domain: seerr.svc.3fr.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"

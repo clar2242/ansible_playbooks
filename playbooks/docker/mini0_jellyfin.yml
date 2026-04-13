@@ -13,7 +13,7 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Etc/UTC"
-          JELLYFIN_PublishedServerUrl: "https://jellyfin.srv.3fr.uk"
+          JELLYFIN_PublishedServerUrl: "https://jellyfin.svc.3fr.uk"
         networks:
           - name: web
         volumes:
@@ -22,7 +22,7 @@
         devices:
           - /dev/dri:/dev/dri
         labels:
-          caddy: jellyfin.srv.3fr.uk
+          caddy: jellyfin.svc.3fr.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 8096 }}"
     - name: Create jellyfin.srv.3fr.uk CNAME
       delegate_to: localhost
@@ -32,7 +32,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: jellyfin.srv.3fr.uk
+          domain: jellyfin.svc.3fr.uk
           type: CNAME
           cname: "{{ inventory_hostname }}"
           overwrite: true
