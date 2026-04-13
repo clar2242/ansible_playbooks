@@ -12,7 +12,10 @@
       - domainlocker
       - dockhand
       - ssh
-      
+      - paperless
+      - romm
+      - qui
+
   tasks:
     - name: pull latest containers on mini1
       ansible.builtin.command: 
