@@ -4,16 +4,12 @@
   gather_facts: false
   vars: 
     stack_name:
-      - audiobookshelf
       - auth
       - paperless
       - ipam
-      - domainlocker
       - romm
       - qui
       - pulse
-      - dockhand
-      - ssh
 
   tasks:
     - name: pull latest containers on mini1

@@ -8,7 +8,11 @@
       - dawarich
       - toolkit
       - karakeep
-
+      - audiobookshelf
+      - domainlocker
+      - dockhand
+      - ssh
+      
   tasks:
     - name: pull latest containers on mini1
       ansible.builtin.command: 
