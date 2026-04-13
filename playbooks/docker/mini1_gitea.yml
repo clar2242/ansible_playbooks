@@ -22,13 +22,15 @@
         ports:
           - "2222:22"
         labels:
-          caddy: git.home.thunderweb.uk
-          caddy.import_1: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
+          caddy_0: git.home.thunderweb.uk
+          caddy_0.redirect: https://git.svc.3fr.uk{uri}
+          caddy_1: git.svc.3fr.uk
+          caddy_1.import_1: accesslogs
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
           caddy.rewrite: '/user/login /user/oauth2/authelia'
         memory: 1G
         memory_swap: 1G
-    - name: Create git.home.thunderweb.uk CNAME
+    - name: Create git.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -36,7 +38,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: git.home.thunderweb.uk
+          domain: git.svc.3fr.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"

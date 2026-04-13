@@ -13,26 +13,27 @@
           - name: web
         env:
           AUTH_PROVIDERS: oidc
-          AUTH_OIDC_ISSUER: "https://auth.thunderweb.uk"
+          AUTH_OIDC_ISSUER: "https://auth.3fr.uk"
           AUTH_OIDC_CLIENT_SECRET: "{{ homarr_oidc_secret }}"
           AUTH_OIDC_CLIENT_ID: "{{ homarr_oidc_client }}"
           AUTH_OIDC_CLIENT_NAME: "Authelia"  
           AUTH_OIDC_AUTO_LOGIN: "true"
           AUTH_OIDC_ADMIN_GROUP: "homarr_admin"
           AUTH_OIDC_OWNER_GROUP: "homarr_admin"
-          NEXTAUTH_URL: "https://start.home.thunderweb.uk/"
+          NEXTAUTH_URL: "https://start.svc.3fr.uk/"
           SECRET_ENCRYPTION_KEY: "{{ homarr_encryption }}"
         volumes:
           - /var/run/docker.sock:/var/run/docker.sock
           - homarr_data:/appdata
         ports:
         labels:
-          caddy: start.home.thunderweb.uk
-          caddy.import_0: httpauth
-          caddy.import_1: accesslogs
+          caddy_0: start.home.thunderweb.uk
+          caddy_0.redirect: https://start.svc.3fr.uk{uri}
+          caddy_1: start.svc.3fr.uk
+          caddy_1.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 7575 }}"
         memory: 1G
-    - name: Create start.home.thunderweb.uk CNAME
+    - name: Create start.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
@@ -40,7 +41,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: start.home.thunderweb.uk
+          domain: start.svc.3fr.uk
           type: CNAME
           ttl: 300
           cname: "{{ inventory_hostname }}"

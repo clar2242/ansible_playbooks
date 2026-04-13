@@ -15,6 +15,9 @@
       - paperless
       - romm
       - qui
+      - auth
+      - ipam
+      - pulse
 
   tasks:
     - name: pull latest containers on mini1
