@@ -13,8 +13,8 @@
         networks:
           - name: web
         env:
-          BK_REBRICKABLE_API_KEY: {{ bricktracker_api_key }}
-          BK_DOMAIN_NAME: bricktracker.svc.3fr.uk
+          BK_REBRICKABLE_API_KEY: "{{ bricktracker_api_key }}""
+          BK_DOMAIN_NAME: "bricktracker.svc.3fr.uk"
           BK_TIMEZONE: "Europe/London"
         volumes:
           - bricktracker_data:/app/data
