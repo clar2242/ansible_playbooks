@@ -1,0 +1,38 @@
+---
+- name: install bricktracker on mini1.srv.3fr.uk
+  hosts: mini1.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: bricktracker
+        image: gitea.baerentsen.space/frederikbaerentsen/bricktracker:latest
+        user: "1000:1000"
+        pull: true
+        hostname: bricktracker
+        restart_policy: always
+        networks:
+          - name: web
+        env:
+          BK_REBRICKABLE_API_KEY: {{ bricktracker_api_key }}
+          BK_DOMAIN_NAME: bricktracker.svc.3fr.uk
+          BK_TIMEZONE: "Europe/London"
+        volumes:
+          - bricktracker_data:/app/data
+        labels:
+          caddy_1: bricktracker.svc.3fr.uk
+          caddy_1.import_1: accesslogs
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 3333 }}"
+    - name: Create bricktracker.svc.3fr.uk CNAME
+      delegate_to: localhost
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: bricktracker.svc.3fr.uk
+          type: CNAME
+          ttl: 300
+          cname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200
