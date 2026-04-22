@@ -8,6 +8,7 @@ tfr
 tfrdebian
 externalboxes
 proxmox
+lxc
 
 [tfr:children]
 tfrdebian
@@ -55,5 +56,12 @@ proxmox1.srv.3fr.uk
 proxmox2.srv.3fr.uk
 mailgateway1.srv.3fr.uk
 
+[lxc]
+nginx-proxy.lxc.3fr.uk
+librenms.lxc.3fr.uk
+
 [proxmox:vars]
+ansible_user=root
+
+[lxc:vars]
 ansible_user=root
