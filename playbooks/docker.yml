@@ -5,7 +5,7 @@
 - import_playbook: docker/mini0_caddy_proxy.yml
 - import_playbook: docker/mini0_compose_updates.yml
 - import_playbook: docker/mini0_jellyfin.yml
-- import_playbook: docker/mini1_bricktracker.yml
+# - import_playbook: docker/mini1_bricktracker.yml
 - import_playbook: docker/mini1_caddy.yml
 - import_playbook: docker/mini1_calibreweb.yml
 - import_playbook: docker/mini1_changedetection.yml
