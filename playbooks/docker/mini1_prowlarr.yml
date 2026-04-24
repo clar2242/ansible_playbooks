@@ -9,20 +9,13 @@
         pull: true
         hostname: prowlarr
         restart_policy: always
-        networks:
-          - name: web
+        network_mode: "service:gluetun"
         env:
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
         volumes:
           - prowlarr_data:/config
-        labels:
-          caddy_0: prowlarr.home.thunderweb.uk
-          caddy_0.redir: https://prowlarr.svc.3fr.uk{uri}
-          caddy_1: prowlarr.svc.3fr.uk
-          caddy_1.import_0: accesslogs
-          caddy_1.reverse_proxy: !unsafe "{{ upstreams 9696 }}"
     - name: Create prowlarr.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
