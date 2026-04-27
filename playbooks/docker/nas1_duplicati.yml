@@ -17,7 +17,7 @@
           - duplicati_data:/config
           - duplicati_source:/source
           - duplicati_backups:/backups
-          - /data/icloud/photos:/data/icloud/photos
+          - /data/icloud:/data/icloud
           - /data/backups/mail:/data/backups/mail
           - /data/backups/nextcloud:/data/backups/nextcloud
           - /data/shared/eBooks/Calibre:/data/shared/eBooks/Calibre
