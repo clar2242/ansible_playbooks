@@ -17,7 +17,12 @@
           - duplicati_data:/config
           - duplicati_source:/source
           - duplicati_backups:/backups
-          - /data:/data
+          - /data/icloud/photos:/data/icloud/photos
+          - /data/backups/mail:/data/backups/mail
+          - /data/backups/nextcloud:/data/backups/nextcloud
+          - /data/shared/eBooks/Calibre:/data/shared/eBooks/Calibre
+          - /data/backups/applications:/data/backups/applications
+          - /data/shared/_Sort:/data/shared/_Sort
         networks:
           - name: web
         labels:
