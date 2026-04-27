@@ -5,7 +5,7 @@
 - import_playbook: docker/mini0_caddy_proxy.yml
 - import_playbook: docker/mini0_compose_updates.yml
 - import_playbook: docker/mini0_jellyfin.yml
-# - import_playbook: docker/mini1_bricktracker.yml
+#- import_playbook: docker/mini1_bricktracker.yml
 - import_playbook: docker/mini1_caddy.yml
 - import_playbook: docker/mini1_calibreweb.yml
 - import_playbook: docker/mini1_changedetection.yml
@@ -19,7 +19,6 @@
 - import_playbook: docker/mini1_pairdrop.yml
 - import_playbook: docker/mini1_phpmyadmin.yml
 - import_playbook: docker/mini1_portainer.yml
-- import_playbook: docker/mini1_prowlarr.yml
 - import_playbook: docker/mini1_radarr.yml
 - import_playbook: docker/mini1_reaparr.yml
 - import_playbook: docker/mini1_registry.yml
@@ -36,6 +35,7 @@
 - import_playbook: docker/nas1_caddy.yml
 - import_playbook: docker/nas1_duplicati.yml
 - import_playbook: docker/nas1_icloudpd.yml
+- import_playbook: docker/nas1_prowlarr.yml
 - import_playbook: docker/nas1_unpackerr.yml
 - import_playbook: docker/nas1_zigbee2mqtt.yml
 - import_playbook: docker/nodes_portainer_agent.yml
