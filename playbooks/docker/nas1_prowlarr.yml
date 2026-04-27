@@ -3,19 +3,6 @@
   hosts: nas1.srv.3fr.uk
   gather_facts: false
   tasks:
-    - community.docker.docker_container:
-        name: prowlarr
-        image: lscr.io/linuxserver/prowlarr:latest
-        pull: true
-        hostname: prowlarr
-        restart_policy: always
-        network_mode: "service:gluetun"
-        env:
-          PUID: "1000"
-          PGID: "1000"
-          TZ: "Europe/London"
-        volumes:
-          - prowlarr_data:/config
     - name: Create prowlarr.svc.3fr.uk CNAME
       delegate_to: localhost
       ansible.builtin.uri:
