@@ -15,11 +15,6 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
-          PIXELFLUX_WAYLAND: "true"
-          DRINODE: "/dev/dri/renderD128"
-          DRI_NODE: "/dev/dri/renderD128"
-        devices:
-          - /dev/dri:/dev/dri
         volumes:
           - filezilla_config:/config
           - /data:/data
