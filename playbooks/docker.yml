@@ -10,6 +10,7 @@
 - import_playbook: docker/mini1_calibreweb.yml
 - import_playbook: docker/mini1_changedetection.yml
 - import_playbook: docker/mini1_compose_updates_svc.yml
+- import_playbook: docker/mini1_flaresolverr.yml
 - import_playbook: docker/mini1_gitea.yml
 - import_playbook: docker/mini1_homarr.yml
 - import_playbook: docker/mini1_homepage.yml
