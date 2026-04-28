@@ -35,7 +35,7 @@
           token: "{{ dns_token }}"
           domain: drive.thunderweb.uk
           type: ANAME
-          ttl: 300
+          ttl: 3600
           aname: "{{ inventory_hostname }}"
           overwrite: true
         status_code: 200

@@ -27,7 +27,7 @@
           token: "{{ dns_token }}"
           domain: tools.svc.3fr.uk
           type: CNAME
-          ttl: 300
+          ttl: 3600
           cname: "{{ inventory_hostname }}"
           overwrite: true
         status_code: 200
