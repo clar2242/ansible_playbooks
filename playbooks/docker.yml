@@ -22,6 +22,7 @@
 - import_playbook: docker/mini1_phpmyadmin.yml
 - import_playbook: docker/mini1_portainer.yml
 - import_playbook: docker/mini1_prowlarr.yml
+- import_playbook: docker/mini1_qbitrr.yml
 - import_playbook: docker/mini1_radarr.yml
 - import_playbook: docker/mini1_reaparr.yml
 - import_playbook: docker/mini1_registry.yml
