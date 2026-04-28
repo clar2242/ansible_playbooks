@@ -1,0 +1,45 @@
+---
+- name: install filezilla on mini1.srv.3fr.uk
+  hosts: mini1.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: filezilla
+        image: lscr.io/linuxserver/filezilla:latest
+        pull: true
+        hostname: filezilla
+        restart_policy: always
+        networks:
+          - name: web
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: "Europe/London"
+          PIXELFLUX_WAYLAND: "true"
+          DRINODE: "/dev/dri/renderD128"
+          DRI_NODE: "/dev/dri/renderD128"
+        devices:
+          - /dev/dri:/dev/dri
+        volumes:
+          - filezilla_config:/config
+          - /data:/data
+        labels:
+          caddy: filezilla.svc.3fr.uk
+          caddy.import_0: accesslogs
+          caddy.reverse_proxy: !unsafe "{{ upstreams 3001 }}"
+          caddy.reverse_proxy.transport: "http"
+          caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
+    - name: Create filezilla.svc.3fr.uk CNAME
+      delegate_to: localhost
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: filezilla.svc.3fr.uk
+          type: CNAME
+          ttl: 300
+          aname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200
