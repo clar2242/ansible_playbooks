@@ -1,4 +1,4 @@
-- hosts: downloads.srv.3fr.uk
+- hosts: dockflare.srv.3fr.uk
   vars:
     docker_users:
       - scott
