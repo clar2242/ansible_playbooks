@@ -19,6 +19,8 @@
       - ipam
       - pulse
       - repo
+      - tracearr
+      - youtarr
 
   tasks:
     - name: pull latest containers on mini1
