@@ -37,6 +37,7 @@
 - import_playbook: docker/monitoring_munin.yml
 - import_playbook: docker/monitoring_uptimekuma.yml
 - import_playbook: docker/nas1_caddy.yml
+- import_playbook: docker/nas1_compose_stacks.yml
 - import_playbook: docker/nas1_duplicati.yml
 - import_playbook: docker/nas1_icloudpd.yml
 - import_playbook: docker/nas1_unpackerr.yml
