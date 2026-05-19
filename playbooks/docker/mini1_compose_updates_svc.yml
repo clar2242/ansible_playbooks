@@ -22,6 +22,7 @@
       - tracearr
       - youtarr
       - iplayarr
+      - autobrr
 
   tasks:
     - name: pull latest containers on mini1
