@@ -18,7 +18,8 @@
           - name: web
         volumes:
           - jellyfin_config:/config
-          - /data:/data
+          - /data/media:/data/media
+          - /data2/media:/data2/media
         devices:
           - /dev/dri:/dev/dri
         labels:
