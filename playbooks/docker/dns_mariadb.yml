@@ -1,7 +1,7 @@
 ---
 - name: install mariadb on dns
   hosts: dns.srv.3fr.uk
-  gather_facts: false
+  gather_facts: true
   tasks:
     - community.docker.docker_container:
         name: mariadb
