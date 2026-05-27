@@ -51,6 +51,10 @@ mini0.srv.3fr.uk
 mini1.srv.3fr.uk
 dockflare.srv.3fr.uk
 
+[proxmoxHV]
+proxmox1.srv.3fr.uk
+proxmox2.srv.3fr.uk
+
 [proxmox]
 proxmox1.srv.3fr.uk
 proxmox2.srv.3fr.uk

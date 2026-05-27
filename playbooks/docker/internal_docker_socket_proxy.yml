@@ -12,6 +12,9 @@
           - /var/run/docker.sock:/var/run/docker.sock:ro
         env:
           CONTAINERS: "1"
+        # Exposed on all interfaces by design: tecnativa/docker-socket-proxy
+        # is configured with CONTAINERS=1 only (read-only container listing),
+        # all other Docker API endpoints are denied.
         ports:
           - 2375:2375
 
