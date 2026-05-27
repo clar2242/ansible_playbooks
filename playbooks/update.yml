@@ -41,15 +41,9 @@
       post_reboot_delay: 30
       test_command: whoami
     when:
-      - inventory_hostname not in groups['proxmox']
+      - inventory_hostname not in groups['proxmoxHV']
       - inventory_hostname != 'nas1.srv.3fr.uk'
       - (ansible_facts['os_family'] == "Debian" and reboot_required_deb.stat.exists | default(false))
         or
         (ansible_facts['os_family'] == "RedHat" and reboot_required_rhel.rc | default(0) == 1)
 
-#- name: update homebrew
-#  hosts: localhost
-#  - homebrew:
-#  tasks:
-#      update_homebrew: yes
-#      upgrade_all: yes
