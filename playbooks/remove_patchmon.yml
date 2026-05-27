@@ -1,9 +1,0 @@
----
-- name: Remove Patchmon Agent
-  hosts: tfrdebian,proxmox
-  become: true
-  gather_facts: false
-  tasks:
-  - shell:
-      cmd: 'curl -s https://patchmon.srv.3fr.uk/api/v1/hosts/remove | sh'
-
