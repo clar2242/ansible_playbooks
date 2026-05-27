@@ -7,6 +7,8 @@
         name: zigbee2mqtt
         image: koenkk/zigbee2mqtt
         pull: true
+        # Exposed on all interfaces by design: Home Assistant requires
+        # LAN-level access to the zigbee2mqtt frontend.
         ports:
           - "8082:8080"
         hostname: zigbee2mqtt
