@@ -26,9 +26,7 @@
         labels:
           caddy: filezilla.svc.3fr.uk
           caddy.import_0: accesslogs
-          caddy.reverse_proxy: !unsafe "{{ upstreams 3001 }}"
-          caddy.reverse_proxy.transport: "http"
-          caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
+          caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
     - name: Create filezilla.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
