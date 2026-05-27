@@ -3,7 +3,8 @@
   hosts: monitoring.srv.3fr.uk
   gather_facts: false
   tasks:
-    - community.docker.docker_container:
+    - no_log: true
+      community.docker.docker_container:
         name: caddy
         image: registry.srv.3fr.uk/caddy
         pull: true

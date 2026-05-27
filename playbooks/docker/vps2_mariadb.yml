@@ -3,7 +3,8 @@
   hosts: vps2.wg.3fr.uk
   gather_facts: false
   tasks:
-    - community.docker.docker_container:
+    - no_log: true
+      community.docker.docker_container:
         name: mariadb
         image: lscr.io/linuxserver/mariadb:latest
         pull: true
