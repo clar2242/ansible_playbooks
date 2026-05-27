@@ -23,7 +23,7 @@
           NEXTAUTH_URL: "https://start.svc.3fr.uk/"
           SECRET_ENCRYPTION_KEY: "{{ homarr_encryption }}"
         volumes:
-          - /var/run/docker.sock:/var/run/docker.sock
+          - /var/run/docker.sock:/var/run/docker.sock:ro
           - homarr_data:/appdata
         ports:
         labels:

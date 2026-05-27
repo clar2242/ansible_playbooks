@@ -23,7 +23,7 @@
           CADDY_DOCKER_CADDYFILE_PATH: "/config/caddy.static"
           CF_API_TOKEN:  "{{ cloudflare_api }}"
         volumes:
-          - /var/run/docker.sock:/var/run/docker.sock
+          - /var/run/docker.sock:/var/run/docker.sock:ro
           - caddy_logs:/var/log/caddy
           - caddy_config:/config
           - caddy_data:/data
