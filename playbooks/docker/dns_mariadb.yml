@@ -19,4 +19,4 @@
         volumes:
           - mariadb_data:/config
         ports:
-          - "3306:3306"
+          - "{{ ansible_eth0.ipv4.address }}:3306:3306"
