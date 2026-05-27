@@ -31,6 +31,7 @@
           caddy.reverse_proxy.transport.tls_insecure_skip_verify: ""
     - name: Create filezilla.svc.3fr.uk CNAME
       delegate_to: localhost
+      no_log: true
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
         method: POST

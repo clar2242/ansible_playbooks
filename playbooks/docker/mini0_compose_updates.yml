@@ -21,6 +21,7 @@
     - name: "Create CNAMEs"
       delegate_to: localhost
       loop: "{{ stack_name }}"
+      no_log: true
       ansible.builtin.uri:
         url: https://dns.srv.3fr.uk/api/zones/records/add
         method: POST
