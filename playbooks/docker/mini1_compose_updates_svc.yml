@@ -18,6 +18,8 @@
       - auth
       - ipam
       - pulse
+      - photon
+      - navidrome
       - repo
       - tracearr
       - youtarr
