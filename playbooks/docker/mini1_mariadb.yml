@@ -20,4 +20,4 @@
         volumes:
           - mariadb_data:/config
         ports:
-          - "{{ ansible_eno1.ipv4.address }}:3306:3306"
+          - "{{ ansible_facts['eno1']['ipv4']['address'] }}:3306:3306"
