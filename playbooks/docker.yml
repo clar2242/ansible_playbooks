@@ -17,6 +17,7 @@
 - import_playbook: docker/mini1_homarr.yml
 - import_playbook: docker/mini1_homepage.yml
 - import_playbook: docker/mini1_mariadb.yml
+- import_playbook: docker/mini1_medialyze.yml
 - import_playbook: docker/mini1_n8n.yml
 - import_playbook: docker/mini1_nextcloud.yml
 - import_playbook: docker/mini1_openbooks.yml
