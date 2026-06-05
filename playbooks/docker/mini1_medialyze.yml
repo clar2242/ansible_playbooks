@@ -13,15 +13,17 @@
           - name: web
         env:
           TZ: "Europe/London"
+          PUID: "1000"
+          PGID: "1000"
         volumes:
           - medialyze_data:/config
-          - /data/media:/data/media
-          - /data2/media:/data2/media
+          - /data/media:/media/data:ro
+          - /data2/media:/media/data2:ro
         labels:
           caddy_1: medialyze.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
-    - name: Create radarr.svc.3fr.uk CNAME
+    - name: Create medialyze.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
       ansible.builtin.uri:
