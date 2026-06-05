@@ -1,0 +1,40 @@
+---
+- name: install komga on mini1.srv.3fr.uk
+  hosts: mini1.srv.3fr.uk
+  gather_facts: false
+  tasks:
+    - community.docker.docker_container:
+        name: komga
+        image: gotson/komga:latest
+        pull: true
+        hostname: medialyze
+        restart_policy: always
+        user: "1000:1000"
+        networks:
+          - name: web
+        env:
+          TZ: "Europe/London"
+          PUID: "1000"
+          PGID: "1000"
+        volumes:
+          - komga_data:/config
+          - /data/shared/eBooks/komga:/data/shared/eBooks/komga
+        labels:
+          caddy_1: komga.svc.3fr.uk
+          caddy_1.import_0: accesslogs
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 25600 }}"
+    - name: Create komga.svc.3fr.uk CNAME
+      delegate_to: localhost
+      no_log: true
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: komga.svc.3fr.uk
+          type: CNAME
+          ttl: 3600
+          cname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200
