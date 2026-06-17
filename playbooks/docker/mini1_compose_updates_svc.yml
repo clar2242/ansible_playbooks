@@ -25,6 +25,7 @@
       - youtarr
       - iplayarr
       - autobrr
+      - yamtrack
 
   tasks:
     - name: pull latest containers on mini1
