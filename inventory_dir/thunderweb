@@ -13,6 +13,9 @@ lxc
 [tfr:children]
 tfrdebian
 
+[wazuhagents]
+nas1.srv.3fr.uk
+
 [tfrdebian]
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
