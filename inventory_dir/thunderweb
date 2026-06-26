@@ -13,6 +13,15 @@ lxc
 [tfr:children]
 tfrdebian
 
+[wazuhagents]
+mini1.srv.3fr.uk
+dns.srv.3fr.uk
+monitoring.srv.3fr.uk
+dockflare.srv.3fr.uk
+proxmox1.srv.3fr.uk
+proxmox2.srv.3fr.uk
+mailgateway1.srv.3fr.uk
+
 [tfrdebian]
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
