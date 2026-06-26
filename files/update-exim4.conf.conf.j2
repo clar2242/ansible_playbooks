@@ -20,7 +20,7 @@
 
 dc_eximconfig_configtype='smarthost'
 dc_other_hostnames=''
-dc_local_interfaces='127.0.0.1 ; ::1 ; {{ ansible_facts['default_ipv4'][address] | default(ansible_facts['all_ipv4_addresses[0]'][address]) }}'
+dc_local_interfaces='127.0.0.1 ; ::1 ; {{ ansible_facts['default_ipv4']['address'] | default(ansible_facts['all_ipv4_addresses[0]'['address']]) }}'
 dc_readhost='{{ inventory_hostname }}'
 dc_relay_domains=''
 dc_minimaldns='false'
