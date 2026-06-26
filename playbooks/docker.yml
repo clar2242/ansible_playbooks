@@ -2,6 +2,7 @@
 - import_playbook: docker/dns_caddy_proxy.yml
 - import_playbook: docker/dns_mariadb.yml
 - import_playbook: docker/internal_docker_socket_proxy.yml
+- import_playbook: docker/wazuh_caddy_proxy.yml
 - import_playbook: docker/mini0_caddy_proxy.yml
 - import_playbook: docker/mini0_compose_updates.yml
 - import_playbook: docker/mini0_jellyfin.yml
