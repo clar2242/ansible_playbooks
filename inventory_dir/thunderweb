@@ -14,7 +14,7 @@ lxc
 tfrdebian
 
 [wazuhagents]
-nas1.srv.3fr.uk
+mini0.srv.3fr.uk
 
 [tfrdebian]
 dns.srv.3fr.uk
