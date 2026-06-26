@@ -14,8 +14,8 @@ lxc
 tfrdebian
 
 [wazuhagents]
-vps1.wg.3fr.uk
-vps2.wg.3fr.uk
+nginx-proxy.lxc.3fr.uk
+librenms.lxc.3fr.uk
 
 [tfrdebian]
 dns.srv.3fr.uk
