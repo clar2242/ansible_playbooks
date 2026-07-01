@@ -4,28 +4,33 @@
   gather_facts: false
   vars: 
     stack_name:
-      - shelfmark
-      - dawarich
-      - toolkit
-      - karakeep
       - audiobookshelf
-      - domainlocker
-      - dockhand
-      - ssh
-      - paperless
-      - romm
-      - qui
       - auth
-      - ipam
-      - pulse
-      - photon
-      - navidrome
-      - repo
-      - tracearr
-      - youtarr
-      - iplayarr
       - autobrr
+      - dawarich
+      - dockhand
+      - domainlocker
+      # - glkvm
+      - homelable
+      - ipam
+      - iplayarr
+      - karakeep
+      - navidrome
+      - paperless
+      - photon
+      - pulse
+      - qui
+      - repo
+      - romm
+      # - semaphore
+      - shelfmark
+      - sparkyfitness
+      - ssh
+      - toolkit
+      - tracearr
+      - wrapperr
       - yamtrack
+      - youtarr
 
   tasks:
     - name: pull latest containers on mini1
