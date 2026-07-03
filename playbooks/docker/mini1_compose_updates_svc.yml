@@ -24,7 +24,7 @@
       - romm
       # - semaphore
       - shelfmark
-      - sparkyfitness
+      # - sparkyfitness
       - ssh
       - toolkit
       - tracearr
