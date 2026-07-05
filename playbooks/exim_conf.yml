@@ -52,4 +52,9 @@
       ansible.builtin.systemd_service:
         name: exim4
         state: restarted
-    
+
+  - name: Remove paniclog
+    ansible.builtin.file:
+      path: /var/log/exim4/paniclog
+      state: absent
+      
