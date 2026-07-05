@@ -65,7 +65,7 @@ mini1.srv.3fr.uk
 dockflare.srv.3fr.uk
 wazuh.srv.3fr.uk
 docker0.srv.3fr.uk
-mgmt.srv.3fr.ukß
+mgmt.srv.3fr.uk
 
 [proxmoxHV]
 proxmox1.srv.3fr.uk
