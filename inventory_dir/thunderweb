@@ -26,6 +26,7 @@ mini1.srv.3fr.uk
 dockflare.srv.3fr.uk
 wazuh.srv.3fr.uk
 docker0.srv.3fr.uk
+mgmt.srv.3fr.uk
 
 [externalboxes]
 vps1.wg.3fr.uk
@@ -42,6 +43,7 @@ mini1.srv.3fr.uk
 dockflare.srv.3fr.uk
 wazuh.srv.3fr.uk
 docker0.srv.3fr.uk
+mgmt.srv.3fr.uk
 
 [dockerinternal]
 dns.srv.3fr.uk
@@ -52,6 +54,7 @@ mini1.srv.3fr.uk
 dockflare.srv.3fr.uk
 wazuh.srv.3fr.uk
 docker0.srv.3fr.uk
+mgmt.srv.3fr.uk
 
 [eximsmarthost]
 dns.srv.3fr.uk
@@ -62,6 +65,7 @@ mini1.srv.3fr.uk
 dockflare.srv.3fr.uk
 wazuh.srv.3fr.uk
 docker0.srv.3fr.uk
+mgmt.srv.3fr.ukß
 
 [proxmoxHV]
 proxmox1.srv.3fr.uk
