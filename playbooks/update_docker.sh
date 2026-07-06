@@ -6,7 +6,7 @@ cd ~/git/ansible/playbooks
 
 echo "---" > docker.yml
 
-ls docker/*.yml | while read playbook
+find docker -type f | grep yml$ | sort | while read playbook
 do
 
 echo "- import_playbook: $playbook" >> docker.yml
