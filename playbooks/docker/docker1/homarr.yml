@@ -1,6 +1,6 @@
 ---
-- name: install homarr on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install homarr on docker1.srv.3fr.uk
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -27,11 +27,11 @@
           - homarr_data:/appdata
         ports:
         labels:
-          caddy_0: start.home.thunderweb.uk
-          caddy_0.redir: https://start.svc.3fr.uk{uri}
           caddy_1: start.svc.3fr.uk
           caddy_1.import_1: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 7575 }}"
+          kuma.homarr.http.name: "Homarr"
+          kuma.homarr.http.url: "https://start.svc.3fr.uk"
         memory: 1G
     - name: Create start.svc.3fr.uk CNAME
       delegate_to: localhost

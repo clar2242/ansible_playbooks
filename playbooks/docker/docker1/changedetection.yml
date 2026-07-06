@@ -1,6 +1,6 @@
 ---
-- name: install changedetection.io on mini1
-  hosts: mini1.srv.3fr.uk
+- name: install changedetection.io on docker1 
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -20,11 +20,11 @@
         volumes:
           - changedetection_data:/config
         labels:
-          caddy_0: change.home.thunderweb.uk
-          caddy_0.redir: https://change.svc.3fr.uk{uri}
           caddy_1: change.svc.3fr.uk
           caddy_1.import_1: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 5000 }}"
+          kuma.changedetection.http.name: "Changedetection"
+          kuma.changedetection.http.url: "https://change.svc.3fr.uk"
 
     - community.docker.docker_container:
         name: browserless

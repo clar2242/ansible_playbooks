@@ -1,6 +1,6 @@
 ---
-- name: install homepage on mini1.srv.3fr.uk  
-  hosts: mini1.srv.3fr.uk
+- name: install homepage on docker1.srv.3fr.uk  
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -23,6 +23,8 @@
           caddy.import_0: httpauth_3fr
           caddy.import_1: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
+          kuma.homepage.http.name: "Homepage"
+          kuma.homepage.http.url: "https://homepage.svc.3fr.uk"
     - name: Create homepage.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

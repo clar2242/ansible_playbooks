@@ -1,13 +1,13 @@
 ---
-- name: install pairdrop on mini1
-  hosts: mini1.srv.3fr.uk
+- name: install openbooks on docker1.srv.3fr.uk
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
-        name: pairdrop
-        image: lscr.io/linuxserver/pairdrop:latest
+        name: openbooks
+        image: evanbuss/openbooks:latest
         pull: true
-        hostname: pairdrop
+        hostname: openbooks
         restart_policy: always
         networks:
           - name: web
@@ -15,13 +15,16 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
+        volumes:
+          - openbooks_data:/books
+        command: "--persist --name {{ openbooks_user }} --log --debug --tls=false -s irc.irchighway.net:6660"
         labels:
-          caddy_0: drop.home.thunderweb.uk
-          caddy_0.redir: https://drop.svc.3fr.uk{uri}
-          caddy_1: drop.svc.3fr.uk
+          caddy_1: ob.svc.3fr.uk
           caddy_1.import_0: accesslogs
-          caddy_1.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
-    - name: Create drop.svc.3fr.uk CNAME
+          caddy_1.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+          kuma.openbooks.http.name: "Openbooks"
+          kuma.openbooks.http.url: "https://ob.svc.3fr.uk"
+    - name: Create ob.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
       ansible.builtin.uri:
@@ -30,7 +33,7 @@
         body_format: form-urlencoded
         body:
           token: "{{ dns_token }}"
-          domain: drop.svc.3fr.uk
+          domain: ob.svc.3fr.uk
           type: CNAME
           ttl: 60
           cname: "{{ inventory_hostname }}"

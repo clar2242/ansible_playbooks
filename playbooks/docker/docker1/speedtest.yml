@@ -1,6 +1,6 @@
 ---
-- name: install speedtest-tracker on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install speedtest-tracker on docker1.srv.3fr.uk
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -21,11 +21,11 @@
         volumes:
           - speedtest_data:/config
         labels:
-          caddy_0: speedtest.home.thunderweb.uk
-          caddy_0.redir: https://speedtest.svc.3fr.uk{uri}
           caddy_1: speedtest.svc.3fr.uk
           caddy_1.import_1: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+          kuma.speedtest.http.name: "Speedtest"
+          kuma.speedtest.http.url: "https://speedtest.svc.3fr.uk"
     - name: Create speedtest.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
