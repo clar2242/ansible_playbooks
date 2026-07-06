@@ -29,6 +29,8 @@
           caddy_1.handle.reverse_proxy: !unsafe "{{ upstreams 8083 }}"
           caddy_1.handle.reverse_proxy.header_up: 'Authorization "Basic: {{ calibre_hash }}"'
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 8083 }}"
+          kuma.calibre.http.name: "Calibre-Web"
+          kuma.calibre.http.url: "https://calibre.svc.3fr.uk"
     - name: Create calibre.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
