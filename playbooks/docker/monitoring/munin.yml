@@ -20,12 +20,12 @@
           - munin_lib:/var/lib/munin
           - munin_log:/var/log/munin
         labels:
-          caddy_0: munin.home.thunderweb.uk
-          caddy_0.redir: https://munin.svc.3fr.uk{uri}
           caddy_1: munin.svc.3fr.uk
           caddy_1.import: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 80 }}"
           caddy_1.redir: / https://munin.svc.3fr.uk/munin/
+          kuma.monitoring.http.name "Munin"
+          kuma.monitoring.http.url "https://munin.svc.3fr.uk/munin/"
     - name: Create munin.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
