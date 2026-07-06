@@ -19,7 +19,7 @@
       - paperless
       - posteria
       - photon
-      - pulse
+      # - pulse
       - qui
       - repo
       - romm
