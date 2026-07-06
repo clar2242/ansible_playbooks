@@ -1,6 +1,6 @@
 ---
-- name: install jellyfin on mini0
-  hosts: mini0.srv.3fr.uk
+- name: install jellyfin on nas1
+  hosts: nas1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -24,6 +24,8 @@
         labels:
           caddy: jellyfin.svc.3fr.uk
           caddy.reverse_proxy: !unsafe "{{ upstreams 8096 }}"
+          kuma.jellyfin.http.name: "Jellyfin"
+          kuma.jellyfin.http.url: "https://jellyfin.svc.3fr.uk"
     - name: Create jellyfin.srv.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

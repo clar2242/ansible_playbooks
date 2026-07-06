@@ -19,7 +19,6 @@
 - import_playbook: docker/dockflare/_compose_updates.yml
 - import_playbook: docker/mini0/_compose_updates.yml
 - import_playbook: docker/mini0/caddy_proxy.yml
-- import_playbook: docker/mini0/jellyfin.yml
 - import_playbook: docker/mini1/_compose_updates_svc.yml
 - import_playbook: docker/mini1/caddy.yml
 - import_playbook: docker/mini1/changedetection.yml
@@ -37,12 +36,14 @@
 - import_playbook: docker/mini1/registry.yml
 - import_playbook: docker/mini1/speedtest.yml
 - import_playbook: docker/mini1/wordpress.yml
+- import_playbook: docker/monitoring/_compose_updates_svc.yml
 - import_playbook: docker/monitoring/munin.yml
 - import_playbook: docker/monitoring/uptimekuma.yml
 - import_playbook: docker/nas1/_compose_stacks.yml
 - import_playbook: docker/nas1/caddy.yml
 - import_playbook: docker/nas1/duplicati.yml
 - import_playbook: docker/nas1/icloudpd.yml
+- import_playbook: docker/nas1/jellyfin.yml
 - import_playbook: docker/nas1/unpackerr.yml
 - import_playbook: docker/nas1/zigbee2mqtt.yml
 - import_playbook: docker/vps1/_compose_updates.yml
