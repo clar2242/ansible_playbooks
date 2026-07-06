@@ -1,6 +1,6 @@
 ---
-- name: install seerr on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install seerr on docker0.srv.3fr.uk
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -17,8 +17,6 @@
         volumes:
           - seerr_data:/app/config
         labels:
-          caddy_0: overseerr.home.thunderweb.uk seerr.home.thunderweb.uk
-          caddy_0.redir: https://seerr.svc.3fr.uk{uri}
           caddy_1: seerr.svc.3fr.uk
           caddy_1.import: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 5055 }}"

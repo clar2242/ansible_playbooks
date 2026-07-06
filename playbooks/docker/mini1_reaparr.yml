@@ -1,6 +1,6 @@
 ---
-- name: install reaparr on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install reaparr on docker0.srv.3fr.uk
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -21,8 +21,6 @@
           - /data/media/Movies:/Movies
           - /data/media/TV:/TvShows
         labels:
-          caddy_0: reaparr.home.thunderweb.uk
-          caddy_0.redir: https://reaparr.svc.3fr.uk{uri}
           caddy_1: reaparr.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 7000 }}"

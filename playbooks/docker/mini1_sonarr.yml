@@ -1,6 +1,6 @@
 ---
-- name: install sonarr on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install sonarr on docker0.srv.3fr.uk
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -20,8 +20,6 @@
           - /data/media:/data/media
           - /data/download/:/data/download
         labels:
-          caddy_0: sonarr.home.thunderweb.uk
-          caddy_0.redir: https://sonarr.svc.3fr.uk{uri}
           caddy_1: sonarr.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 8989 }}"

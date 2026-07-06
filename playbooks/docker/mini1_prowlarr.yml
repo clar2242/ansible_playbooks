@@ -1,6 +1,6 @@
 ---
-- name: install prowlarr on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install prowlarr on docker0.srv.3fr.uk
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -18,8 +18,6 @@
         volumes:
           - prowlarr_data:/config
         labels:
-          caddy_0: prowlarr.home.thunderweb.uk
-          caddy_0.redir: https://prowlarr.svc.3fr.uk{uri}
           caddy_1: prowlarr.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 9696 }}"

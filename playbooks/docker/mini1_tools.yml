@@ -1,6 +1,6 @@
 ---
-- name: install IT Tools on mini1
-  hosts: mini1.srv.3fr.uk
+- name: install IT Tools on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -12,8 +12,6 @@
         networks:
           - name: web
         labels:
-          caddy_0: tools.home.thunderweb.uk
-          caddy_0.redir: https://tools.svc.3fr.uk{uri}
           caddy_1: tools.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 80 }}"

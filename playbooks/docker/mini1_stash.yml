@@ -1,6 +1,6 @@
 ---
-- name: install stash on mini1
-  hosts: mini1.srv.3fr.uk
+- name: install stash on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -20,8 +20,6 @@
           - /data/shared/_Sort:/data/shared/_Sort
           - /data/shared/_Sort/stash_data:/config
         labels:
-          caddy_0: stash.home.thunderweb.uk
-          caddy_0.redir: https://stash.svc.3fr.uk{uri}
           caddy_1: stash.svc.3fr.uk
           caddy_1.import_0: httpauth_3fr
           caddy_1.import_1: accesslogs
