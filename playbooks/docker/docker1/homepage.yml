@@ -11,6 +11,8 @@
         restart_policy: always
         networks:
           - name: web
+        dns_servers:
+          - 192.168.250.53
         env:
           HOMEPAGE_ALLOWED_HOSTS: "homepage.svc.3fr.uk"
           PUID: "1000"
