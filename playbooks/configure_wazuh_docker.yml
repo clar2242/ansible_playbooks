@@ -1,10 +1,13 @@
 ---
 - name: Install Wazuh Agent
-  gather_facts: true
-  hosts: docker0.srv.3fr.uk
+  hosts: linuxservers
   become: true
 
   tasks:
+  - name: Gather the package facts
+    package_facts:
+      manager: auto
+
   - name: Install and Configure Wazuh Agent
     when: "'wazuh-agent' not in ansible_facts.packages"
     block:
