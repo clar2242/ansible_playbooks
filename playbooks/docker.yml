@@ -3,7 +3,6 @@
 - import_playbook: docker/_shared/docker_socket_proxy.yml
 - import_playbook: docker/_shared/portainer_agent.yml
 - import_playbook: docker/_vpsshared/portainer_agent.yml
-- import_playbook: docker/dns/caddy_proxy.yml
 - import_playbook: docker/dns/mariadb.yml
 - import_playbook: docker/docker0/calibreweb.yml
 - import_playbook: docker/docker0/flaresolverr.yml
@@ -38,7 +37,6 @@
 - import_playbook: docker/mini1/registry.yml
 - import_playbook: docker/mini1/speedtest.yml
 - import_playbook: docker/mini1/wordpress.yml
-- import_playbook: docker/monitoring/caddy_proxy.yml
 - import_playbook: docker/monitoring/munin.yml
 - import_playbook: docker/monitoring/uptimekuma.yml
 - import_playbook: docker/nas1/_compose_stacks.yml
