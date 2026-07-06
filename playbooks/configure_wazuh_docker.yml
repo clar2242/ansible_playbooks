@@ -6,7 +6,7 @@
 
   tasks:
   - name: Install and Configure Wazuh Agent
-    when: 'wazuh-agent' not in ansible_facts.packages
+    when: "'wazuh-agent' not in ansible_facts.packages"
     block:
       - name: Download the installation package
         get_url:
