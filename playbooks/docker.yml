@@ -1,4 +1,5 @@
 ---
+- import_playbook: docker/caddy_proxy.yml
 - import_playbook: docker/dns_caddy_proxy.yml
 - import_playbook: docker/dns_mariadb.yml
 - import_playbook: docker/internal_docker_socket_proxy.yml

@@ -56,6 +56,10 @@ wazuh.srv.3fr.uk
 docker0.srv.3fr.uk
 mgmt.srv.3fr.uk
 
+[caddyproxy]
+docker0.srv.3fr.uk
+mgmt.srv.3fr.uk
+
 [eximsmarthost]
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
