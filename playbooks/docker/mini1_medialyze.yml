@@ -18,7 +18,6 @@
         volumes:
           - medialyze_data:/config
           - /data/media:/media/data:ro
-          - /data2/media:/media/data2:ro
         labels:
           caddy_1: medialyze.svc.3fr.uk
           caddy_1.import_0: accesslogs
