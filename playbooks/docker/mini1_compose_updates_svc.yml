@@ -14,9 +14,10 @@
       - homelable
       - ipam
       - iplayarr
-      - karakeep
+      # - karakeep
       - navidrome
       - paperless
+      - posteria
       - photon
       - pulse
       - qui
