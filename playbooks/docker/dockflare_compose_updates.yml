@@ -1,0 +1,35 @@
+---
+- name: update docker compose stacks on dockflare
+  hosts: dockflare.srv.3fr.uk
+  gather_facts: false
+  vars: 
+    stack_name:
+      - dockflare
+
+  tasks:
+    - name: pull latest containers on dockflare
+      ansible.builtin.command: 
+        cmd: docker compose pull
+        chdir: /home/scott/docker/{{ item }}
+      loop: "{{ stack_name }}"
+    - name: restart containers
+      ansible.builtin.command: 
+        cmd: docker compose up -d
+        chdir: /home/scott/docker/{{ item }}
+      loop: "{{ stack_name }}"
+    - name: "Create CNAMEs"
+      delegate_to: localhost
+      loop: "{{ stack_name }}"
+      no_log: true
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: "{{ item }}.svc.3fr.uk"
+          type: CNAME
+          ttl: 60
+          cname: "{{ inventory_hostname }}"
+          overwrite: true
+        status_code: 200
