@@ -1,6 +1,6 @@
 ---
 - name: Install Wazuh Agent
-  hosts: linuxservers
+  hosts: linuxboxes
   become: true
 
   tasks:
