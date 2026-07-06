@@ -23,6 +23,8 @@
           caddy_1: komga.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 25600 }}"
+          kuma.komga.http.name: "Komga"
+          kuma.komga.http.url: "https://komga.svc.3fr.uk"
     - name: Create komga.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

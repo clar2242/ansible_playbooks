@@ -22,6 +22,8 @@
           caddy_1: medialyze.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 8080 }}"
+          kuma.medialyze.http.name: "Medialyze"
+          kuma.medialyze.http.url: "https://medialyze.svc.3fr.uk"
     - name: Create medialyze.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

@@ -18,6 +18,8 @@
           caddy_1: flaresolverr.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 8191 }}"
+          kuma.flaresolverr.http.name: "Flaresolverr"
+          kuma.flaresolverr.http.url: "https://flaresolverr.svc.3fr.uk"
     - name: Create flaresolverr.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

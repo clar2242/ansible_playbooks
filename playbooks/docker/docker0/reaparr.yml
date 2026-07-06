@@ -24,6 +24,8 @@
           caddy_1: reaparr.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 7000 }}"
+          kuma.reaparr.http.name: "Reaparr"
+          kuma.reaparr.http.url: "https://reaparr.svc.3fr.uk"
     - name: Create reaparr.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

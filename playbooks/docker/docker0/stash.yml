@@ -24,6 +24,8 @@
           caddy_1.import_0: httpauth_3fr
           caddy_1.import_1: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 9999 }}"
+          kuma.stash.http.name: "Stash"
+          kuma.stash.http.url: "https://stash.svc.3fr.uk"
     - name: Create stash.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

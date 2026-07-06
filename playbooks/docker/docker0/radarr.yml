@@ -23,6 +23,8 @@
           caddy_1: radarr.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 7878 }}"
+          kuma.radarr.http.name: "Radarr"
+          kuma.radarr.http.url: "https://radarr.svc.3fr.uk"
     - name: Create radarr.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

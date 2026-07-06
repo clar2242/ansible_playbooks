@@ -21,6 +21,8 @@
           caddy_1: tautulli.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 8181 }}"
+          kuma.tautulli.http.name: "Tautulli"
+          kuma.tautulli.http.url: "https://tautulli.svc.3fr.uk" 
     - name: Create tautulli.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

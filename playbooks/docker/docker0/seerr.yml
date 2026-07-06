@@ -20,6 +20,8 @@
           caddy_1: seerr.svc.3fr.uk
           caddy_1.import: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 5055 }}"
+          kuma.seerr.http.name: "Seerr"
+          kuma.seerr.http.url: "https://seerr.svc.3fr.uk"
         healthcheck:
           test: wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/status || exit 1
           start_period: 20s

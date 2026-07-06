@@ -21,6 +21,8 @@
           caddy_1: prowlarr.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 9696 }}"
+          kuma.prowlarr.http.name: "Prowlarr"
+          kuma.prowlarr.http.url: "https://prowlarr.svc.3fr.uk"
     - name: Create prowlarr.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
