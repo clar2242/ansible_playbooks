@@ -1,5 +1,4 @@
 ---
-- import_playbook: docker/mgmt/registry.yml
 - import_playbook: docker/_shared/caddy_proxy.yml
 - import_playbook: docker/_shared/docker_socket_proxy.yml
 - import_playbook: docker/_shared/portainer_agent.yml
@@ -25,13 +24,14 @@
 - import_playbook: docker/docker1/pairdrop.yml
 - import_playbook: docker/docker1/speedtest.yml
 - import_playbook: docker/dockflare/_compose_updates.yml
+- import_playbook: docker/mgmt/gitea.yml
 - import_playbook: docker/mgmt/portainer.yml
+- import_playbook: docker/mgmt/registry.yml
 - import_playbook: docker/mini0/_compose_updates.yml
 - import_playbook: docker/mini0/caddy_proxy.yml
 - import_playbook: docker/mini0/filezilla.yml
 - import_playbook: docker/mini1/_compose_updates_svc.yml
 - import_playbook: docker/mini1/caddy.yml
-- import_playbook: docker/mini1/gitea.yml
 - import_playbook: docker/mini1/mariadb.yml
 - import_playbook: docker/mini1/nextcloud.yml
 - import_playbook: docker/mini1/phpmyadmin.yml
