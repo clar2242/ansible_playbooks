@@ -18,6 +18,7 @@ nginx-proxy.lxc.3fr.uk
 librenms.lxc.3fr.uk
 
 [tfrdebian]
+auth.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 monitoring.srv.3fr.uk
@@ -34,6 +35,7 @@ vps1.wg.3fr.uk
 vps2.wg.3fr.uk
 
 [docker]
+auth.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 vps1.wg.3fr.uk
@@ -48,6 +50,7 @@ docker1.srv.3fr.uk
 mgmt.srv.3fr.uk
 
 [dockerinternal]
+auth.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 monitoring.srv.3fr.uk
@@ -60,6 +63,7 @@ docker1.srv.3fr.uk
 mgmt.srv.3fr.uk
 
 [caddyproxy]
+auth.srv.3fr.uk
 docker0.srv.3fr.uk
 docker1.srv.3fr.uk
 mgmt.srv.3fr.uk
@@ -67,6 +71,7 @@ dns.srv.3fr.uk
 monitoring.srv.3fr.uk
 
 [eximsmarthost]
+auth.srv.3fr.uk
 dns.srv.3fr.uk
 nas1.srv.3fr.uk
 monitoring.srv.3fr.uk
