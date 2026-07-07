@@ -61,6 +61,21 @@
           domain: registry.svc.3fr.uk
           type: CNAME
           ttl: 60
+          cname: "registry.srv.3fr.uk"
+          overwrite: true
+        status_code: 200
+    - name: Create registry.srv.3fr.uk CNAME
+      delegate_to: localhost
+      no_log: true
+      ansible.builtin.uri:
+        url: https://dns.srv.3fr.uk/api/zones/records/add
+        method: POST
+        body_format: form-urlencoded
+        body:
+          token: "{{ dns_token }}"
+          domain: registry.srv.3fr.uk
+          type: CNAME
+          ttl: 60
           cname: "{{ inventory_hostname }}"
           overwrite: true
         status_code: 200
