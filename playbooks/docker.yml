@@ -5,6 +5,7 @@
 - import_playbook: docker/_vpsshared/portainer_agent.yml
 - import_playbook: docker/auth/_compose_updates.yml
 - import_playbook: docker/dns/mariadb.yml
+- import_playbook: docker/docker0/_compose_updates.yml
 - import_playbook: docker/docker0/calibreweb.yml
 - import_playbook: docker/docker0/flaresolverr.yml
 - import_playbook: docker/docker0/ittools.yml
@@ -17,6 +18,8 @@
 - import_playbook: docker/docker0/sonarr.yml
 - import_playbook: docker/docker0/stash.yml
 - import_playbook: docker/docker0/tautulli.yml
+- import_playbook: docker/docker1/_compose_updates.yml
+- import_playbook: docker/docker1/bricktracker.yml
 - import_playbook: docker/docker1/changedetection.yml
 - import_playbook: docker/docker1/homarr.yml
 - import_playbook: docker/docker1/homepage.yml
@@ -32,8 +35,6 @@
 - import_playbook: docker/mini0/_compose_updates.yml
 - import_playbook: docker/mini0/caddy_proxy.yml
 - import_playbook: docker/mini0/filezilla.yml
-- import_playbook: docker/mini1/_compose_updates_svc.yml
-- import_playbook: docker/mini1/caddy.yml
 - import_playbook: docker/mini1/mariadb.yml
 - import_playbook: docker/mini1/nextcloud.yml
 - import_playbook: docker/mini1/phpmyadmin.yml

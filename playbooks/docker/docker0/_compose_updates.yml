@@ -1,15 +1,16 @@
 ---
-- name: update docker compose stacks on mgmt
-  hosts: mgmt.srv.3fr.uk
+- name: update docker compose stacks on docker0
+  hosts: docker0.srv.3fr.uk
   gather_facts: false
   vars: 
     stack_name:
-      - dockhand
-      - pulse
-      - repo
-      - ssh
-      - toolkit
-      # - semaphore
+      - autobrr
+      - domainlocker
+      - iplayarr
+      - posteria
+      - qui
+      - shelfmark
+      - tracearr
 
   tasks:
     - name: pull latest containers on mini0

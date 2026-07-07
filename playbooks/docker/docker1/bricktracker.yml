@@ -1,6 +1,6 @@
 ---
-- name: install bricktracker on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install bricktracker on docker1.srv.3fr.uk
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -21,6 +21,8 @@
           caddy_1: bricktracker.svc.3fr.uk
           caddy_1.import_1: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 3333 }}"
+          kuma.bricktracker.http.name: "Bricktracker"
+          kuma.bricktracker.http.url: "https://bricktracker.svc.3fr.uk"
     - name: Create bricktracker.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
