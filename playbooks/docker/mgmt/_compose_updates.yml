@@ -4,6 +4,7 @@
   gather_facts: false
   vars: 
     stack_name:
+      - dockhand
       - pulse
       - ssh
       # - semaphore

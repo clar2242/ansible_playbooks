@@ -6,20 +6,16 @@
     stack_name:
       - audiobookshelf
       - autobrr
-      - dawarich
-      - dockhand
       - domainlocker
       # - glkvm
       - iplayarr
       - navidrome
       - paperless
       - posteria
-      - photon
       - qui
       - repo
       - romm
       - shelfmark
-      - ssh
       - toolkit
       - tracearr
       - wrapperr
