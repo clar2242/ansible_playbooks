@@ -59,6 +59,6 @@
           domain: git.home.thunderweb.uk
           type: CNAME
           ttl: 60
-          cname: "{{ git.svc.3fr.uk }}"
+          cname: "git.svc.3fr.uk"
           overwrite: true
         status_code: 200
