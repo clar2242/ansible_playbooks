@@ -48,7 +48,7 @@
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 80 }}"
           kuma.registry.http.name: "Registry"
-          kuma.registry.http.url: "https://registry.svc.3fr.uk"
+          kuma.registry.http.url: "https://registry.svc.3fr.uk/v2/"
     - name: Create registry.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
