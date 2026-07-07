@@ -1,33 +1,13 @@
 ---
-- name: update docker compose stacks on mini1 (svc.3fr.uk)
-  hosts: mini1.srv.3fr.uk
+- name: update docker compose stacks on auth
+  hosts: auth.srv.3fr.uk
   gather_facts: false
   vars: 
     stack_name:
-      - audiobookshelf
-      - autobrr
-      - dawarich
-      - dockhand
-      - domainlocker
-      # - glkvm
-      - iplayarr
-      - navidrome
-      - paperless
-      - posteria
-      - photon
-      - qui
-      - repo
-      - romm
-      - shelfmark
-      - ssh
-      - toolkit
-      - tracearr
-      - wrapperr
-      - yamtrack
-      - youtarr
+      - auth
 
   tasks:
-    - name: pull latest containers on mini1
+    - name: pull latest containers on mini0
       ansible.builtin.command: 
         cmd: docker compose pull
         chdir: /home/scott/docker/{{ item }}
