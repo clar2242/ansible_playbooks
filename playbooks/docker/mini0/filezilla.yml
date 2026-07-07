@@ -1,6 +1,6 @@
 ---
-- name: install filezilla on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install filezilla on mini0.srv.3fr.uk
+  hosts: mini0.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -27,6 +27,8 @@
           caddy: filezilla.svc.3fr.uk
           caddy.import_0: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 3000 }}"
+          kuma.filezilla.http.name: "FileZilla"
+          kuma.filezilla.http.url: "https://filezilla.svc.3fr.uk"
     - name: Create filezilla.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

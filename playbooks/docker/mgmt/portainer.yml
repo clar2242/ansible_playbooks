@@ -1,6 +1,6 @@
 ---
-- name: install portainer on mini1
-  hosts: mini1.srv.3fr.uk
+- name: install portainer on mgmt
+  hosts: mgmt.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -20,6 +20,8 @@
           caddy_1: portainer.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 9000 }}"
+          kuma.portainer.http.name: "Portainer"
+          kuma.portainer.http.url: "https://portainer.svc.3fr.uk"
     - name: Create portainer.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

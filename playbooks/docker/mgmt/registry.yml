@@ -1,6 +1,6 @@
 ---
-- name: install docker registry on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install docker registry on mgmt.srv.3fr.uk
+  hosts: mgmt.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -47,6 +47,8 @@
           caddy_1: registry.svc.3fr.uk
           caddy_1.import_0: accesslogs
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 80 }}"
+          kuma.registry.http.name: "Registry"
+          kuma.registry.http.url: "https://registry.svc.3fr.uk"
     - name: Create registry.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true

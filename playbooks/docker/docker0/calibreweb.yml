@@ -31,7 +31,6 @@
           caddy_1.reverse_proxy: !unsafe "{{ upstreams 8083 }}"
           kuma.calibre.http.name: "Calibre-Web"
           kuma.calibre.http.url: "https://calibre.svc.3fr.uk"
-          kuma.calibre.http.notification.active: "true"
     - name: Create calibre.svc.3fr.uk CNAME
       delegate_to: localhost
       no_log: true
