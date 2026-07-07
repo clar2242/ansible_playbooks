@@ -1,6 +1,6 @@
 ---
 - name: install caddy on Caddy Proxy hosts
-  hosts: caddyproxy,!docker1.srv.3fr.uk
+  hosts: caddyproxy
   gather_facts: false
   tasks:
     - no_log: true

@@ -62,7 +62,8 @@ mgmt.srv.3fr.uk
 [caddyproxy]
 auth.srv.3fr.uk
 docker0.srv.3fr.uk
-docker1.srv.3fr.uk
+## Disabled - Different config for docker1
+#docker1.srv.3fr.uk
 mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 monitoring.srv.3fr.uk

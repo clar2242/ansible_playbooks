@@ -26,6 +26,9 @@
           - caddy_data:/data
           - caddy_logs:/var/log/caddy
           - wordpress_data_scottclark:/var/www/html
+        labels:
+          kuma.yag_admin.http.name: "YAG Admin"
+          kuma.yag_admin.http.url: "https://yag.home.thunderweb.uk"
         ports:
           - "80:80"
           - "443:443"
