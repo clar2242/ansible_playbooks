@@ -1,6 +1,5 @@
----
-- name: install caddy on Caddy Proxy hosts
-  hosts: caddyproxy,!docker1.srv.3fr.uk
+- name: install caddy on docker1.srv.3fr.uk
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - no_log: true
@@ -13,10 +12,6 @@
         # Empty by design: required so Caddy advertises both IPv4 and IPv6
         # upstreams. Setting an explicit IP forces a single address family.
         default_host_ip: ""
-        dns_servers:
-          - 8.8.8.8
-          - 1.1.1.1
-          - 8.8.4.4
         networks:
           - name: web
         env:
@@ -30,6 +25,7 @@
           - caddy_config:/config
           - caddy_data:/data
           - caddy_logs:/var/log/caddy
+          - wordpress_data_scottclark:/var/www/html
         ports:
           - "80:80"
           - "443:443"

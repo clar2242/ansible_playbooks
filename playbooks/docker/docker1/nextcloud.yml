@@ -1,6 +1,6 @@
 ---
-- name: install nextcloud on mini1.srv.3fr.uk
-  hosts: mini1.srv.3fr.uk
+- name: install nextcloud on docker1.srv.3fr.uk
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -24,6 +24,8 @@
           caddy.import_0: accesslogs
           caddy.reverse_proxy: !unsafe "{{ upstreams 80 }}"
           caddy.reverse_proxy.header_up:  "Host {host}"
+          kuma.nextcloud.http.name: "Nextcloud"
+          kuma.nextcloud.http.url: "https://drive.thunderweb.uk"
     - name: Create drive.thunderweb.uk ANAME
       delegate_to: localhost
       no_log: true

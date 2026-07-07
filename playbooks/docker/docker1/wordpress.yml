@@ -1,6 +1,6 @@
 ---
-- name: install wordpress on mini1.srv.3fr.uk for dev.scottclark.uk
-  hosts: mini1.srv.3fr.uk
+- name: install wordpress on docker1.srv.3fr.uk for dev.scottclark.uk
+  hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:
     - community.docker.docker_container:
@@ -28,6 +28,8 @@
           caddy.encode: gzip
           caddy.@forbidden.path: "/.user.ini"
           caddy.respond: "@forbidden 404"
+          kuma.wordpress_dev_scottclark.http.name: "WordPress - Scott Clark"
+          kuma.wordpress_dev_scottclark.http.url: "https://dev.scottclark.uk"
     - name: Create dev.scottclark.uk ANAME
       delegate_to: localhost
       no_log: true
