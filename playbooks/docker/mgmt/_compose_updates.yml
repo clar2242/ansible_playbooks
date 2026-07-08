@@ -4,6 +4,7 @@
   gather_facts: false
   vars: 
     stack_name:
+      - apprise
       - dockhand
       - pulse
       - repo
