@@ -17,6 +17,8 @@
           TZ: "Europe/London"
           DB_CONNECTION: "sqlite"
           APP_KEY: "{{ speedtest_appkey }}"
+          APP_URL: "https://speedtest.svc.3fr.uk"
+          APP_TIMEZONE: "Europe/London"
           SPEEDTEST_SCHEDULE: "0 */8 * * *"
           SPEEDTEST_BLOCKED_SERVERS: "55137"
         volumes:
