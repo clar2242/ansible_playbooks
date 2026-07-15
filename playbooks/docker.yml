@@ -38,7 +38,6 @@
 - import_playbook: docker/mgmt/portainer.yml
 - import_playbook: docker/mgmt/registry.yml
 - import_playbook: docker/mini0/_compose_updates.yml
-- import_playbook: docker/mini0/caddy_proxy.yml
 - import_playbook: docker/mini0/filezilla.yml
 - import_playbook: docker/monitoring/_compose_updates_svc.yml
 - import_playbook: docker/monitoring/munin.yml
@@ -57,5 +56,4 @@
 - import_playbook: docker/vps2/linkstack.yml
 - import_playbook: docker/vps2/mariadb.yml
 - import_playbook: docker/vps2/shlink.yml
-- import_playbook: docker/wazuh/caddy_proxy.yml
 - import_playbook: docker_prune.yml

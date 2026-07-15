@@ -1,5 +1,5 @@
 ---
-- name: install filezilla on mini0.srv.3fr.uk
+- name: install filezilla on mini0
   hosts: mini0.srv.3fr.uk
   gather_facts: false
   tasks:

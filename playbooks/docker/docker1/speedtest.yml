@@ -1,5 +1,5 @@
 ---
-- name: install speedtest-tracker on docker1.srv.3fr.uk
+- name: install speedtest-tracker on docker1
   hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:

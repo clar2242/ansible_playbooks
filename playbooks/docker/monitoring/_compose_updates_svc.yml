@@ -1,5 +1,5 @@
 ---
-- name: update docker compose stacks on monitoring (svc.3fr.uk)
+- name: update docker compose stacks on monitoring
   hosts: monitoring.srv.3fr.uk
   gather_facts: false
   vars: 
@@ -7,7 +7,7 @@
       - autokuma
 
   tasks:
-    - name: pull latest containers on mini1
+    - name: pull latest containers on monitoring
       ansible.builtin.command: 
         cmd: docker compose pull
         chdir: /home/scott/docker/{{ item }}

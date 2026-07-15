@@ -1,5 +1,5 @@
 ---
-- name: install gitea on mgmt.srv.3fr.uk
+- name: install gitea on mgmt
   hosts: mgmt.srv.3fr.uk
   gather_facts: false
   tasks:

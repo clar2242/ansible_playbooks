@@ -1,5 +1,5 @@
 ---
-- name: update docker compose stacks on nas1 (svc.3fr.uk)
+- name: update docker compose stacks on nas1
   hosts: nas1.srv.3fr.uk
   gather_facts: false
   vars: 

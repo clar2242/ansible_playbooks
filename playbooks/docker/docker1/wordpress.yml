@@ -1,5 +1,5 @@
 ---
-- name: install wordpress on docker1.srv.3fr.uk for dev.scottclark.uk
+- name: install wordpress on docker1 for dev.scottclark.uk
   hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:

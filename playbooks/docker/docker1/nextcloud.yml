@@ -1,5 +1,5 @@
 ---
-- name: install nextcloud on docker1.srv.3fr.uk
+- name: install nextcloud on docker1
   hosts: docker1.srv.3fr.uk
   gather_facts: false
   tasks:

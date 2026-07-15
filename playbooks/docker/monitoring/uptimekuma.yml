@@ -15,7 +15,6 @@
           PUID: "1000"
           PGID: "1000"
           TZ: "Europe/London"
-          UPTIME_KUMA_LOG_RESPONSE_BODY_MONITOR_ID: "6"
         memory: 512M
         memory_swap: 512M
         volumes:

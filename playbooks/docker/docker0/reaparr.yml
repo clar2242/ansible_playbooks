@@ -1,5 +1,5 @@
 ---
-- name: install reaparr on docker0.srv.3fr.uk
+- name: install reaparr on docker0
   hosts: docker0.srv.3fr.uk
   gather_facts: false
   tasks:

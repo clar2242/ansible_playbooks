@@ -64,9 +64,13 @@ auth.srv.3fr.uk
 docker0.srv.3fr.uk
 ## Disabled - Different config for docker1
 #docker1.srv.3fr.uk
+## Disabled - Different config for nas1
+#nas1.srv.3fr.uk
 mgmt.srv.3fr.uk
 dns.srv.3fr.uk
 monitoring.srv.3fr.uk
+mini0.srv.3fr.uk
+wazuh.srv.3fr.uk
 
 [eximsmarthost]
 auth.srv.3fr.uk
