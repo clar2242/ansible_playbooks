@@ -22,7 +22,6 @@
 - import_playbook: docker/docker1/bricktracker.yml
 - import_playbook: docker/docker1/caddy.yml
 - import_playbook: docker/docker1/changedetection.yml
-- import_playbook: docker/docker1/homarr.yml
 - import_playbook: docker/docker1/homepage.yml
 - import_playbook: docker/docker1/mariadb.yml
 - import_playbook: docker/docker1/n8n.yml

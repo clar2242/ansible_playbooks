@@ -6,7 +6,6 @@
     stack_name:
       - apprise
       - dockhand
-      - pulse
       - repo
       - ssh
       - toolkit
