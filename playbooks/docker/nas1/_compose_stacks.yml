@@ -5,6 +5,7 @@
   vars: 
     stack_name:
       - downloads
+      - muxarr
 
   tasks:
     - name: pull latest containers on nas1
